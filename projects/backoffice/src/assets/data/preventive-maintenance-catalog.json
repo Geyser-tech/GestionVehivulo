@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": "100",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "A",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "101",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "C",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "102",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "B",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "103",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "A",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "104",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "C",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "105",
+            "startDate": "21/12/2022",
+            "finalDate": "30/12/2022",
+            "class": "B",
+            "engineType": "GASOLINERO",
+            "version": "1",
+            "state": "Activo",
+            "statusClass": "Green"
+        }
+    ]
+}

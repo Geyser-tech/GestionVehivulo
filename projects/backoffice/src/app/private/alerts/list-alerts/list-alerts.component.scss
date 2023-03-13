@@ -1,0 +1,63 @@
+@import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+}
+
+.button-search-container {
+    text-align: center;
+}
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+
+}
+
+.title-filter {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.dateSelectContainer {
+    width: 140px;
+}
+
+.dateSelectContainerfecha {
+    width: 140px;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.button-search-container {
+    text-align: left;
+}
+
+.table {
+    overflow: auto;
+}
+
+.mat-radio-button {
+    margin: 5px;
+}
+
+.mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

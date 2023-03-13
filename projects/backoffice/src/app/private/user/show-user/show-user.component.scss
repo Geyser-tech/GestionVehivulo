@@ -1,0 +1,138 @@
+@import 'variables';
+
+.seccion-container {
+    margin: 10px;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: start;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+    margin-left: 12px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.round-button:hover {
+    transform: translateY(0) scale(1.02);
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+.mat-dialog-content {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.tsp-container {
+    padding: 1% 0% 0% 2%;
+}
+
+//Buttons
+.button-actions {
+    margin-top: 5px;
+    background-color: blue;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-actions-delete {
+
+    margin-top: 5px;
+    background-color: $tspSigesError;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+}
+
+.tsp-index {
+    text-align: center !important;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.buttonedit {
+    border: 1px solid white;
+}

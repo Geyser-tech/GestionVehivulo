@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <span class="tsp-font-size-modal-titles tsp-view-title nameView">{{ 'VEHICLE_INSPECTIONS.TITLE' | translate
+            }}</span>
+    </div>
+    <div class="filters mt-2">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 date">
+                <div class="dateContent  row" [formGroup]="form">
+                    <span class="title tsp-font-size-default-title">{{'PIP.LIST.DATES' | translate}}</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' | translate}}
+                            </mat-label>
+                            <input (dateChange)="clearEndDate()" class="tsp-font-size-default-content" matInput
+                                [matDatepicker]="picker1" [min]="minDate" [max]="maxDate" formControlName="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.END_DATE' | translate}}
+                            </mat-label>
+                            <input [matDatepickerFilter]="filterEndDate" class="tsp-font-size-default-content" matInput
+                                [matDatepicker]="picker" [min]="minDate" [max]="maxDate" formControlName="EndDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <!-- filter area -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsArea" *ngIf="areas!=null">
+                <cad-chips-input [items]="areas" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.AREA' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedAreas($event)">
+                </cad-chips-input>
+            </div>
+            <!-- enterprise -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsEnterprise" *ngIf="providers!=null">
+                <cad-chips-input [items]="providers" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.ENTERPRISES' | translate"
+                    [InputCheckLabel]="'VEHICLE_INSPECTIONS.DATA.ALL' | translate"
+                    (selectedItems)="selectedProviders($event)"></cad-chips-input>
+            </div>
+            <!-- filter state -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-3 chipsState" *ngIf="states!=null">
+                <cad-multi-check-box-filter [items]="states" (selectedItems)="selectedStates($event)"
+                    [GroupName]="'VEHICLE_INSPECTIONS.DATA.STATUS' | translate">
+                </cad-multi-check-box-filter>
+            </div>
+            <!-- buttons new and history -->
+            <div class="col-12 col-sm-6 md-7 col-lg-12 col-xl-12 btnNewAndHistory">
+
+                <div class="btnCancelFilter">
+                    <button mat-raised-button
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                        (click)="clearFilters()">
+                        <mat-icon>filter_alt_off</mat-icon>
+                    </button>
+                </div>
+                <div class="btnSearch">
+                    <button mat-raised-button
+                        class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success generalMatForm"
+                        (click)="searchData()">{{'VEHICLE_INSPECTIONS.DATA.SEARCH' | translate}}</button>
+                </div>
+                <div class="btnNew">
+                    <button mat-raised-button *ngIf="!checkOnlyRead"
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                        (click)="openRegister()">
+                        <mat-icon>add</mat-icon>{{'VEHICLE_INSPECTIONS.DATA.NEW' | translate}}
+                    </button>
+                </div>
+                <div class="btnHistory">
+                    <button mat-raised-button (click)="openShowHistory()"
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success">
+                        <mat-icon>history</mat-icon>{{'VEHICLE_INSPECTIONS.DATA.HISTORY' | translate}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- table list vehicle inspections -->
+    <div class="list-vehicle-inspections">
+        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openShow($event)">
+        </cad-table-filter>
+    </div>
+</div>

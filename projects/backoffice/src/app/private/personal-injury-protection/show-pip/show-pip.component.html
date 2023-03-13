@@ -1,0 +1,316 @@
+<div class="container"
+    *ngIf="pip!=null && pipStateExpireParameter!=null  && pipStateLapsedParameter!=null && pipStateActiveParameter!=null">
+    <div class="tsp-title-header-modal titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 row leftSectionTitleModal">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 titleNameModal">
+                <div>
+                    <span class="tsp-font-size-modal-titles">{{'PIP.TITLE' | translate}}</span>&nbsp;
+                </div>
+                <div>
+                    <span class="tsp-font-size-modal-titles">{{pip.licensePlate}}</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div [ngClass]="{'pip-status-lapsed':pipStateLapsedParameter == pip.state,
+                'pip-status-valid': pipStateActiveParameter == pip.state, 
+                'pip-status-expire': pipStateExpireParameter == pip.state}">
+                    <span class="tsp-font-size-modal-titles">{{pipState}}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal" *ngIf="pip.registrationState!=true &&
+        !checkOnlyRead">
+            <div class="optionModal" [ngClass]="{'title-modal':pip.registerState==false}">
+                <div class="btnEdit">
+                    <button mat-raised-button class="tsp-button-edit" (click)="openEdit()" *ngIf="pip.registerState">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button class="tsp-button-delete" (click)="openUnsuscribe()"
+                        *ngIf="pip.registerState">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'PIP.SHOW_PIP.BTN.UNSUSCRIBE'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-content class="container">
+        <!-- Section Vehicle -->
+        <div class="Section mt-2">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container">
+                    <mat-label class="tsp-font-size-default-title title-container">
+                        {{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'|
+                        translate}}</mat-label>
+                </div>
+                <div class="container row tsp-container">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content"> {{'PIP.DATA.LICENSE_PLATE'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.licensePlate}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.AREA'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.area
+                                }}</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.RESPONSIBLE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div> -->
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.TYPE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.vehicleType}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.BRAND'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.brand}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.MODEL'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.model}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.COLOR'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.color}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.YEAR'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.year}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.N_ENGINE'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.engineNumber}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.SERIE'|
+                                translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.serialNumber}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section Enterprise -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container">
+                    <span class="tsp-font-size-default-title title-container">{{'PIP.SHOW_PIP.INSURANCE_COMPANY' |
+                        translate}}</span>
+                </div>
+                <div class="container row  tsp-container">
+                    <div class="col-12 contentAtribute">
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.insurer}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Section Poliza -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container ">
+                    <mat-label class="tsp-font-size-default-content">{{'PIP.SECTIONS_TITLES.POLICY_DATA'
+                        |
+                        translate}}</mat-label>
+                </div>
+
+                <div class="container row tsp-container">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.POLICY_N' |
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.policyNumber}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.POLICY_VALIDITY' |
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{pip.fromValidityPolicy | date:
+                                        'dd/MM/yyyy'}}</span>
+                                    -
+                                    <span class="tsp-font-size-default-content">{{pip.untilValidityPolicy | date:
+                                        'dd/MM/yyyy'}}</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'PIP.DATA.VALIDITY_PIP_CERTIFICATE' |
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{pip.fromValidityCertificate | date:
+                                        'dd/MM/yyyy'}}</span>
+                                    -
+                                    <span class="tsp-font-size-default-content">{{pip.untilValidityCertificate | date:
+                                        'dd/MM/yyyy'}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Section Insured -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container ">
+                    <span class="tsp-font-size-default-title title-container">{{'PIP.SECTIONS_TITLES.INSURED' |
+                        translate}}</span>
+                </div>
+                <div class="container row tsp-container">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span class="tsp-font-size-default-content">{{'PIP.DATA.IDENTIFICATION_DOCUMENT' |
+                                translate}}</span>
+                        </div>
+                        <div class="tsp-font-size-default-content">
+                            {{pip.documentNumber}}
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span class="tsp-font-size-default-content">{{'PIP.DATA.BUSINESS_NAME' | translate}}</span>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.businessName}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span class="tsp-font-size-default-content">{{'PIP.DATA.DATE_OF_ISSUE' | translate}}</span>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.issueDate | date: 'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span class="tsp-font-size-default-content">{{'PIP.DATA.BROADCAST_TIME' | translate}}</span>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.issueDate | date: 'hh:mm a'}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span class="tsp-font-size-default-content">{{'PIP.DATA.PREMIUM_AMOUNT' | translate}}</span>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{pip.premiumAmount}}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section File Uploaded -->
+        <div class="Section">
+            <div class="title title-container">
+                <span class="tsp-font-size-default-title title-container">{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT'
+                    | translate}}</span>
+            </div>
+            <cad-viewer-file [Files]="pip.documentsUrl"></cad-viewer-file>
+
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close class="tsp-font-size-buttons tsp-button-delete">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

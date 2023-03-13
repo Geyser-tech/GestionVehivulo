@@ -1,0 +1,259 @@
+<div class="container">
+  <div class="tsp-title-header-modal row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+      <div>
+        <mat-label>{{ 'PIP.TITLES.REGISTER' | translate }}</mat-label>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="form">
+    <div mat-dialog-content class="container">
+      <div class="row seccion-container">
+        <div class="row">
+          <hr class="ks-line" />
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tsp-secction-title">
+              <span class="tsp-font-size-default-title tsp-label-title">
+                {{ 'PIP.CREATE.INSURED_VEHICLE' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <cad-search-print [PlaceHolderInput]="'PIP.DATA.LICENSE_PLATE' | translate"
+          (SendIdentifierObject)="searchVehicle($event)" [SomeObject]="vehicle" [Labels]="labels" [ColumnNumber]=4
+          [isvehicle]="true">
+        </cad-search-print>
+      </div>
+
+      <div class="row seccion-container ">
+        <div class="row">
+          <hr class="ks-line" />
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tsp-secction-title mb-2">
+              <span class="tsp-font-size-default-title  tsp-label-title">
+                {{ 'PIP.CREATE.INSURANCE_COMPANY' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field class="general-input" appearance="fill">
+              <mat-label class="tsp-font-size-default-content"> {{ 'PIP.DATA.INSURANCE' | translate }}</mat-label>
+              <mat-select formControlName="insurance" class="tsp-font-size-default-content">
+                <mat-option *ngFor="let insurance of insurances" [value]="insurance.id"
+                  class="tsp-font-size-default-content">
+                  {{ insurance.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.controls.insurance.errors?.required && form.controls.insurance.touched"
+                class="tsp-font-size-errors-messages">
+                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row seccion-container mb-2">
+        <div class="row">
+          <hr class="ks-line" />
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tsp-secction-title">
+              <span class="tsp-font-size-default-title tsp-label-title">
+                {{ 'PIP.CREATE.POLICY_DATA' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="general-input">
+              <mat-label class="tsp-font-size-default-content"> {{ 'PIP.DATA.POLICY_N' | translate }} </mat-label>
+              <input matInput formControlName="policyNumber" placeholder="{{ 'PIP.DATA.POLICY_N' | translate }}"
+                maxlength="50" required
+                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                class="tsp-font-size-default-content">
+              <mat-error *ngIf="form.controls.policyNumber.errors?.required && form.controls.policyNumber.touched"
+                class="tsp-font-size-errors-messages">
+                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+              <mat-hint>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 row">
+            <label class="tsp-font-size-default-content"> {{ 'PIP.DATA.POLICY_VALIDITY' | translate }}
+            </label>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input" appearance="fill">
+                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                  'PIP.DATA.START_DATE' | translate }} </mat-label>
+                <input matInput [matDatepicker]="startPolicyValidity" (dateChange)="clearEndPolicy()" required
+                  formControlName="startPolicyValidity" class="tsp-font-size-default-content" />
+                <mat-datepicker-toggle matSuffix [for]="startPolicyValidity"
+                  class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                <mat-datepicker #startPolicyValidity></mat-datepicker>
+
+                <mat-error *ngIf="form.controls.startPolicyValidity.errors?.required">{{
+                  'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                  }}</mat-error>
+
+              </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input" appearance="fill">
+                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                  'PIP.DATA.END_DATE' | translate }} </mat-label>
+                <input matInput [matDatepicker]="endPolicyValidity" [matDatepickerFilter]="filterEndPolicy" required
+                  formControlName="endPolicyValidity" class="tsp-font-size-default-content"
+                  (dateChange)="endPolicy()" />
+                <mat-datepicker-toggle matSuffix [for]="endPolicyValidity"
+                  class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                <mat-datepicker #endPolicyValidity></mat-datepicker>
+
+                <mat-error *ngIf="form.controls.endPolicyValidity.errors?.required">{{
+                  'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 row">
+            <label class="tsp-font-size-default-content"> {{ 'PIP.DATA.VALIDITY_PIP_CERTIFICATE' | translate }}
+            </label>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input" appearance="fill">
+                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                  'PIP.DATA.START_DATE' | translate }} </mat-label>
+                <input matInput [matDatepicker]="startCertificateValidity" (dateChange)="clearEndCertificate()" required
+                  formControlName="startCertificateValidity" class="tsp-font-size-default-content" />
+                <mat-datepicker-toggle matSuffix [for]="startCertificateValidity"
+                  class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                <mat-datepicker #startCertificateValidity></mat-datepicker>
+
+                <mat-error *ngIf="form.controls.startCertificateValidity.errors?.required">{{
+                  'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                  }}</mat-error>
+
+              </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input" appearance="fill">
+                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                  'PIP.DATA.END_DATE' | translate }} </mat-label>
+                <input matInput [matDatepicker]="endCertificateValidity" [matDatepickerFilter]="filterEndCertificate"
+                  required formControlName="endCertificateValidity" class="tsp-font-size-default-content" />
+                <mat-datepicker-toggle matSuffix [for]="endCertificateValidity"
+                  class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                <mat-datepicker #endCertificateValidity></mat-datepicker>
+
+                <mat-error *ngIf="form.controls.endCertificateValidity.errors?.required">{{
+                  'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row seccion-container mb-2">
+        <div class="row">
+          <hr class="ks-line" />
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tsp-secction-title   ">
+              <span class="tsp-font-size-default-title tsp-label-title">
+                {{ 'PIP.CREATE.CONTRACTOR_INSURED' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="selector-dni-container">
+          <cad-search-print [PlaceHolderInput]="'PIP.DATA.IDENTIFICATION_DOCUMENT' | translate"
+            (SendIdentifierObject)="seachDocumentIdentity($event)" [SomeObject]="documentIdentity" [Labels]="labelsDni"
+            [ColumnNumber]=6 [isvehicle]="false">
+          </cad-search-print>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+            <mat-form-field class="general-input" appearance="fill">
+              <mat-label class="tsp-font-size-default-content"> {{ 'PIP.DATA.DATE_OF_ISSUE' | translate }} </mat-label>
+              <input matInput [matDatepicker]="date" required formControlName="date"
+                class="tsp-font-size-default-content" />
+              <mat-datepicker-toggle matSuffix [for]="date" class="tsp-font-size-default-content">
+              </mat-datepicker-toggle>
+              <mat-datepicker #date class="tsp-font-size-default-content"></mat-datepicker>
+
+              <!-- Required Date Messages -->
+              <mat-error *ngIf="form.controls.date.errors?.required && form.controls.date.touched"
+                class="tsp-font-size-errors-messages">
+                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+            <mat-form-field class="general-input" appearance="fill">
+              <mat-label class="tsp-font-size-default-content"> {{ 'PIP.DATA.BROADCAST_TIME' | translate }} </mat-label>
+              <input matInput type="time" class="inputDate" formControlName="hour" required
+                class="tsp-font-size-default-content" />
+              <mat-error *ngIf="form.controls.hour.errors?.required && form.controls.hour.touched"
+                class="tsp-font-size-errors-messages">
+                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+            <mat-form-field class="general-input">
+              <mat-label class="tsp-font-size-default-content"> {{ 'PIP.DATA.PREMIUM_AMOUNT' | translate }} </mat-label>
+              <input type="number" matInput formControlName="amount" class="tsp-font-size-default-content"
+                placeholder="{{ 'PIP.DATA.PREMIUM_AMOUNT' | translate }}" required maxlength="15" step=".01"
+                onchange="this.value=parseFloat(this.value).toFixed(2)">
+              <mat-error *ngIf="form.controls.amount.errors?.pattern && form.controls.amount.touched"
+                class="tsp-font-size-errors-messages">
+                {{ 'MOBILITY_REQUEST.ERRORS.NUMBER_YEAR' | translate }}</mat-error>
+
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row seccion-container mb-2">
+        <div class="row">
+          <hr class="ks-line" />
+          <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="tsp-secction-title   ">
+              <span class="tsp-font-size-default-title tsp-label-title">
+                {{ 'PIP.CREATE.PRINTABLE_DOCUMENT' | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <cad-upload-files [Multiple]="true" [Label]="'MOBILITY_REQUEST.LABELS.ADD_DOCUMENT' | translate"
+          [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"></cad-upload-files>
+      </div>
+
+
+      <label class="label margin_top">{{ 'PIP.REQUIRED_DATA' | translate }} </label>
+
+    </div>
+    <div class="row mt-4">
+      <div class="buttons-container">
+        <button mat-raised-button class="tsp-button-success"
+          [disabled]="form.invalid||vehicle==undefined || (documentIdentity==undefined) || !loading" (click)="save()">
+          <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+        </button>
+        <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+          <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

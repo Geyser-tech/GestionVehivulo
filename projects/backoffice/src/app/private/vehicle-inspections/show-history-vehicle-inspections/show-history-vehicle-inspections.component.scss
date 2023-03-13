@@ -1,0 +1,191 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.mat-dialog-content {
+    margin: 0;
+}
+
+.tsp-title {
+    color: $tspSigesBlueLetters;
+}
+
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: left;
+    }
+
+    .state {
+        border: 1px solid;
+        text-align: center;
+        justify-content: center;
+        background: $tspSigesMagenta;
+        color: $tspSigesBlack;
+        padding-right: 18px;
+        padding-left: 18px;
+        border-radius: 5px;
+        margin: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        border-color: $tspSigesMagenta;
+    }
+}
+
+
+.optionsModal {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+    margin-left: -11px;
+    margin-right: -10px;
+    border-top-style: solid;
+    border-top-color: $tspSigesBlue;
+}
+
+/* .mat-raised-button {
+    padding: 0 2px 0px 2px;
+    min-width: 0;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+} */
+
+.flex {
+    display: flex;
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.btnSearch {
+    min-width: 0;
+    margin-left: 10px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.searchPlate {
+    max-width: 120px;
+
+    input {
+        text-align: center;
+    }
+}
+
+.generalLabel {
+    color: black;
+    font-weight: bold;
+}
+
+.statusSuccess {
+    border: 1px solid;
+    background-color: $colorSuccess;
+    border-color: $colorSuccess;
+    color: $tspSigesWhiteLetters;
+}
+
+.statusYelow {
+    border: 1px solid;
+    background-color: $colorWarning;
+    border-color: $colorWarning;
+    color: $tspSigesWhiteLetters;
+}
+
+.statusRed {
+    border: 1px solid;
+    background-color: $colorDanger;
+    border-color: $colorDanger;
+    color: $tspSigesWhiteLetters;
+}
+
+.table {
+    overflow: auto;
+}
+
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    text-align: center;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    text-align: center;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+}

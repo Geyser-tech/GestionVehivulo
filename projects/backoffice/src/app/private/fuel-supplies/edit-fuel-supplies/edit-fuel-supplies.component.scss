@@ -1,0 +1,186 @@
+@import 'variables';
+
+.seccion-container {
+    margin: 10px;
+}
+
+.title-container {
+    margin-left: -8px;
+    margin-top: -10px;
+}
+
+.tsp-container {
+    padding: 0% 2% 1% 0%;
+}
+
+
+.contentAtribute {
+    margin-bottom: 6px;
+    display: flex;
+}
+
+.tsp-container-content {
+    padding: 0% 1% 1% 3%;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .state {
+        border: 1px solid;
+        text-align: center;
+        justify-content: center;
+        background: $tspSigesMagenta;
+        color: $tspSigesBlack;
+        padding-right: 18px;
+        padding-left: 18px;
+        border-radius: 5px;
+        margin: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        border-color: $tspSigesMagenta;
+    }
+}
+
+.register-background {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-footer-text {
+    font-weight: 600;
+
+}
+
+.tsp-input-table {
+    width: 150px;
+    text-align: center;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .6) !important;
+}
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+
+.conceptName {
+    pointer-events: none;
+    border: none;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.mat-dialog-content {
+    margin: 0;
+}
+
+.tsp-label-title {
+    font-weight: 600;
+}
+
+.columnTable {
+    text-align: center;
+}
+
+.round-button-delete {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesError;
+}

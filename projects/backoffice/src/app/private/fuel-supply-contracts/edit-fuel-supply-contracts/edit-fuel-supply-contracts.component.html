@@ -1,0 +1,255 @@
+<div class="container">
+    <form [formGroup]="form" *ngIf="form!=null">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <span class="tsp-font-size-modal-titles">{{'CONTRACT.CONTRACT_EDIT' |
+                    translate}}
+                </span>
+            </div>
+        </div>
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="Section">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="title-container">
+                                <span class="tsp-font-size-default-title tsp-title">{{'CONTRACT.CONTRACT_DATA'
+                                    | translate}}:</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content tsp-labels">{{'CONTRACT.CONTRACT_NUMBER'
+                                    | translate}}</mat-label>
+                                <input type="text" formControlName="contractNumber" matInput>
+                                <mat-error
+                                    *ngIf="form.controls.contractNumber.errors?.required && form.controls.contractNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content"> {{
+                                    'FUEL_SUPPLY_CONTRACT.DATA.VALITY_DATE' |
+                                    translate }}
+                                </mat-label>
+                                <mat-date-range-input [rangePicker]="policyValidity"
+                                    class="tsp-font-size-default-content">
+                                    <input matStartDate placeholder="{{ 'CONTRACT.BEGINNING' | translate }}" required
+                                        formControlName="issueDate" class="tsp-font-size-default-content" />
+                                    <input matEndDate placeholder="{{ 'CONTRACT.EXPIRATION' | translate }}" required
+                                        formControlName="expirationDate" class="tsp-font-size-default-content" />
+                                </mat-date-range-input>
+                                <mat-datepicker-toggle matSuffix [for]="policyValidity"></mat-datepicker-toggle>
+                                <mat-date-range-picker #policyValidity></mat-date-range-picker>
+
+                                <mat-error *ngIf="form.controls.issueDate.errors?.required"
+                                    class="tsp-font-size-errors-messages">{{ 'GENERAL.ERRORS.REQUIRED' |
+                                    translate }}</mat-error>
+                                <mat-error *ngIf="form.controls.expirationDate.errors?.required"
+                                    class="tsp-font-size-errors-messages">{{ 'GENERAL.ERRORS.REQUIRED' |
+                                    translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content">
+                                    {{'CONTRACT.TYPE_CONTRACT'|
+                                    translate}} </mat-label>
+                                <mat-select formControlName="typeContract" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let item of typeContract " [value]="item.id">
+                                        {{ item.name }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Contract Detail -->
+                <div class="Section">
+                    <div class="DispatchData row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content">
+                                    {{'CONTRACT.CONCEPT'|
+                                    translate}} </mat-label>
+                                <mat-select (selectionChange)="addConcept($event)" formControlName="concept"
+                                    class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let item of conceptTemporal " [value]="item.id">
+                                        {{ item.name }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.ITEM'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.CONCEPT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.AREA'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.QUANTITY'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.UNIT_PRICE'|
+                                            translate}}
+                                        </th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.AMOUNT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.OPTIONS'|
+                                            translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody formArrayName="arrayContractDetail">
+                                    <ng-container *ngFor="let item of arrayContractDetail.controls;let i=index;">
+                                        <tr *ngIf="arrayContractDetail.controls" [formGroupName]="i">
+                                            <td class="tsp-font-size-default-content">{{i+1}}</td>
+                                            <td class="tsp-font-size-default-content"><input type="text"
+                                                    formControlName="conceptName" class="conceptName">
+                                            </td>
+                                            <td class="tsp-font-size-default-content">
+                                                <mat-form-field>
+                                                    <mat-select formControlName="areaId"
+                                                        class="tsp-font-size-default-content columnTable">
+                                                        <mat-option *ngFor="let item of areasTemporal "
+                                                            [value]="item.id">
+                                                            {{ item.name }}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="quantity"
+                                                    type="number" (ngModelChange)="calcAmount(i)" min="1" maxlength="10"
+                                                    step=".01"                  
+                                                    onchange="this.value=parseFloat(this.value).toFixed(2)" />
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="unitPrice"
+                                                    type="number" (ngModelChange)="calcAmount(i)" min="1" maxlength="10"
+                                                    step=".01"                  
+                                                    onchange="this.value=parseFloat(this.value).toFixed(2)" />
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="amount"
+                                                    type="number" (change)="calcQuantity(i)" min="1" maxlength="10"
+                                                    step=".01"                  
+                                                    onchange="this.value=parseFloat(this.value).toFixed(2)">
+                                            </td>
+                                            <!-- value="{{fuelSpplyForm.value.amount*FuelSuplies.pu | number}}" -->
+                                            <td class="tsp-font-size-default-content"><button mat-flat-button
+                                                    type="button" color="warn" class="removeItem"
+                                                    (click)="removeDataConcept(i)">
+                                                    <mat-icon>close</mat-icon>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr *ngIf="i+1==arrayContractDetail.controls.length">
+                                            <td colspan="4"></td>
+                                            <td class="tsp-font-size-default-content columnTable">
+                                                {{'FUEL_SUPPLIES.DATA.TOTAL'|
+                                                translate}}</td>
+                                            <td class="tsp-font-size-default-content columnTable">{{total }}
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </ng-container>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Section">
+                <div class="row seccion-container">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 titleSection tsp-secction-title">
+                        <span class="tsp-font-size-default-title tsp-title">{{'CONTRACT.CONTRACTOR_DATA'
+                            | translate}}:</span>
+
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="ruc">
+                            <cad-search-print [PlaceHolderInput]="'PIP.DATA.IDENTIFICATION_DOCUMENT' | translate"
+                                (SendIdentifierObject)="seachDocumentIdentity($event)" [SomeObject]="documentIdentity"
+                                [Labels]="labelsDni" [ColumnNumber]=6 [isvehicle]="false"
+                                [DocumentIdentity]="contractData.contractor.ruc">
+                            </cad-search-print>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'CONTRACT.ADDRESS'
+                                | translate}}</mat-label>
+                            <input type="text" formControlName="Address" matInput>
+                            <mat-error *ngIf="form.controls.Address.errors?.required && form.controls.Address.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'CONTRACT.EMAIL'
+                                | translate}}</mat-label>
+                            <input type="text" formControlName="Email" matInput>
+                            <mat-error *ngIf="form.controls.Email.errors?.required && form.controls.Email.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'CONTRACT.PHONE'
+                                | translate}}</mat-label>
+                            <input type="text" formControlName="Phone" matInput>
+                            <mat-error *ngIf="form.controls.Phone.errors?.required && form.controls.Phone.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content">
+                                {{'CONTRACT.TYPE_CLASIFICATION'|
+                                translate}} </mat-label>
+                            <mat-select formControlName="typeClasification" class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let item of typeClasification " [value]="item.id">
+                                    {{ item.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary"
+                    [disabled]="form.invalid || arrayContractDetail.controls.length==0" class="button-save"
+                    (click)="saveContract()">
+                    <mat-icon class="icons">save</mat-icon>{{'CONTRACT.SAVE' | translate}}
+                </button>
+                <button mat-raised-button color="warn" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{'CONTRACT.TOCLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,160 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="view-title-container">
+                <div class="row">
+                    <div class="col-sm-12 col-10 col-md-10 col-lg-10 col-xl-10">
+                        <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                            {{'FUNCIONARIES.DATA.FUNC_EDITNAME' | translate}}
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                        <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                            <button class="button-actions" (click)="editFuncionaries()">
+                                <mat-icon class="tsp-icons">edit</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                        <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                            <button class="button-actions-delete" (click)="deleteFuncionaries()">
+                                <mat-icon class="tsp-icons">delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <mat-dialog-content>
+                <form>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-10 col-md-10 col-lg-10 col-xl-10">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.GENERAL_DATA' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label
+                                    class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_FUNCIONARIES'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_GENERO'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_EDAD' |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_ADRESS'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNCI_PHONE'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_EMAILS'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">CARRILLO TOLEDO LUIS FERNANDO</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">MASCULINO</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">24</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">L01-CASTILLO N° 345</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">992865957</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">carrillo.toledo@unas.edu.pe</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.FUNC_FUNCTION' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_AREA' |
+                                    translate}}:</label>
+                                <br />
+                                <label
+                                    class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_TYPECONTRACT'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_ROLESS'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">OGA</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">PLANILLA</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">GERENTE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.FUNCION_CRED_USER' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_EMAILS'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_PASSWD'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                                <label
+                                    class="tsp-font-size-default-title titlehader">{{'FUNCIONARIES.DATA.FUNC_SECUR_USER'
+                                    |
+                                    translate}}:</label>
+                                <br />
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">carrillo@gmail.com</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">**********</label>
+                                <br />
+                                <label class="tsp-font-size-default-title">Lector de Area</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-dialog-content>
+            <div class="row mt-4 mb-4">
+                <div class="buttons-container">
+                    <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                        mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'FUNCIONARIES.DATA.TO_CLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

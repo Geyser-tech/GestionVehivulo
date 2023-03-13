@@ -1,0 +1,66 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "2",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "3",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "De Baja",
+            "statusClass": "red"
+        },
+        {
+            "id": "4",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "5",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "6",
+            "funcionaries": "Josue Acosta",
+            "user": "josue@gmail.com",
+            "rol": "ADMIN GLOBAL",
+            "status": "Activo",
+            "statusClass": "Green"
+        }
+    ],
+    "rol": [
+        {
+            "id": "1",
+            "rol": "ADMIN GLOBAL"
+        },
+        {
+            "id": "2",
+            "rol": "ADMIN GLOBAL"
+        },
+        {
+            "id": "2",
+            "rol": "ADMIN GLOBAL"
+        }
+    ]
+}

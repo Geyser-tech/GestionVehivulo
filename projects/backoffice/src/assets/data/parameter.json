@@ -1,0 +1,45 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Transaccion",
+            "description": "CONTABILIDAD"
+        },
+        {
+            "id": "2",
+            "name": "Transaccion",
+            "description": "CONTABILIDAD"
+        },
+        {
+            "id": "3",
+            "name": "Transaccion",
+            "description": "CONTABILIDAD"
+        },
+        {
+            "id": "4",
+            "name": "Transaccion",
+            "description": "CONTABILIDAD"
+        },
+        {
+            "id": "5",
+            "name": "Transaccion",
+            "description": "CONTABILIDAD"
+        }
+    ],
+    "parameter": [
+        {
+            "id": "1",
+            "name": "AAAAAAAA",
+            "type": "BBBBBBBB",
+            "description": "CCCCCCC",
+            "worth": "DDDDDDDD"
+        },
+        {
+            "id": "2",
+            "name": "AAAAAAAA",
+            "type": "BBBBBBBB",
+            "description": "CCCCCCC",
+            "worth": "DDDDDDDD"
+        }
+    ]
+}

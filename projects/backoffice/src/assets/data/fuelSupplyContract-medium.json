@@ -1,0 +1,37 @@
+{
+    "data": [
+        {
+            "Id": "001",
+            "ContractNumber": "032-3256-23215",
+            "BusinessName": "SAC",
+            "FromContractDate": "12/12/2022",
+            "UntilContractDate": "12/12/2022",
+            "TotalQuantity": "396.25",
+            "QuantityAvailable": "654.36",
+            "StatusContract": "VIGENTE",
+            "StatusRegistration": "ACTIVO"
+        },
+        {
+            "Id": "002",
+            "ContractNumber": "032-3256-23215",
+            "BusinessName": "SAC",
+            "FromContractDate": "12/12/2022",
+            "UntilContractDate": "12/12/2022",
+            "TotalQuantity": "396.25",
+            "QuantityAvailable": "654.36",
+            "StatusContract": "VIGENTE",
+            "StatusRegistration": "ACTIVO"
+        },
+        {
+            "Id": "003",
+            "ContractNumber": "032-325da6-23dada5",
+            "BusinessName": "SAC",
+            "FromContractDate": "12/12/2022",
+            "UntilContractDate": "12/12/2022",
+            "TotalQuantity": "400.25",
+            "QuantityAvailable": "125.36",
+            "StatusContract": "VIGENTE",
+            "StatusRegistration": "DE BAJA"
+        }
+    ]
+}

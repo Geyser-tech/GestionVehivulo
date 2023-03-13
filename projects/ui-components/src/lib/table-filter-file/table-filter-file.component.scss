@@ -1,0 +1,67 @@
+@import 'variables.scss';
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-actions-delete {
+    margin-top: 5px;
+    background-color: $tspSigesError;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 3px;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-red {
+    color: red;
+    text-align: center;
+}
+
+.status-green {
+    color: green;
+    text-align: center;
+}
+
+.data-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+.iconFile {
+    font-size: 40px;
+    color: $colorDanger;
+}

@@ -1,0 +1,7 @@
+<cad-register-master-detail [Title]="'DETAIL_MASTERS.TITLES.REGISTER' | translate"
+    [CodeInput]="'MASTERS.CREATE.LABELS.CODE' | translate" [NameInput]="'MASTERS.CREATE.LABELS.NAME' | translate"
+    [ButtonClose]="'MASTERS.BUTTONS.CLOSE' | translate" [ButtonSave]="'MASTERS.BUTTONS.SAVE' | translate"
+    [MasterId]="idMaster" [UserAreaId]="userAreaId" (RegisterDetailMasterEvent)="registerDetailMaster($event)"
+    [errorMessageRequired]="'MASTERS.ERRORS.REQUIRED' | translate"
+    [errorMessageUpperCase]="'MASTERS.ERRORS.ONLY_UPPER_CASE' | translate">
+</cad-register-master-detail>

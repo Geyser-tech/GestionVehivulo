@@ -1,0 +1,8 @@
+<div class="filter-container">
+    <label class="group-title tsp-font-size-default-title">{{GroupName}}</label>
+    <mat-checkbox class="check-box" [(ngModel)]="checkedParent" (change)="onChangeParent($event)"></mat-checkbox>
+    <div *ngFor="let item of items">
+        <mat-checkbox class="check-box" (change)="onChangeChilds($event)" [(ngModel)]="item.checked"
+            class="tsp-font-size-default-content">{{item.name}}</mat-checkbox>
+    </div>
+</div>

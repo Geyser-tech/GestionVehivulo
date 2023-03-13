@@ -1,0 +1,115 @@
+@import 'variables';
+
+.tsp-view-title {
+
+    color: $tspSigesWhiteLetters;
+
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button-add-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.button-add {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhiteLetters;
+    margin-right: 5px;
+}
+
+.button-clear-filters {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhiteLetters;
+    margin-right: 5px;
+
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    font-weight: 400;
+}
+
+.multi-check-container {
+    margin-top: 1px;
+}
+
+
+
+.generalMatForm {
+    width: 100%;
+    font-size: 14px;
+}
+
+.date {
+    align-items: center;
+    margin-left: 0px;
+}
+
+.dateContent {
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: $tspSigesBlue;
+}
+
+.btnSearch {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.btnNewAndHistory {
+    margin-top: auto;
+}
+
+.btnNewAndHistory {
+    margin-top: auto;
+    display: flex;
+    justify-content: end;
+}
+
+.contentBTNs {
+    display: flex;
+    justify-content: end;
+}
+
+.btnNew {
+    margin-right: 8px;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+// @media (max-width: 884px) and (min-width: 0px) {}
+
+@media (max-width: 664px) {
+
+    .btnSearch {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    .contentBTNs {
+        justify-content: center;
+        margin-right: -27px;
+    }
+
+}

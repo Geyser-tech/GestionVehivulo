@@ -1,0 +1,62 @@
+<p-table [value]="Licenses" [(selection)]="selectedItems" [selectionPageOnly]="true" styleClass="p-datatable-customers"
+    class="tsp-table-container table" dataKey="id" [columns]="columns">
+    <ng-template pTemplate="header">
+        <tr>
+            <th class="column-options table-font-header">
+                {{numberLabel}}
+            </th>
+            <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                class="column-options table-font-header">
+                {{column.header}}</th>
+            <th class="column-options table-font-header">
+                {{licenses}}
+            </th>
+            <th class="column-options table-font-header">
+                {{optionsLabel}}
+            </th>
+        </tr>
+
+    </ng-template>
+    <ng-template pTemplate="body" let-customer let-rowData let-columns="columns" let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="customer">
+            <td class="tsp-font-size-default-content tsp-index">
+                {{rowIndex + 1}}
+            </td>
+            <td *ngFor="let col of columns; let i=index" class="column-options">
+
+        <tr class="data-columns tsp-font-size-default-content" *ngIf="col.field != 'state'">
+            {{
+            rowData[col.field]}}
+        </tr>
+        <tr class="data-columns tsp-font-size-default-content" *ngIf="col.field == 'state'" [ngClass]="{'status-lapsed':rowData.state == '0', 'status-active': rowData.state == '1' 
+                }">{{ rowData['state'] == 0 ? 'CADUCADO' : 'VIGENTE'}}</tr>
+        </td>
+        <td>
+            <div mat-raised-button class="container-document">
+                <mat-icon class="iconFile">description</mat-icon>
+                <span class="red">{{rowData.documents.length}} </span>
+                <button class="button-actions-delete arrowDown" (click)="showAction(rowData)">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+            </div>
+        </td>
+        <td>
+            <div *ngIf="rowData.registrationState ==1" mat-raised-button
+                class="col-12 col-md-6 col-lg-4 container-document">
+                <button class="button-actions-delete revalidacionLicense" [disabled]="revalidateDisabled"
+                    (click)="revalidateAction(rowData)">
+                    <span>REV/REC</span>
+                </button>
+            </div>
+            <div *ngIf="rowData.registrationState ==0" class="col-12 col-md-6 col-lg-4 container-document">
+                <mat-icon>maximize</mat-icon>
+            </div>
+        </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="4"> {{ notLicenses }}</td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -1,0 +1,151 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-font-size-modal-titles tsp-view-title">{{ 'VALORIZATION.LABELS.TITLE' | translate }}</h1>
+    </div>
+    <div>
+        <div class="radioButton">
+            <mat-radio-group [(ngModel)]="valueRadioBtn">
+                <mat-radio-button class="tsp-font-size-default-content" value="valorization">{{
+                    'FUEL_SUPPLIES.DATA.VALORIZATION' |
+                    translate
+                    }}</mat-radio-button>
+                <mat-radio-button class="tsp-font-size-default-content" value="control">{{
+                    'FUEL_SUPPLIES.DATA.CONTROL_FIRM' |
+                    translate
+                    }}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <section class="mt-3">
+            <hr class="ks-line">
+            <div class="titleSection title-container">
+                <mat-label class="tsp-label-search tsp-font-size-default-content">{{ 'FUEL_SUPPLIES.DATA.CRITERY_FILTER'
+                    | translate }}</mat-label>
+            </div>
+            <div class="row" *ngIf="valueRadioBtn=='valorization'">
+                <form [formGroup]="reportValorizationForm">
+                    <div class="row tsp-secction-container">
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row">
+                            <mat-form-field appearance="fill" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' | translate}}
+                                </mat-label>
+                                <input (dateChange)="clearValorizationEndDate()" matInput [matDatepicker]="picker1"
+                                    formControlName="fromDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.END_DATE' |
+                                    translate}}</mat-label>
+                                <input [matDatepickerFilter]="filterValorizationEndDate" matInput
+                                    [matDatepicker]="picker" formControlName="toDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class=" tsp-font-size-default-content">AREA</mat-label>
+                                    <mat-select name="food" class=" tsp-font-size-default-content"
+                                        formControlName="areaId" (selectionChange)="changeArea($event)">
+                                        <mat-option *ngFor="let area of areas" [value]="area.id"
+                                            class=" tsp-font-size-default-content">
+                                            {{area.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class=" tsp-font-size-default-content">{{ 'FUEL_SUPPLIES.DATA.CONTRACT' |
+                                        translate | uppercase}}</mat-label>
+                                    <mat-select name="food" class=" tsp-font-size-default-content"
+                                        formControlName="contractId">
+                                        <mat-option *ngFor="let contract of contracts" [value]="contract.id"
+                                            class=" tsp-font-size-default-content">
+                                            {{contract.contractNumber}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="contentSection row" *ngIf="valueRadioBtn=='control'">
+                <form [formGroup]="reportControlFuelSupplyForm">
+                    <div class="row tsp-secction-container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 row">
+                                <mat-form-field appearance="fill" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' |
+                                        translate}}
+                                    </mat-label>
+                                    <input (dateChange)="clearControlEndDate()" matInput [matDatepicker]="fromDate"
+                                        formControlName="fromDate">
+                                    <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                                    <mat-datepicker #fromDate></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' |
+                                        translate}}
+                                    </mat-label>
+                                    <input [matDatepickerFilter]="filterControlEndDate" matInput
+                                        [matDatepicker]="toDate" formControlName="toDate">
+                                    <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+                                    <mat-datepicker #toDate></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <div>
+                                    <mat-form-field appearance="fill" class="generalMatForm"
+                                        class="tsp-font-size-default-content" style="width: 100%;">
+                                        <mat-label class="tsp-font-size-default-content">{{'VALORIZATION.LABELS.AREA'|
+                                            translate}}</mat-label>
+                                        <mat-select formControlName="areaId" class="tsp-font-size-default-content">
+                                            <mat-option *ngFor="let area of areas" [value]="area.id"
+                                                class="tsp-font-size-default-content">
+                                                {{area.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <hr class="ks-line">
+            <div class="titleSection title-container">
+                <mat-label class="tsp-label-search tsp-font-size-default-content"
+                    *ngIf="valueRadioBtn=='valorization'">{{ 'FUEL_SUPPLIES.DATA.TYPE_VALORIZATION' | translate
+                    }} A:</mat-label>
+                <mat-label class="tsp-label-search tsp-font-size-default-content" *ngIf="valueRadioBtn=='control'">{{
+                    'FUEL_SUPPLIES.DATA.TYPE_VALORIZATION' | translate
+                    }}</mat-label>
+            </div>
+            <div class="contentSection">
+                <div class="btnShow" *ngIf="valueRadioBtn=='valorization'">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        (click)="getValorizationReportTypeA()">Ver</button>
+                </div>
+                <div class="btnShow" *ngIf="valueRadioBtn=='control'">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        (click)="getReportControlFuelSupply()">Ver2</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

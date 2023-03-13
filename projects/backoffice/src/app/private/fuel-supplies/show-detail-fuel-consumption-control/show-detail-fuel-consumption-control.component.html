@@ -1,0 +1,140 @@
+<div class="container" *ngIf="vehicle!=null &&fuelSupplyConsumption!=null">
+    <div class="tsp-container">
+        <div class="titleModal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 SectionTitleModal">
+                <div class="titleNameModal">
+                    <span class="tsp-title-modals tsp-font-size-default-title">{{'FUEL_SUPPLIES.TITLES.SHOW_DETAIL'|
+                        translate}} | </span>
+                </div>
+            </div>
+        </div>
+        <div mat-dialog-content class="container">
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 title-container mb-2">
+                        <mat-label class=" title tsp-font-size-default-title ">{{'FUEL_SUPPLIES.DATA.CONTROL_PROGRESS'|
+                            translate}}</mat-label>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                            <div class="col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                                <mat-label class="tsp-font-size-default-content tsp-labels">
+                                    {{'FUEL_SUPPLIES.DATA.INTERVAL'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-10 col-lg-10 col-xl-10">
+                                <span class="tsp-font-size-default-content">{{vehicle.startDate| date:
+                                    'dd/MM/yyyy'}} - {{vehicle.endDate| date:
+                                    'dd/MM/yyyy'}}</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                            <div class="col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2 tsp-labels">
+                                <mat-label class="tsp-font-size-default-content">{{'FUEL_SUPPLIES.DATA.FUEL'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3">
+                                <span class="tsp-font-size-default-content">{{vehicle.fuelType}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                            <div class="col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2 tsp-labels">
+                                <mat-label class="tsp-font-size-default-content">{{'FUEL_SUPPLIES.DATA.SUPPLIYING'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-10 col-lg-10 col-xl-10">
+                                <span class="tsp-font-size-default-content">{{vehicle.numberFuelSupplies}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 title-container mb-2">
+                        <mat-label class=" title tsp-font-size-default-title ">{{'FUEL_SUPPLIES.DATA.DETAIL_CONSUPTION'|
+                            translate}}</mat-label>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="SectionTable row">
+                                    <div class="contentTable col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <p-table [value]="fuelSupplyConsumption">
+                                            <ng-template pTemplate="header">
+                                                <tr class="tsp-font-size-default-content">
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.DATE_SUPPLIYING'|
+                                                        translate }}</th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.USER_AREA'|
+                                                        translate}}</th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.DRIVER'|
+                                                        translate}}
+                                                    </th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.KM_INITIAL'|
+                                                        translate}}</th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.KM_FINAL'|
+                                                        translate}}</th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.TRAIL'|
+                                                        translate}}
+                                                    </th>
+                                                    <th class="tsp-table-header">
+                                                        {{'FUEL_SUPPLIES.DATA.CONSUMPTION_GALLON'|
+                                                        translate}}</th>
+                                                    <th class="tsp-table-header">
+                                                        {{'FUEL_SUPPLIES.DATA.ESTABLISHED_RANGE'|
+                                                        translate}}</th>
+                                                    <th class="tsp-table-header">{{'FUEL_SUPPLIES.DATA.PERCEIVED_RANGE'|
+                                                        translate}}</th>
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="body" let-FuelSuplies let-rowIndex="rowIndex">
+                                                <tr class="tsp-font-size-default-content tsp-table-content">
+                                                    <td>{{FuelSuplies.supplyDate | date:
+                                                        'dd/MM/yyyy'}}</td>
+                                                    <td>{{FuelSuplies.userArea}}</td>
+                                                    <td>{{FuelSuplies.driver}}</td>
+                                                    <td>{{FuelSuplies.startKm}}</td>
+                                                    <td>{{FuelSuplies.endKm}}</td>
+                                                    <td>{{FuelSuplies.totalKm}}</td>
+                                                    <td>{{FuelSuplies.gallonsConsumption}}</td>
+                                                    <td>{{FuelSuplies.fixedConsumptionRange }}</td>
+                                                    <td
+                                                        [ngClass]="{'fuel-supply-consumption-status-unacceptable':FuelSuplies.state == fuelConsumptionStateUnacceptable , 
+                                                    'fuel-supply-consumption-status-acceptable': FuelSuplies.state == fuelConsumptionStateAcceptable}">
+                                                        {{FuelSuplies.perceivedConsumptionRange | number:'.3-3'}}</td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row ">
+                    <div class="tsp-fuel-supply-result-container">
+                        <span
+                            class=" tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.PERCEIVED_RANGE_INTERVAL'|
+                            translate}}
+                        </span>
+                        <span class="tsp-font-size-default-content tsp-fuel-supply-total"
+                            [ngClass]="{'fuel-supply-consumption-status-unacceptable':vehicle.state == fuelConsumptionStateUnacceptable, 
+                    'fuel-supply-consumption-status-acceptable': vehicle.state == fuelConsumptionStateAcceptable}">{{vehicle.totalPerceivedRange| number:'.3-3'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="CloseModal">
+            <button class="button-close" mat-flat-button mat-button mat-dialog-close color="warn">
+                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

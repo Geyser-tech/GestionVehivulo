@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "id": "100",
+            "concept": "20022|aceite",
+            "areas": "abastecimiento",
+            "quantity": "202022",
+            "pu": "33",
+            "toimport": "234567"
+        }
+    ]
+}

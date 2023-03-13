@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'ALERTS.TITLE' | translate }}</h1>
+    </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="save()">
+    <div class="row mt-4">
+        <div class="col-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="filter-container">
+                <label class="title-filter">{{'ALERTS.LABELS.DOCUMENT' | translate}} :</label><br>
+                <mat-radio-group class="mat-radio-group" formControlName="document">
+                    <mat-radio-button class="mat-radio-button" *ngFor="let document of documents" [value]="document">
+                        {{document.name}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="col-12  col-md-3 col-lg-3 col-xl-3 button-search-container">
+            <button class="button-actions" (click)="save()" [disabled]="form.invalid">
+                <mat-icon class="tsp-icons">search</mat-icon>
+            </button>
+        </div>
+    </div>
+</form>
+<div class="table row mt-4" *ngIf="columns">
+    <cad-table-filter-alerts [items]="data" [columns]="columns" [actions]="actions"
+        id="goToCreate"></cad-table-filter-alerts>
+</div>

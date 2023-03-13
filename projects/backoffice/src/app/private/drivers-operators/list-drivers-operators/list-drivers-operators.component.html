@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+            {{ 'DRIVERS_OPERATORS.TITLE' | translate }}
+        </span>
+    </div>
+    <div class="filters mt-2">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 date">
+                <div class="dateContent  row" [formGroup]="form">
+                    <span class="title tsp-font-size-default-title">{{'PIP.LIST.DATES' | translate}}</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' | translate}}
+                            </mat-label>
+                            <input (dateChange)="clearEndDate()" class="tsp-font-size-default-content" matInput
+                                [matDatepicker]="picker1" [min]="minDate" [max]="maxDate" formControlName="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.END_DATE' | translate}}
+                            </mat-label>
+                            <input [matDatepickerFilter]="filterEndDate" class="tsp-font-size-default-content" matInput
+                                [matDatepicker]="picker" [min]="minDate" [max]="maxDate" formControlName="EndDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsArea">
+                <cad-chips-input [items]="classCategory"
+                    [InputLabel]="'VISUALIZE_DRIVER.DRIVER.CLASS_CATEGORY' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"
+                    (selectedItems)="selectedClassCategory($event)"></cad-chips-input>
+            </div>
+            <div class="col-12 col-sm-6 md-7 col-lg-12 col-xl-12 btnNewAndHistory">
+                <div class="btnCancelFilter">
+                    <button mat-raised-button
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                        (click)="clearFilters()">
+                        <mat-icon>filter_alt_off</mat-icon>
+                    </button>
+                </div>
+                <div class="btnSearch">
+                    <button mat-raised-button
+                        class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success generalMatForm"
+                        (click)="searchData()">{{'VEHICLE_INSPECTIONS.DATA.SEARCH' | translate}}</button>
+                </div>
+                <div class="btnNew">
+                    <button mat-raised-button *ngIf="!checkOnlyRead"
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                        (click)="openRegister()">
+                        <mat-icon>add</mat-icon>{{'FUEL_SUPPLY_CONTRACT.NEW'|
+                        translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-vehicle-inspections">
+        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openShow($event)"
+            id="goToCreate"></cad-table-filter>
+    </div>
+</div>

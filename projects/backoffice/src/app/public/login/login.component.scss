@@ -1,0 +1,210 @@
+/* ////////////////////////////// Login ////////////////////////////// */
+
+@import "variables";
+
+/* ////////// Card Foot ////////// */
+
+.loginFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* ////////// Environment Label ////////// */
+
+.environmentLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+}
+
+.cardTitle {
+  text-align: center;
+  font-family: 'Kanit', sans-serif !important;
+
+}
+
+/*** validations ***/
+
+.validation.text-danger {
+  font-size: 11px;
+  color: #a6061d;
+  background: #b40c2312;
+  width: 100%;
+  border-radius: 2px;
+  display: table;
+  padding: 3px;
+  margin-top: 4px;
+}
+
+.validation>i {
+  margin-right: 3px;
+}
+
+/*** login button ***/
+button .mdi-spin {
+  color: #000;
+}
+
+.tsp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  font-family: 'Kanit', sans-serif !important;
+}
+
+
+
+.inputIconBtn {
+  margin-right: -10px;
+}
+
+.tsp-button-login {
+  border: none !important;
+  background-color: $tspSigesBlueDark;
+  border-radius: 5px;
+}
+
+.tsp-card-header {
+  background-color: $tspSigesBlueDark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tsp-login-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: 'Kanit', sans-serif !important;
+}
+
+.tsp-login-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: 'Kanit', sans-serif !important;
+  margin-top: 10px;
+}
+
+.card {
+  border: none !important;
+  border-radius: 5px;
+  width: 20%;
+}
+
+//AGREGAR ESTILOS ///////////////////////////////////////////////////
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 1280px) {
+  .tsp-container {
+    margin-top: -142px;
+    min-height: 123vh;
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .tsp-container {
+    margin-top: -142px;
+    min-height: 123vh;
+  }
+}
+
+@media (max-width: 351px) {
+  .tsp-container .card {
+    min-width: 100%;
+  }
+
+  .tsp-container {
+    margin-top: -142px;
+  }
+}
+
+//GUI///////////////////////////////////////////////////////////////////
+
+.tsp-icon-logo {
+  width: 80%;
+}
+
+.tsp-titles-container {
+  text-align: center;
+}
+
+.tsp-wallpaper {
+  background-image: url("../../../assets/images/pictures/Float-Vehicle-withoutcolor.png");
+  background-repeat: repeat-x;
+  animation: slideleft 90000s infinite linear;
+  -webkit-animation: slideleft 90000s infinite linear;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
+
+
+.bg-layer {
+  background: rgb(4 34 216 / 64%);
+  min-height: 100vh;
+}
+
+@keyframes slideleft {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 90000%;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 90000%;
+  }
+}
+
+//Agregar css
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.loginInput {
+  margin-top: 20px;
+}

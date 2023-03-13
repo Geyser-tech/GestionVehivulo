@@ -1,0 +1,60 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tsp-label-search {
+    font-weight: 600;
+    color: $tspSigesBlue;
+}
+
+.tsp-secction-container {
+    padding: 1% 1% 1% 4%;
+}
+
+.title-container {
+    margin-left: 5px;
+    margin-top: -10px;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.radioButton {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.titleSection {
+    color: $tspSigesBlueLetters;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+::ng-deep .mat-radio-label {
+    margin-right: 20px;
+}
+
+.dateContent {
+    margin-left: 4px;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.contentSection {
+    margin-top: 10px;
+}
+
+.btnShow {
+    margin-left: 10px;
+}

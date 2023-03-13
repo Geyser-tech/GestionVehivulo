@@ -1,0 +1,86 @@
+@import 'variables.scss';
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-actions-delete {
+
+    margin-top: 5px;
+    background-color: $tspSigesError;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.tsp-index {
+    text-align: center !important;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-lapsed {
+    color: $tspSigesStateLapsed;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.status-active {
+    color: $tspSigesStateActive;
+    text-align: center;
+    font-weight: 600;
+}
+
+.status-expire {
+    color: $tspSigesStateExpire;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.data-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    padding: 0px;
+}

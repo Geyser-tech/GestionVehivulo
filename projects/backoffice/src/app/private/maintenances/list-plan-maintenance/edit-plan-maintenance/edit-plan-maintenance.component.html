@@ -1,0 +1,163 @@
+<div class="container" *ngIf="planMaintenance!=null && PlanMaintenanceStateRegisteredParameter!=null">
+    <div [ngClass]="{'tsp-general-content':PlanMaintenanceStateRegisteredParameter == planMaintenance.state}">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="tsp-title-container">
+                    <h1 class="tsp-title tsp-view-title tsp-font-size-default-title">
+                        {{'PLAN_MAINTENANCES.SHOW.LABELS.EDIT_TITLE'
+                        |
+                        translate}}
+                    </h1>
+
+                    <span
+                        class="tsp-title tsp-view-title tsp-font-size-default-title tsp-date-header">{{planMaintenance.fromDate
+                        |
+                        date:'dd/MM/YYYY
+                        '}} - {{planMaintenance.toDate | date:'dd/MM/YYYY
+                        '}}</span>
+
+                </div>
+
+            </div>
+        </div>
+        <div mat-dialog-content class="container">
+            <div class="row" [formGroup]="editPlanMaintenanceForm">
+                <div class="row seccion-container">
+                    <div class="row mb-2">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog">
+                            <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                                <span>{{'PLAN_MAINTENANCES.SHOW.LABELS.PROVIDER_DATA' |
+                                    translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.DOCUMENT_IDENTITY'
+                                | translate}}</span>
+                            <br>
+                            <span
+                                class="tsp-font-size-default-content">{{planMaintenance.providerDocumentIdentity}}</span>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.BUSINESS_NAME'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.providerBusinessName}}</span>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.ADDRESS'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.providerAddress}}</span>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field class="general-input">
+                                    <mat-label class=" tsp-font-size-default-content"> {{
+                                        'PLAN_MAINTENANCES.LABELS.CONTRACT_NUMBER' | translate }} </mat-label>
+                                    <input matInput formControlName="contractNumber"
+                                        placeholder="{{ 'PLAN_MAINTENANCES.LABELS.CONTRACT_NUMBER' | translate }}"
+                                        maxlength="50" required class=" tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="editPlanMaintenanceForm.controls.address.errors?.required && editPlanMaintenanceForm.controls.address.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog mb-2">
+                                <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                                    <span>{{'PLAN_MAINTENANCES.SHOW.LABELS.PLAN_MAINTENANCE_DATA' |
+                                        translate}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 row">
+                            <label class="tsp-font-size-default-content"> {{ 'FUEL_SUPPLIES.DATA.DATE' | translate }}
+                            </label>
+                            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                                <mat-form-field class="general-input" appearance="fill">
+                                    <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                        'PIP.DATA.START_DATE' | translate }} </mat-label>
+                                    <input matInput [matDatepicker]="fromDate" (dateChange)="clearToDate()" required
+                                        formControlName="fromDate" class="tsp-font-size-default-content" />
+                                    <mat-datepicker-toggle matSuffix [for]="fromDate"
+                                        class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                    <mat-datepicker #fromDate></mat-datepicker>
+
+                                    <mat-error *ngIf="editPlanMaintenanceForm.controls.fromDate.errors?.required">{{
+                                        'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                        }}</mat-error>
+
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                                <mat-form-field class="general-input" appearance="fill">
+                                    <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                        'PIP.DATA.END_DATE' | translate }} </mat-label>
+                                    <input matInput [matDatepicker]="toDate" [matDatepickerFilter]="filterToDate"
+                                        required formControlName="toDate" class="tsp-font-size-default-content" />
+                                    <mat-datepicker-toggle matSuffix [for]="toDate"
+                                        class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                    <mat-datepicker #toDate></mat-datepicker>
+
+                                    <mat-error *ngIf="editPlanMaintenanceForm.controls.toDate.errors?.required">{{
+                                        'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                        }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line" />
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title ">
+                                    <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                        {{'MOBILITY_REQUEST.LABELS.ATTACHED_DOCUMENT'| translate}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <cad-upload-files [Multiple]="true" [Label]="'MOBILITY_REQUEST.LABELS.ADD_DOCUMENT' | translate"
+                            [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"
+                            [RegisteredFiles]="planMaintenance.documentsUrl"></cad-upload-files>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                    (click)="saveEditPlanMaintenance()" [disabled]="editPlanMaintenanceForm.invalid || loading==false">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button [disabled]="loading==false" class="tsp-button-delete tsp-font-size-buttons tsp-buttons"
+                    mat-flat-button mat-button mat-dialog-close>
+                    <mat-icon>close</mat-icon>{{'PLAN_MAINTENANCES.SHOW.LABELS.CLOSE' |
+                    translate}}
+                </button>
+
+
+            </div>
+        </div>
+    </div>

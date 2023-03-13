@@ -1,0 +1,342 @@
+<div class="container" *ngIf="maintenance!=null">
+    <div class="row">
+        <div class="view-title-container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'MAINTENANCES.TITLE' |
+                        translate
+                        }}</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="buttons-header-container"
+                        *ngIf="this.maintenance.state==maintenanceStateRegisteredParameter">
+                        <!-- <button mat-raised-button color="primary" class="action-buttons tsp-button-tool">
+                            <mat-icon class="icons">construction</mat-icon>
+                        </button> -->
+                        <button mat-raised-button color="primary" class="action-buttons tsp-button-edit"
+                            (click)="openEdit()">
+                            <mat-icon class="icons">edit</mat-icon>
+                        </button>
+                        <button mat-raised-button color="primary" class="action-buttons tsp-button-delete"
+                            (click)="openUnsuscribe()">
+                            <mat-icon class="icons">delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-content class="container">
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'MOBILITY_REQUEST.LABELS.INSURED_VEHICLE' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.LICENSE_PLATE'|
+                        translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.licensePlate}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels"> {{'PIP.DATA.AREA'| translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.area}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.TYPE'| translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.typeVehicle}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels"> {{'PIP.DATA.BRAND'| translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.brand}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.MODEL'| translate}}
+                    </span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.model}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.COLOR'| translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.color}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels"> {{'PIP.DATA.YEAR'| translate}}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.year}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.N_ENGINE'| translate}}
+                    </span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.engineNumber}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'MAINTENANCES.LABELS.TYPE_MAINTENANCE' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.typeMaintenance}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row seccion-container">
+
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'MAINTENANCES.LABELS.MAINTENANCE_DETAILS' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row"
+                *ngIf="maintenance.state == maintenanceStateRegisteredParameter || maintenance.state == maintenanceStateNotExecutedParameter">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.MAINTENANCE_CLASS' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.maintenanceClass}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.TYPE_MOTOR' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.engineType}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="maintenance.state == maintenanceStateExecutedParameter">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.MAINTENANCE_CLASS' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.maintenanceClass}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.TYPE_MOTOR' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.vehicle.engineType}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.KM' | translate }}
+                    </span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.odometer}}
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row"
+                *ngIf="maintenance.state == maintenanceStateRegisteredParameter || maintenance.state == maintenanceStateNotExecutedParameter">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.DATE' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.maintenanceDate | date:'dd/MM/YYYY h:mm a'}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.CONTRACT' |
+                        translate }}
+                    </span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.planNumber}}
+                    </span>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                    *ngIf="maintenance.state!=maintenanceStateRegisteredParameter">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.EXECUTE_DATE' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content"
+                        *ngIf="maintenance.state!=maintenanceStateNotExecutedParameter">
+                        {{maintenance.executionDate | date:'dd/MM/YYYY h:mm a'}}
+                    </span>
+
+                    <span class="tsp-font-size-default-content"
+                        *ngIf="maintenance.state==maintenanceStateNotExecutedParameter ">
+                        {{ 'MAINTENANCES.LABELS.NOT_EXECUTED' |
+                        translate }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="maintenance.state == maintenanceStateExecutedParameter">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.DATE' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.maintenanceDate | date:'dd/MM/YYYY h:mm a'}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.TOTAL_AMOUNT' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.amount}}
+                    </span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.CONTRACT' |
+                        translate }}
+                    </span><br>
+                    <span class="tsp-font-size-default-content ">
+                        {{maintenance.planNumber}}
+                    </span>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                    *ngIf="maintenance.state!=maintenanceStateRegisteredParameter">
+                    <span class="tsp-font-size-default-content  tsp-labels">{{ 'MAINTENANCES.LABELS.EXECUTE_DATE' |
+                        translate }}</span><br>
+                    <span class="tsp-font-size-default-content"
+                        *ngIf="maintenance.state!=maintenanceStateNotExecutedParameter">
+                        {{maintenance.executionDate | date:'dd/MM/YYYY h:mm a'}}
+                    </span>
+
+                    <span class="tsp-font-size-default-content"
+                        *ngIf="maintenance.state==maintenanceStateNotExecutedParameter ">
+                        {{ 'MAINTENANCES.LABELS.NOT_EXECUTED' |
+                        translate }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="maintenance.state !=maintenanceStateRegisteredParameter ||
+            maintenance.planState != planStateRegisterdParameter">
+                <hr class="sub-ks-line" />
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 sub-ks-line-vertical"
+                    *ngIf="maintenance.typeMaintenanceId == correctiveMaintenance">
+                    <span class="tsp-font-size-default-content  tsp-labels tsp-margin-botton">{{
+                        'MAINTENANCES.LABELS.ACTIVITIES' | translate }}</span><br>
+                    <p-table [value]="maintenance.maintenanceDetail" class="table">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>{{'MAINTENANCES.LABELS.DESCRIPTION'| translate}}</th>
+                                <th>{{'MAINTENANCES.LABELS.AMOUNT'| translate}}</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-value let-rowIndex="rowIndex">
+                            <tr *ngIf="value.maintenanceDetailTypeId==correctiveMaintenance">
+                                <td>{{value.description}}</td>
+                                <td>{{value.quantity}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 sub-ks-line-vertical"
+                    *ngIf="maintenance.typeMaintenanceId == preventiveMaintenance">
+                    <span class="tsp-font-size-default-content  tsp-labels tsp-margin-botton">{{
+                        'MAINTENANCES.LABELS.ACTIVITIES' | translate }}</span><br>
+                    <div *ngFor="let activitie of maintenance.activities" class="activitiesPreventiveContainer">
+                        <mat-icon *ngIf="activitie.isSelected" class="iconCheck">check_box</mat-icon>
+                        <mat-icon *ngIf="!activitie.isSelected">
+                            check_box_outline_blank
+                        </mat-icon>
+
+                        <span class="tsp-font-size-default-content">
+                            {{activitie.activitie}}
+                        </span>
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                    <span class=" tsp-font-size-default-content tsp-labels">{{
+                        'MAINTENANCES.LABELS.SPARE_PARTS' | translate }} </span><br>
+                    <p-table [value]="maintenance.maintenanceDetail" class="table">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>{{'MAINTENANCES.LABELS.DESCRIPTION'| translate}}</th>
+                                <th>{{'MAINTENANCES.LABELS.AMOUNT'| translate}}</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-detail let-rowIndex="rowIndex">
+                            <tr>
+                                <td>{{detail.description}}</td>
+                                <td>{{detail.quantity}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row seccion-container seccion-documents"
+            *ngIf="maintenance.state == maintenanceStateExecutedParameter">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'MAINTENANCES.LABELS.DOCUMENT' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <cad-viewer-file [Files]="maintenance?.documentsSparePartUrl"></cad-viewer-file>
+            <cad-viewer-file [Files]="maintenance?.documentsConformityUrl"></cad-viewer-file>
+            <cad-viewer-file [Files]="maintenance?.documentsVehicleUrl"></cad-viewer-file>
+
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button class="button-close" mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+
+
+</div>

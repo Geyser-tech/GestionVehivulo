@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="view-title-container">
+                <div class="row">
+                    <div class="col-sm-12 col-10 col-md-10 col-lg-10 col-xl-10">
+                        <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                            {{'USERS.DATA.USERS' | translate}}
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                        <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                            <button class="button-actions" (click)=" editUser()">
+                                <mat-icon class="tsp-icons">edit</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                        <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                            <button class="button-actions-delete" (click)="deleteUser()">
+                                <mat-icon class="tsp-icons">delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <mat-dialog-content>
+                <form action="">
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-10 col-md-10 col-lg-10 col-xl-10">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_CREDENTIALS' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_EMAIL' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USERT_PASSWORD' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_ROL' | translate}}:
+                                </label>
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">fernando.carrillo@gmail.com</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">*****************</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">Lector de area</label>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-10 col-md-10 col-lg-10 col-xl-10">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_ASIG' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_AREA' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_FUNCIONARIES' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_ROLESS' | translate}}:
+                                </label>
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">OGA</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">Josue Acosta</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">Administrador | Gerente</label>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-dialog-content>
+            <div class="row mt-4 mb-4">
+                <div class="buttons-container">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons">
+                        <mat-icon class="icons">save</mat-icon>{{ 'USERS.DATA.USER_SAVE' | translate }}
+                    </button>
+                    <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                        mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'USERS.DATA.USER_TOCLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

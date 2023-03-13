@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "registration": "12/09/2023",
+            "dni": "78021702",
+            "functionaries": "Josue Acosta",
+            "phone": "992876567",
+            "email": "josue@gmail.com",
+            "area": "OGA",
+            "contract": "Planilla",
+            "state": "Activo"
+        },
+        {
+            "id": "2",
+            "registration": "12/09/2023",
+            "dni": "78021702",
+            "functionaries": "Josue Acosta",
+            "phone": "992876567",
+            "email": "josue@gmail.com",
+            "area": "OGA",
+            "contract": "Planilla",
+            "state": "Activo"
+        },
+        {
+            "id": "3",
+            "registration": "12/09/2023",
+            "dni": "78021702",
+            "functionaries": "Josue Acosta",
+            "phone": "992876567",
+            "email": "josue@gmail.com",
+            "area": "OGA",
+            "contract": "Planilla",
+            "state": "Activo"
+        },
+        {
+            "id": "4",
+            "registration": "12/09/2023",
+            "dni": "78021702",
+            "functionaries": "Josue Acosta",
+            "phone": "992876567",
+            "email": "josue@gmail.com",
+            "area": "OGA",
+            "contract": "Planilla",
+            "state": "Activo"
+        }
+    ]
+}

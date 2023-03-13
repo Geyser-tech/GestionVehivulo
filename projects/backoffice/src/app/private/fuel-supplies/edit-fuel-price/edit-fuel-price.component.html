@@ -1,0 +1,95 @@
+<div class="container" *ngIf="priceFuelSupply!=null">
+    <div class="tsp-title-header-modal row">
+        <div class="">
+            <mat-label class="tsp-title tsp-view-title tsp-font-size-modal-titles"> {{ 'FUEL_SUPPLIES.TITLES.PRICE' |
+                translate }}
+                | {{priceFuelSupply.concept}} {{ 'FUEL_SUPPLIES.TITLES.EDIT' | translate }}
+            </mat-label>
+        </div>
+    </div>
+    <form [formGroup]="form">
+        <div mat-dialog-content class="container mt-2">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'FUEL_SUPPLIES.FUEL_PRICE.GENERAL_DATA' | translate }}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" style="width: 90%;">
+                        <input matInput disabled class="tsp-font-size-default-content"
+                            value="{{priceFuelSupply.contract}}">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" style="width: 90%;">
+                        <input matInput disabled class="tsp-font-size-default-content"
+                            value="{{priceFuelSupply.provider}}">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" style="width: 90%;">
+                        <input matInput disabled class="tsp-font-size-default-content"
+                            value="{{priceFuelSupply.concept}}">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.EFECTIVE_DATE' | translate }} </mat-label>
+                        <input class="tsp-font-size-default-content" [matDatepicker]="effectiveDate" matInput
+                            formControlName="effectiveDate" />
+                        <mat-datepicker-toggle matSuffix [for]="effectiveDate"> </mat-datepicker-toggle>
+                        <mat-datepicker #effectiveDate></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}
+                        </mat-label>
+                        <input class="tsp-font-size-default-content" matInput type="number" formControlName="unitPrice"
+                            placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}" required>
+                        <mat-error *ngIf="form.controls.unitPrice.errors?.required && form.controls.unitPrice.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <cad-upload-files [Multiple]="true" [Label]="'FUEL_SUPPLIES.FUEL_PRICE.DOCUMENT' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"
+                    [RegisteredFiles]="priceFuelSupply.documentsUrl"></cad-upload-files>
+                <!-- <div class="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+                    <mat-form-field class="general-input" style="width: 80%;">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.DOCUMENT' | translate }}
+                        </mat-label>
+                        <input matInput id="uploadFile" value={{file.name}} disabled
+                            class="tsp-font-size-default-content" />
+                    </mat-form-field>
+                    <div class="fileUpload btn ">
+                        <mat-icon>note_add</mat-icon>
+                        <input id="uploadBtn" type="file" class="upload" (change)="onFileSelect($event)"
+                            accept="application/pdf" />
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()" [disabled]="form.invalid">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

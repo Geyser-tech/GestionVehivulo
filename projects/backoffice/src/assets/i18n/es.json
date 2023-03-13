@@ -1,0 +1,1536 @@
+{
+  "LOGIN": {
+    "LABELS": {
+      "TITLE": "Iniciar Sesión ",
+      "EMAIL": "Email",
+      "PASSWORD": "Contraseña",
+      "COMPANY": "FLOTA VEHICULAR"
+    },
+    "PLACEHOLDERS": {
+      "EMAIL": "Juan@tsol.com",
+      "PASSWORD": "Contraseña"
+    },
+    "BUTTONS": {
+      "SUBMIT": "Iniciar"
+    },
+    "VALIDATORS": {
+      "EMAIL_REQUIRED": "Campo Requerido",
+      "EMAIL_WRONG_FORMAT": "Formato Incorrecto",
+      "EMAIL_TO_LONG": "Solo 256 caracteres",
+      "PASSWORD_REQUIRED": "Campo Requerido",
+      "PASSWORD_TO_LONG": "Solo 256 caracteres"
+    },
+    "FOOTER": {
+      "COMPANY_NAME": "Tech Solutions Perú",
+      "COMPANY_ACRONYM": "Tsol Perú",
+      "DEVELOPMENT": "Desarrollado por"
+    },
+    "ERRORS": {
+      "INFO": {
+        "TITLE": "Correo/Contraseña Incorrectos",
+        "MESSAGE": "Verifique los campos marcados"
+      },
+      "ERROR": {
+        "TITLE": "Error",
+        "MESSAGE": "No se puede conectar al servidor"
+      },
+      "SESSION_EXPIRED": {
+        "TITLE": "Sesión Expirada",
+        "MESSAGE": "Vuelva a Iniciar Sesión"
+      }
+    }
+  },
+  "GENERAL": {
+    "BUTTONS": {
+      "NEW": "Nuevo",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar",
+      "OK": "Aceptar",
+      "CANCEL": "Cancelar",
+      "DELETE": "Eliminar",
+      "EDIT": "Editar",
+      "REMOVE": "Remover",
+      "CHANGE": "Cambiar",
+      "REQUIRED_MARK": "*"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido.",
+      "DATA_INVALID": "El valor ingresado es no valido",
+      "ERROR": "Error!",
+      "INPUT_TITLE_ERROR": "Verificar los datos Ingresados!",
+      "INPUT_DETAIL_ERROR": "Los datos ingresados no son correctos!",
+      "SPECIAL_CHARACTERS": "No se permiten carácteres especiales",
+      "LIMIT_CHARACTERS": "Sobrepaso el límite máximo de carácteres",
+      "ONLY_NUMBERS": "Solo se permiten números"
+    },
+    "LABELS": {
+      "FROM": "Desde",
+      "UNTIL": "Hasta"
+    },
+    "SPINNER": {
+      "LOADING": "Cargando..."
+    }
+  },
+  "MASTER": {
+    "MASTER_TITLE": {
+      "TITLE": "MAESTROS",
+      "NEW_TEACHER": "NUEVO MAESTRO",
+      "MESSAGE": "El campo es requerido",
+      "ID": "ID",
+      "CODE": "Código",
+      "NAME": "Nombre",
+      "OPTIONS": "OPTIONS",
+      "TEACHER REGISTRATION": "REGISTRO DE MAESTRO",
+      "SAVE": "GUARDAR",
+      "TOCLOSE": "CERRAR",
+      "MASTER_REGISTER": "REGISTRAR UN MAESTRO",
+      "UPDATE_MASTER": "ACTUALIZAR UN MAESTRO",
+      "BELONGS": "Pertenece a:",
+      "MASTER_SELECT": "Maestros"
+    },
+    "MASTER_DETAIL": {
+      "DETAIL_TITLE": "ACCIÓN OPERATIVA TRANSACCION",
+      "NEW_DETALLE": "NUEVO DETALLE",
+      "TO_DOWNLOAD": "DESCARGAR",
+      "WORTH": "valor",
+      "RECORD_DETAIL": "REGISTRAR DETALLE DE MAESTRO",
+      "EDIT": "ACTUALIZAR UN DETALLE"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Maestro Registrado!",
+        "SUCCESS": "Se agrego correctamente el Maestro",
+        "FAILED_TITLE": "Maestro no Registrado",
+        "FAILED": "El Maestro no se pudo registrar!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Maestro",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el Maestro",
+        "FAILED_TITLE": "Actualización del Maestro Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Maestro Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el Maestro",
+        "FAILED_TITLE": "Actualización del Maestro Fallido!"
+      }
+    }
+  },
+  "PARAMETER": {
+    "PARAMETER_TITLE": "PARAMETROS DE CONFIGURACIÓN",
+    "DATA": {
+      "NEW_CONFIGURATION": "NUEVA CONFIGURACIÓN",
+      "TO_DOWNLOAD": "DESCARGAR",
+      "NAME": "NOMBRE",
+      "DESCRIPTION": "DESCRIPCIÓN",
+      "WORTH": "VALOR",
+      "TYPE": "TIPO",
+      "REGISTER_TITLE": "REGISTRAR CONFIGURACIÓN",
+      "EDIT_TITLE": "ACTUALIZAR CONFIGURACIÓN",
+      "NAME_CONF": "Nombre de configuración",
+      "DESCRIPTION_CONF": "Descripción de Configuración",
+      "SAVE": "GUARDAR",
+      "TO_CLOSE": "CERRAR",
+      "CAVEAT": "ADVERTENCIA",
+      "MESSAGE": "Se perderan los datos ingresados ¿Esta seguro que desea eliminar la configuración?",
+      "AGREE": "ACEPTAR",
+      "CANCEL": "CANCELAR",
+      "MESSAGE_ADVERTENCE": "No se puede eliminar la configuración, porque contiene parámetros",
+      "TITLE_PARAMETER_CONFIG": "PARAMETRO DE CONFIGURACIÓN: Transacción",
+      "MEW_PARAMETER": "NUEVO PARÁMETRO",
+      "REGISTER_PARAMETER": "REGISTRAR PARÁMETRO",
+      "NAME_PARAMETER": "Nombre del parámetro",
+      "DESCRIPTION_PARAMETER": "Descripción",
+      "WORTH_PARAMETER": "Valor",
+      "MESSAGE_PARAMETER": "El campo es requerido",
+      "EDIT_PARAMETER": "ACTUALIZAR PARÁMETRO"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Parámetro de Configuración Registrado!",
+        "SUCCESS": "Se agrego correctamente el Parámetro de Configuración",
+        "FAILED_TITLE": "Parámetro de Configuración Registrado",
+        "FAILED": "El Parámetro de Configuración no se pudo registrar!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Parámetro de Configuración",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el Parámetro de Configuración",
+        "FAILED_TITLE": "Actualización del Parámetro de Configuración Fallida!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Parámetro de Configuración Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el Parámetro de Configuración",
+        "FAILED_TITLE": "Actualización del Parámetro de Configuración Fallido!"
+      }
+    },
+    "CONFIGURATION": {
+      "UNSUSCRIBE": {
+        "TITLE_MODAL": "DAR DE BAJA UNA CONFIGURACIÓN",
+        "QUESTION": "¿Estas seguro que quieres dar de baja una configuración?"
+      },
+      "MESSAGES": {
+        "ADD": {
+          "SUCCESS_TITLE": "Configuración Registrado!",
+          "SUCCESS": "Se agrego correctamente la Configuración",
+          "FAILED_TITLE": "Configuración Registrada",
+          "FAILED": "La Configuración no se pudo registrar!"
+        },
+        "UNSUSCRIBE": {
+          "SUCCESS": "Se dio de baja exitosamente la Configuración",
+          "SUCCESS_TITLE": "Actualización Exitosa!",
+          "FAILED": "Ocurrio un error al dar de baja la Configuración",
+          "FAILED_TITLE": "Actualización de la Configuración Fallida!"
+        },
+        "UPDATE": {
+          "SUCCESS": "Se actualizo la Configuración Correctamente",
+          "SUCCESS_TITLE": "Actualización Exitosa!",
+          "FAILED": "Ocurrio un error al actualizar la Configuración",
+          "FAILED_TITLE": "Actualización de la Configuración Fallido!"
+        }
+      }
+    }
+  },
+  "FUNCIONARIES": {
+    "FUNCIO_TITLE": "FUNCIONARIOS",
+    "DATA": {
+      "REGISTER_DATA": "Fecha de registro",
+      "AREA": "Área",
+      "TYPE_CONTRACT": "Tipo de contrato",
+      "NEW_FUNCIO": "NUEVO",
+      "REGISTRATION": "REGISTRO",
+      "DNI": "DNI",
+      "FUN_NAME": "FUNCIONARIO",
+      "PHONE": "PHONE",
+      "EMAIL": "CORREO",
+      "FUNCIO_AREA": "ÁREA",
+      "FUNCIO_CONTRACT": "CONTRACTO",
+      "STATE": "ESTADO-REGISTRO",
+      "REGISTER_FUN": "REGISTRO DE FUNCIONARIOS",
+      "INFORMATION_PERSONAL": "DATOS PERSONALES",
+      "SAVE": "GUARDAR",
+      "TO_CLOSE": "CERRAR",
+      "DATA_DNI": "Número de DNI",
+      "LASTNAME": "Apellido Paterno",
+      "MATERNAL_LAST_NAME": "Apellido Materno",
+      "NAME": "Nombres",
+      "FUNCIO_EMAIL": "Correo",
+      "FUNCIONARIES_EMAIL": "ejemplo@gmail.com",
+      "FUNCIONARIES_PHONE": "Teléfono",
+      "FUNCIONARIES_ADRESS": "Dirección",
+      "FUNCIONARIES_GENDER": "Género",
+      "FUNCIONARIES_DATE": "Fecha de Nacimiento",
+      "FUNCIONARIES_FUN": "FUNCIÓN",
+      "FUNCIONARIES_AREA": "Área",
+      "FUN_TYPE_CONTRACT": "Tipo de Contrato",
+      "USER_CREDENTIALS": "CREDENCIALES DE USUARIO",
+      "FUNC_ROLES": "Roles",
+      "FUNC_ROLE": "Todas",
+      "FUNC_EMAIL": "Ingresa su correo electrónica",
+      "FUNC_PASSWORD": "CONTRASEÑA",
+      "FUNC_REPEAT_PASSWORD": "REPETIR CONTRASEÑA",
+      "FUNC_CONFIRM": "Confirmar la contraseña",
+      "FUNC_PASSWORD_MESSAGE": "Ingresar la contraseña",
+      "FUNC_SECURITY": "ROL DE SEGURIDAD",
+      "FUNC_DATE": "Fecha de registro",
+      "FUNC_SINCE": "DESDE",
+      "FUNC_UNTIL": "HASTA",
+      "FUNC_ADDCREDENTIALS": "Agregar Credenciales",
+      "FUNC_EDITNAME": "FUNCIONARIO | OGA",
+      "GENERAL_DATA": "DATOS GENERALES",
+      "FUNC_FUNCTION": "FUNCIÓN",
+      "FUNCION_CRED_USER": "CREDENCIALES DE USUARIO",
+      "FUNC_FUNCIONARIES": "FUNCIONARIO",
+      "FUNC_GENERO": "GÉNERO",
+      "FUNC_EDAD": "EDAD",
+      "FUNC_ADRESS": "DIRECCIÓN",
+      "FUNCI_PHONE": "TELÉFONO",
+      "FUNC_EMAILS": "CORREO",
+      "FUNC_AREA": "ÁREA",
+      "FUNC_TYPECONTRACT": "TIPO DE CONTRATO",
+      "FUNC_ROLESS": "ROLES",
+      "FUNC_PASSWD": "CONTRASEÑA",
+      "FUNC_SECUR_USER": "ROL DE SEGURIDAD",
+      "FUNC_UNSUSCRIBE": "DAR DE BAJA REGISTRO DE FUNCIONARIO",
+      "FUNC_MESSAGE": "¿Estas seguro que quieres dar de baja FUNCIONARIO | OGA?",
+      "FUNC_OBSERVATION": "Observación",
+      "FUNC_CONFIRM_BUTTON": "CONFIRMAR",
+      "FUNC_TO_UPDATE": "FUNCIONARIO OGA | ACTUALIZAR"
+    }
+  },
+  "USERS": {
+    "DATA": {
+      "USER_TITLE": "USUARIOS",
+      "USER_FUNCIONARIES": "FUNCIONARIO",
+      "USERS": "USUARIO",
+      "USER_ROLE": "ROL",
+      "USER_STATE": "STATE",
+      "USER_NEW": "NUEVO USUARIO",
+      "USER_SEE": "VER ROLES",
+      "USER_ROLES": "Roles",
+      "USER_SAVE": "GUARDAR",
+      "USER_TOCLOSE": "CERRAR",
+      "USER_CREDENTIALS": "CREDENCIALES",
+      "USER_EMAIL": "CORREO",
+      "USER_EMAIL_PLACEHOLDER": "Ingresa su correo electrónica",
+      "USERT_PASSWORD": "CONTRASEÑA",
+      "USER_PASSWORD_PLACEHOLDER": "Ingresar la contraseña",
+      "USER_REPEAT_PASSWORD": "REPETIR CONTRASEÑA",
+      "USER_REPEAT_PLACEHOLDER": "Confirmar su contraseña",
+      "USER_ASSIGN_OFFICER": "ASIGNAR FUNCIONARIO",
+      "USER_AREA": "ÁREA",
+      "USER_ADD_ASSIGNMENT": "Agregar asignación",
+      "USER_ROLE_TRAY": "BANDEJA DE ROLES",
+      "USER_ADD_ROL": "AGREGAR ROL",
+      "USER_CLOSE": "CERRAR",
+      "USER_CANCEL": "CANCELAR",
+      "USER_REGISTRATION_ROLE": "REGISTRO DE ROL",
+      "USER_NEWROL": "Registrar un nuevo rol",
+      "USER_ROL": "ROL DE SEGURIDAD",
+      "USER_ASIG": "FUNCIONARIO ASIGNADO",
+      "USER_ROLESS": "ROLES",
+      "USER_DELETE": "DAR DE BAJA USUARIO",
+      "USER_DELETE_MESSAGE": "¿Estas seguro que quieres dar de baja usuario creado",
+      "USER_UPDATE": "ACTUALIZAR USUARIO",
+      "USER_CONFIRM_EDITION": "CONFIRMAR EDICIÓN",
+      "USER_CONFIRM_TITLE": "Guardar todo los cambios efectuados?",
+      "USER_CONFIRM": "CONFIRMAR"
+    }
+  },
+  "VEHICLES": {
+    "BUTTONS": {
+      "NEW": "NUEVO",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar",
+      "CONFIRM": "Confirmar",
+      "CANCEL": "Cancelar",
+      "SEARCH": "BUSCAR"
+    },
+    "LABELS": {
+      "GENERAL_DATE": "Datos Generales",
+      "FEATURES": "Características",
+      "LICENSE_PLATE": "Placa",
+      "BRAND": "Marca",
+      "VEHICLE_TYPE": "Tipo de Vehículo",
+      "ASSIGNED_AREA": "Área Asignada",
+      "AREA": "Área",
+      "USER_AREA": "Área Usuaria",
+      "MODEL": "Modelo",
+      "YEAR": "Año",
+      "COLOR": "Color",
+      "FUEL_TYPE": "Tipo de Combustible",
+      "ENGINE_NUMBER": "Número de Motor",
+      "ENGINE_TYPE": "Tipo de Motor",
+      "SERIAL_NUMBER": "Número de serie",
+      "ALERT": "Alertas",
+      "NO_VEHICLES_AREA": "No hay vehículos en esta área",
+      "NO_USERS_AREA": "No hay áreas usuarias en esta área",
+      "BELONGING": "Propietario",
+      "FACTORY_CONSUMPTION_RANGE": "Rango de Consumo Fabricante (KM/gl)",
+      "FILTERS": "Filtros",
+      "FROM_DATE": "Desde",
+      "UNTIL_DATE": "Hasta"
+    },
+    "TITLES": {
+      "REGISTER": "Registro de Vehículo",
+      "EDIT": "Editar Vehículo",
+      "UNSUSCRIBE": "Dar de Baja Registro de Vehículo",
+      "ASSIGNMENT_VEHICLE": "ASIGNACIÓN: VEHÍCULO - ÁREA USUARIA",
+      "HISTORY_VEHICLE_ASSIGNMENT": "Historial de Asignaciones"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido",
+      "MAYUSCULE_LONG": "Solo se permiten letras mayúsculas entre 14 y 17 caracteres",
+      "MAYUSCULE": "Solo se permiten letras mayúsculas",
+      "CHARACTER_SPECIAL": "No se permiten caracteres especiales",
+      "MIN_SIX_CARACTERS": "Mínimo seis digitos",
+      "NUMBER": "Solo se permiten números"
+    },
+    "SHOW": {
+      "LABELS": {
+        "ASSIGNED_AREA": "Área Asignada",
+        "ALL": "Todas",
+        "BRAND": "Marca",
+        "VEHICLE_TYPE": "Tipo de Vehículo",
+        "VEHICLE_STATE": "Estado del Vehículo",
+        "SOAT_STATE": "Estado del SOAT",
+        "TECHNICAL_REVIEW_STATE": "Estado de Revisión Técnica",
+        "REGISTER_STATE": "Estado de Registro",
+        "PIP": "SOAT",
+        "TECHNICAL_REVIEW": "Revisión Técnica",
+        "MAINTENANCE": "Mantenimiento",
+        "VEHICLE": "Vehículo",
+        "PIP_NOT_REGISTRED": "Este vehículo no tiene SOAT",
+        "VEHICLE_INSPECTION_NOT_REGISTRED": "Este vehículo no tiene Revisiones Técnicas",
+        "MAINTENANCE_NOT_REGISTRED": "Este vehículo no tiene un Mantenimiento Registrado",
+        "USER_AREA": "Área Usuaria",
+        "VEHICLES": "Vehículos",
+        "DRIVE": "Conductor",
+        "DATE_ISSUE": "Fecha de revisión",
+        "DATE_EXPIRATION": "Fecha de vencimiento"
+      },
+      "TABLE_HEADERS": {
+        "AREA": "Área",
+        "BRAND": "Marca",
+        "MODEL": "Modelo",
+        "PIP_POLICY": "Soat",
+        "REGISTER_STATE": "Estado-Vehículo",
+        "STATE": "Estado-Registro",
+        "TYPE": "Tipo",
+        "YEAR": "Año"
+      }
+    },
+    "UNSUSCRIBE": {
+      "LABELS": {
+        "OBSERVATION": "Observación",
+        "UNSUSCRIBE": "¿Esta seguro de dar de baja al vehículo?"
+      }
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro el Vehículo Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrio un error al registrar el Vehículo",
+        "FAILED_TITLE": "Registro de Vehículo Fallido!"
+      },
+      "ADD_VEHICLE_ASSIGNMENT": {
+        "SUCCESS": "Se registro la Asignación de Vehículo correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrio un error al registrar la Asignación de Vehículo",
+        "FAILED_TITLE": "Registro de Asignación de Vehículo Fallido!"
+      },
+      "UNSUSCRIBE_VEHICLE_ASIGNMENT": {
+        "SUCCESS": "Se dio de baja exitosamente la Asignación de Vehículo",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja la Asignación de Vehículo",
+        "FAILED_TITLE": "Actualización de la Asignación de Vehículo Fallido!"
+      },
+      "UPDATE_VEHICLE_ASIGNMENT": {
+        "SUCCESS": "Se actualizo la Asignación de Vehículo Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar la Asignación de Vehículo",
+        "FAILED_TITLE": "Actualización de la Asignación de Vehículo Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Vehículo Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el Vehículo",
+        "FAILED_TITLE": "Actualización de Vehículo Fallido!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Vehículo",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el Vehículo",
+        "FAILED_TITLE": "Actualización de Vehículo Fallido!"
+      }
+    }
+  },
+  "PIP": {
+    "TITLE": "SOAT",
+    "TITLE_EDI": "Actualizar SOAT",
+    "TITLES": {
+      "REGISTER": "Registro de SOAT"
+    },
+    "CONTROL_PANEL": "Home / SOAT",
+    "CONTROL_PANEL_NEW": "Home / SOAT / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / SOAT / Editar",
+    "NEW": "NUEVO",
+    "EDIT": {
+      "TITLE": "Edit SOAT",
+      "QUIT": {
+        "TITLE": "Quit editing?"
+      }
+    },
+    "MESSAGES": {
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el SOAT Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el SOAT",
+        "FAILED_TITLE": "Actualización del SOAT!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el SOAT",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el SOAT",
+        "FAILED_TITLE": "Actualización del SOAT Fallido!"
+      }
+    },
+    "CREATE": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "INSURANCE_COMPANY": "PROVEEDOR",
+      "POLICY_DATA": "DATOS DE LA PÓLIZA",
+      "CONTRACTOR_INSURED": "CONTRATANTE / ASEGURADO",
+      "PRINTABLE_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "MESSAGES": {
+        "SEARCH_VEHICLE": {
+          "SUCCESS": "Se encontro el vehículo",
+          "SUCCESS_TITLE": "Busqueda Exitoso!",
+          "FAILED": "La placa ingresada no corresponde a ningun vehículo",
+          "FAILED_TITLE": "Vehículo no Registrado"
+        },
+        "INSURER_MASTER": {
+          "FAILED": "No se pudo obtener los detalles de maestro",
+          "FAILED_TITLE": "Error!"
+        },
+        "ADD": {
+          "SUCCESS": "Se Registro el SOAT Correctamente!",
+          "SUCCESS_TITLE": "Registro Exitoso!"
+        }
+      }
+    },
+    "SECTIONS_TITLES": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "INSURANCE_COMPANY": "DATOS DEL PROVEEDOR",
+      "POLICY_DATA": "DATOS DE LA PÓLIZA",
+      "INSURED": "CONTRATANTE/ASEGURADO",
+      "PRINTABLE_DOCUMENT": "DOCUMENTO ADJUNTO"
+    },
+    "DATA": {
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Área",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "BRAND": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "SERIE": "Vin/N de serie",
+      "INSURANCE": "Proveedor",
+      "POLICY_N": "Nº de póliza - certificado",
+      "POLICY_VALIDITY": "Vigencia de la póliza",
+      "VALIDITY_PIP_CERTIFICATE": "Vigencia del certificado SOAT control policial",
+      "IDENTIFICATION_DOCUMENT": "RUC/DNI",
+      "BUSINESS_NAME": "Razón Social",
+      "DATE_OF_ISSUE": "Fecha",
+      "BROADCAST_TIME": "Hora de emisión",
+      "PREMIUM_AMOUNT": "Importe de la prima",
+      "START_DATE": "Desde",
+      "END_DATE": "Hasta",
+      "ADD_DOCUMENT": "Agregar documento",
+      "REGISTRATION_STATE": "Estado del Registro",
+      "ERRORS": {
+        "LICENSE_PLATE_REQUIRED": "La placa es requerido.",
+        "POLICY_N_REQUIRED": "El Nº de póliza es requerido.",
+        "START_DATE_REQUIRED": "Fecha de inicio requerido.",
+        "END_DATE_REQUIRED": "Fecha de fin requerido.",
+        "START_DATE_INVALID": "Fecha de inicio invalido.",
+        "END_DATE_INVALID": "Fecha de fin invalido.",
+        "PREMIUM_AMOUNT_REQUIRED": "Importe de la prima es requerido.",
+        "IDENTIFICATION_DOCUMENT_REQUIRED": "Documento de indentificación es requerido.",
+        "DATE_OF_ISSUE_REQUIRED": "Fecha es requerido",
+        "BROADCAST_TIME_REQUIRED": "Hora es requerido"
+      }
+    },
+    "REQUIRED_MARK": "*",
+    "REQUIRED_DATA": "(*) Datos Obligatorios",
+    "LIST": {
+      "ID": "N°",
+      "DAYS_UNTIL_EXPIRATION": "DIAS PARA VENCER",
+      "AREAS": "ÁREAS",
+      "INSURANCE_COMPANY": "EMPRESA PROVEEDORA",
+      "POLICY_NUMBER": "NÚMERO DE PÓLIZA",
+      "LICENSE_PLATE": "PLACA",
+      "TYPE": "TIPO",
+      "REGISTER_STATE": "ESTADO DEL REGISTRO",
+      "STATE": "ESTADO",
+      "OPTIONS": "OPCIONES",
+      "DATES": "Fecha:",
+      "INITIAL_DATE": "Desde",
+      "FINAL_DATE": "Hasta",
+      "RECORD": "HISTORIAL",
+      "SEARCH": "BUSCAR"
+    },
+    "SHOW_PIP": {
+      "BTN": {
+        "UNSUSCRIBE": "Dar de Baja"
+      },
+      "INSURANCE_COMPANY": "PROVEEDOR",
+      "STATES": {
+        "LAPSED": "Caducado",
+        "ACTIVE": "Vigente",
+        "EXPIRE": "Proximo a Vencer"
+      }
+    },
+    "EDIT_PIP": {
+      "SECTION_VEHICLE": {
+        "PLACEHOLDER": {
+          "LICENSE_PLATE": "Ingrese el N° de Placa"
+        }
+      },
+      "SECTION_ENTERPRISE": {
+        "PLACEHOLDERS": {
+          "INSURANCE_CARRIER": "INGRESE PROVEEDOR"
+        }
+      },
+      "SECTION_POLIZA": {
+        "PLACEHOLDERS": {
+          "N_POLIZA_CERTIFIED": "Número de póliza",
+          "START_DATE": "Ingrese fecha inicio",
+          "END_DATE": "Ingrese fecha fin"
+        }
+      },
+      "SECTION_INSURED": {
+        "PLACEHOLDERS": {
+          "DATE": "Ingrese una Fecha",
+          "TOTAL_PRIMA": "Ingrese el importe total de la prima"
+        }
+      },
+      "ERRORS": {
+        "LIMIT_END_DATE": "Fecha invalida",
+        "ONLYNUMBER": "Solo se permiten valores numericos"
+      }
+    },
+    "UNSUSCRIBE_PIP": {
+      "TITLE": "DAR DE BAJA DOCUMENTO",
+      "LABELS": {
+        "QUESTION": "¿Estas seguro que quieres dar de baja el SOAT?",
+        "OBSERVATIONS": "Observaciones"
+      },
+      "PLACEHOLDERS": {
+        "OBSERVATIONS": "Ingrese el motivo por el cual desea realizar esta acción"
+      }
+    }
+  },
+  "VEHICLE_INSPECTIONS": {
+    "TITLE": "Revisión Técnica",
+    "TITLES": {
+      "REGISTER": "Registro de Revisión Técnica",
+      "SHOW_HISTORY": "HISTORIAL",
+      "NEW": "NUEVO",
+      "EDIT": "REV TEC"
+    },
+    "CONTROL_PANEL": "Home / Revisión Técnica",
+    "CONTROL_PANEL_NEW": "Home / Revisión Técnica / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Revisión Técnica / Editar",
+    "NEW": "Nueva Revisión Técnica",
+    "SHOW": "Ver Revisión Técnica",
+    "EDIT": {
+      "TITLE": "Editar Revisión Técnica",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "LABELS": {
+      "N_": "N°",
+      "ENTERPRISE": "Proveedor",
+      "REVIEW_DATE": "Fecha de expiración",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO"
+    },
+    "PLACEHOLDERS": {
+      "N_": "Ingrese el número del certificado",
+      "ENTERPRISE": "Ingrese el nombre del Proveedor",
+      "REVIEW_DATE": "Ingrese la fecha de revisión",
+      "EXPIRATION_DATE": "Ingrese la fecha de vencimiento"
+    },
+    "DATA": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Área",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "BRAND": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "SERIE": "Vin/N de serie",
+      "CERTIFICATE_DETAILS": "DATOS DEL CERTIFICADO",
+      "CERTIFICATE_NUMBER": "Nº",
+      "ENTERPRISE": "Proveedor",
+      "ENTERPRISES": "Proveedores",
+      "REVIEW_DATE": "Fecha de revisión",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "ATTACHED_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "ADD_DOCUMENT": "Agregar documento",
+      "DAYS_EXPIRE": "Días por vencer ",
+      "STATUS": "Estado",
+      "HISTORY": "HISTORIAL",
+      "NEW": "NUEVO",
+      "SEARCH": "BUSCAR",
+      "ALL": "TODOS"
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA DOCUMENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja la Revisión Técnica?"
+    },
+    "SHOW_HISTORY": {
+      "TITLE": "HISTORIAL DE LAS REVISIONES TÉCNICAS",
+      "N_CERTIFIED": "N° CERTIFICADO",
+      "SUPPLIER": "PROVEEDOR",
+      "REVIEW_DATE": "FECHA DE REVISIÓN",
+      "EXPIRATION_DATE": "FECHA DE VENCIMIENTO",
+      "STATE": "ESTADO",
+      "STATE_REGISTER": "ESTADO DEL REGISTRO"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro la Revisión Técnica Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrio un error al registrar la Revisión Técnica",
+        "FAILED_TITLE": "Registro de Revisión Técnica Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo la Revisión Técnica Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar la Revisión Técnica",
+        "FAILED_TITLE": "Actualización de la Revisión Técnica Fallido!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente la Revisión Técnica",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja la Revisión Técnica",
+        "FAILED_TITLE": "Actualización de la Revisión Técnica Fallido!"
+      }
+    }
+  },
+  "FUEL_SUPPLIES": {
+    "TITLE": "Abastecimiento",
+    "TITLES": {
+      "REGISTER": "Registro de Abastecimiento",
+      "SHOW": "ABASTECIMIENTO",
+      "DETAIL_FUEL_CONSUMPTION": "Control de Consumo de Combustible",
+      "SHOW_DETAIL": "DETALLE CONSUMO",
+      "PRICE_RECORD": "Registro de Precio",
+      "RECORT_FUEL": "REPORTES DE COMBUSTIBLE",
+      "FUEL_PRICES": "Precios de Combustible",
+      "PRICE": "Precio",
+      "EDIT": "(Editar)"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro el Abastecimiento Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrio un error al registrar el Abastecimiento",
+        "FAILED_TITLE": "Registro de Abastecimiento Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Abastecimiento Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error  al registrar el Abastecimiento",
+        "FAILED_TITLE": "Actualización de Abastecimiento Fallido!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Abastecimiento",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el Abastecimiento",
+        "FAILED_TITLE": "Actualización de Abastecimiento Fallido!"
+      }
+    },
+    "SUPPLY": {
+      "ERORRS": {
+        "AREAS_NOT_FOUND": "El área no tiene áreas usuarias",
+        "CONTRACT_NOT_FOUND": "Contratos no disponibles"
+      },
+      "TITLE": "ABASTECIMIENTO",
+      "VEHICLE_DATA": "DATOS DE VEHÍCULO",
+      "DISPATCH_DATA": "DATOS DE DESPACHO",
+      "CATERING": "ABASTECIMIENTO",
+      "BUTTONS_SAVE": "Guardar",
+      "BUTTONS_CLOSE": "Cerrar",
+      "SUPPLYS": {
+        "LICENSE_PLATE": "Placa",
+        "AREA": "Área",
+        "DISPATCH_NOTE": "Nota de despacho",
+        "DISPATCH_DATE": "Fecha de despacho",
+        "SELLER": "Vendedor",
+        "DRIVER": "Conductor",
+        "DISPATCH_TIME": "Hora de despacho",
+        "ODOMETER": "Odómetreo",
+        "CONTRACT": "Contrato",
+        "CONCEPT": "Concepto",
+        "FUEL_NEW": "NUEVO",
+        "FUEL_SEARCH": "BUSCAR"
+      }
+    },
+    "CONTROL_PANEL": "Home / Abastecimiento",
+    "CONTROL_PANEL_NEW": "Home / Abastecimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Abastecimiento / Editar",
+    "NEW": "Nuev Abastecimiento",
+    "SHOW": "Ver Abastecimiento",
+    "EDIT": {
+      "TITLE": "Editar Abastecimiento",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA REGISTRO DE ABASTECIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el abastecimiento?",
+      "BTN": "Dar de Baja"
+    },
+    "DATA": {
+      "DATE": "Fecha",
+      "DATE_FROM": "Desde",
+      "DATE_UNTIL": "Hasta",
+      "AREAS": "Áreas",
+      "DATA_TODS": "Todas",
+      "CONTRACT": "Contrato",
+      "FUEL": "Combustible",
+      "VALIDATION_DATA": "DATOS DE VALIDACIÓN",
+      "VEHICLE_DATA": "DATOS DE VEHÍCLO",
+      "RESPONSIBLE": "Responsable",
+      "LICENSE_PLATE": "Placa",
+      "TYPE": "TIPO",
+      "TYPE_VEHICLE": "TIPO DE VEHÍCULO",
+      "TYPE_SUPPLY": "TIPO DE COMBUSTIBLE",
+      "BRAND": "MARCA",
+      "MODEL": "MODELO",
+      "COLOR": "COLOR",
+      "AREA": "ÁREA",
+      "N_ENGINE": "Nº DE MOTOR",
+      "SERIE": "Nº DE SERIE",
+      "YEAR": "AÑO",
+      "DISPATCH_DATA": "DATOS DE DESPACHO",
+      "DISPATCH_NOTE": "NOTA DE DESPACHO",
+      "DISPATCH_DATE": "FECHA DE DESPACHO",
+      "DISPATCH_TIME": "HORA DE DESPACHO",
+      "SELLER": "VENDEDOR",
+      "ODOMETER": "ODÓMETRO",
+      "DRIVER": "CONDUCTOR",
+      "SUPPLIYING": "ABASTECIMIENTO",
+      "ITEM": "ÍTEM",
+      "CONCEPT": "CONCEPTO",
+      "QUANTITY": "CANTIDAD",
+      "PU": "P.U.",
+      "AMOUNT": "IMPORTE",
+      "TOTAL": "TOTAL",
+      "OPTIONS": "OPCIONES",
+      "CONTROL_PROGRESS": "PROGRESO DEL CONTRATO",
+      "INTERVAL": "INTERVALO",
+      "DETAIL_CONSUPTION": "DETALLE DE CONSUMO",
+      "DATE_SUPPLIYING": "Fecha de abastecimiento",
+      "USER_AREA": "Área Usuaria",
+      "KM_INITIAL": "KM Inicial",
+      "KM_FINAL": "KM Final",
+      "TRAIL": "Recorrido",
+      "CONSUMPTION_GALLON": "Galones Consumidos",
+      "ESTABLISHED_RANGE": "Rango Fijo Establecido",
+      "PERCEIVED_RANGE": "Rango Percibido",
+      "PERCEIVED_RANGE_INTERVAL": "RANGO PERCIBIDO EN EL INTERVALO",
+      "VALORIZATION": "VALORIZACIONES",
+      "CONTROL_FIRM": "CONTROL PARA FIRMA",
+      "CRITERY_FILTER": "CRITERIOS Y FILTROS",
+      "TYPE_VALORIZATION": "VALORIZACIÓN TIPO ",
+      "DATE_TIME_INITIAL": "Fecha y Hora Desde",
+      "DATE_TIME_END": "Fecha y Hora Hasta",
+      "DATE_REGISTER": "Fecha de Registro"
+    },
+    "FUEL_PRICE": {
+      "ACTUAL_PRICE": "Precio final en planta",
+      "PREVIUS_PRICE": "Precio anterior en planta",
+      "PRICE_CONTRACT": "PRECIO ACTUAL EN CONTRATO",
+      "PRICES": "PRECIOS",
+      "GENERAL_DATA": "DATOS GENERALES",
+      "CONTRACT": "Contrato",
+      "CONTRACTOR": "Contratista",
+      "CONCEPT": "Concepto",
+      "EFECTIVE_DATE": "Fecha de Vigencia",
+      "WORTH": "valor",
+      "DOCUMENT": "Documento Adjunto",
+      "PRICE_VARIANT": "Fecha",
+      "PRICE_STATEMENT": "Estado de Precio",
+      "MESSAGES": {
+        "ADD": {
+          "SUCCESS": "Se regitro el precio correctamente",
+          "SUCCESS_TITLE": "Registro Exitoso!",
+          "FAILED": "Ocurrio un error al registrar el precio",
+          "FAILED_TITLE": "Registro de Precio Fallido!"
+        },
+        "UPDATE": {
+          "SUCCESS": "Se actualizo el Precio Correctamente",
+          "SUCCESS_TITLE": "Actualización Exitosa!",
+          "FAILED": "Ocurrio un error al actualizar el Precio",
+          "FAILED_TITLE": "Actualización del Precio Fallido!"
+        }
+      }
+    }
+  },
+  "FUEL_CONSUMPTION": {
+    "LIST": {
+      "LABELS": {
+        "LICENSE_PLATE": "PLACA",
+        "FUEL_TYPE": "COMBUSTIBLE",
+        "START_KM": "KM INICIAL",
+        "END_KM": "KM FINAL",
+        "TOTAL_KM": "RECORRIDO (KM)",
+        "GALLONS_CONSUMPTION": "GALONES CONSUMIDOS (GL)",
+        "FIXED_RANGE": "RANGO FIJO ESTABLECIDO (KM/GL)",
+        "PERCEIVED": "RANGO PERCIBIDO (KM/GL)"
+      }
+    }
+  },
+  "FUEL_SUPPLY_CONTRACT": {
+    "TITLE": "Contratos de abastecimiento",
+    "TITLES": {
+      "REGISTER": "Registro de Contratos de abastecimiento"
+    },
+    "CONTROL_PANEL": "Home / Contratos de abastecimiento",
+    "CONTROL_PANEL_NEW": "Home / Contratos de abastecimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Contratos de abastecimiento / Editar",
+    "NEW": "NUEVO",
+    "SHOW": {
+      "TITLE": "CONTRATO"
+    },
+    "EDIT": {
+      "TITLE": "Editar Contrato de abastecimiento",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA CONTRATO DE ABASTECIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el contrato de abastecimiento?"
+    },
+    "LABELS": {
+      "CONTRACTOR": "Contratista",
+      "CONCEPT": "Concepto",
+      "CONTRACT_STATUS": "Estado del contrato",
+      "REGISTER_STATUS": "Estado del registro",
+      "CONTRACT_EXPIRATION": "Vencimiento de contrato",
+      "FROM": "Desde",
+      "UNTIL": "Hasta",
+      "ALL": "Todas"
+    },
+    "DATA": {
+      "GENERAL_DATE": "DATOS GENERALES",
+      "NUMBER_CONTRACT": "NÚMERO DE CONTRATO",
+      "NUMBER_CONTRACTS": "Número de contrato",
+      "AMOUNT_TOTAL": "MONTO TOTAL",
+      "VALITY_DATE": "Fecha de Vigencia Del Contrato",
+      "START_DATE": "INICIO",
+      "END_DATE": "VENCIMIENTO",
+      "CONCEPT": "CONCEPTO",
+      "CONTRACTOR": "CONTRATISTA",
+      "STATE_CONTRACT": "ESTADO CONTRATO",
+      "STATE_REGISTRATION": "ESTADO REGISTRO",
+      "QUANTITY_TOTAL": "CANTIDAD TOTAL",
+      "CONTRACTOR_DETAILS": "DATOS DEL CONTRATISTA",
+      "BUSINESS_NAME": "RAZÓN SOCIAL",
+      "RUC": "RUC",
+      "CONTRACTHEADER": "CONTRATO",
+      "ADDRESS": "DIRECCIÓN",
+      "MAIL": "CORREO",
+      "PHONE": "TELÉFONO",
+      "CONTRACT_PROGRESS": "PROGRESO DE CONTRATO",
+      "AREA": "ÁREA",
+      "FUEL_NEW": "NUEVO",
+      "FUEL_SEARCH": "BUSCAR",
+      "CONTRACTED_QUANTITY": "CANTIDAD CONTRATADA",
+      "CONSUMED_QUANTITY": "CANTIDAD CONSUMIDA",
+      "QUANTITY_AVAILABLE": "CANTIDAD DISPONIBLE",
+      "STATUS": {
+        "VALID": "VIGENTE",
+        "TIMED_OUT": "CADUCADO"
+      }
+    },
+    "CREATE": {
+      "CONTRACTOR_INSURED": "CONTRATANTE / ASEGURADO",
+      "PRINTABLE_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "MESSAGES": {
+        "SEARCH_VEHICLE": {
+          "SUCCESS": "Se encontro el vehículo",
+          "SUCCESS_TITLE": "Busqueda Exitoso!",
+          "FAILED": "La placa ingresada no corresponde a ningún vehículo",
+          "FAILED_TITLE": "Vehículo no Registrado"
+        },
+        "ADD": {
+          "SUCCESS": "Se Registro el contrato Correctamente!",
+          "SUCCESS_TITLE": "Registro Exitoso!"
+        }
+      }
+    }
+  },
+  "DRIVERS_OPERATORS": {
+    "TITLE": "Conductores",
+    "TITLES": {
+      "REGISTER": "Registro de Conductores"
+    },
+    "CONTROL_PANEL": "Home / Conductores",
+    "CONTROL_PANEL_NEW": "Home / Conductores / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Conductores / Editar",
+    "NEW": "Nuevo Conductor",
+    "SHOW": "Ver Conductor",
+    "EDIT": {
+      "TITLE": "Conductor (Editar)",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA EL CONDUCTOR",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el conductor?"
+    },
+    "LABELS": {
+      "AREAS": "ÁREA",
+      "GENERAL_DATE": "Datos Generales",
+      "NUMBER_DNI": "Número de DNI",
+      "DNI": "DNI",
+      "PATERNAL_LAST_NAME": "Apellido paterno",
+      "MOTHER_LAST_NAME": "Apellido materno",
+      "NAMES": "Nombres",
+      "DATE_BIRTH": "Fecha de nacimiento",
+      "GENDER": "GÉNERO",
+      "EMAIL": "CORREO",
+      "PHONE": "TELÉFONO",
+      "DIRECTION": "DIRECCIÓN",
+      "DRIVERS_LICENSES": "LICENCIAS DE CONDUCIR",
+      "LICENSE_NUMBER": "NÚMERO DE LICENCIA",
+      "CLASS": "CLASE",
+      "CATEGORY": "CATEGORÍA",
+      "EXPEDITION_DATE": "FECHA DE EXPEDICIÓN",
+      "EXPIRATION_DATE": "FECHA DE VENCIMIENTO",
+      "REGISTER_LICENSE": "Registrar Licencia",
+      "VARIOUS": "VARIOS",
+      "NO_LICENSES": "No hay licencias.",
+      "DOCUMENT_LICENSE": "Documento(Licencia)",
+      "DOCUMENT_RECORD": "Documento(Record)"
+    },
+    "LIST": {
+      "LICENSE_NUMBER": "Número-Licencia",
+      "CLASS_CATEGORY": "Clas/cat.",
+      "ISSUE_DATE": "Expedición",
+      "EXPIRATION_DATE": "vencimiento",
+      "STATE": "Estado"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Conductor Registrado!",
+        "SUCCESS": "Se agrego correctamente el Conductor",
+        "FAILED_TITLE": "Conductor no Registrado",
+        "FAILED": "El Conductor no se pudo registrar!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Conductor Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el Conductor",
+        "FAILED_TITLE": "Actualización del Conductor Fallido!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Conductor",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al dar de baja el Conductor",
+        "FAILED_TITLE": "Actualización del Conductor Fallido!"
+      },
+      "REVALIDATION": {
+        "SUCCESS_TITLE": "Licencia Revalidado!",
+        "SUCCESS": "Se Revalido correctamente La Licencia",
+        "FAILED_TITLE": "Revalidación Fallida",
+        "FAILED": "La Licencia no se pudo revalidar!"
+      }
+    }
+  },
+  "CONTRACT": {
+    "CONTRACT_REGISTRATION": "REGISTRO DE CONTRATO",
+    "CONTRACT_EDIT": "EDITAR CONTRATO",
+    "CONTRACT_DATA": "DATOS DE CONTRATO",
+    "GENERAL_DATA": "DATOS GENERALES",
+    "BEGINNING": " Fecha Inicio",
+    "EXPIRATION": "Fecha Vencimiento",
+    "CONCEPT": "Concepto",
+    "TYPE_CONTRACT": "Tipo de Contrato",
+    "TYPE_CLASIFICATION": "Tipo de Clasificación",
+    "ITEM": "Ítem",
+    "AREA": "Área",
+    "QUANTITY": "Cantidad",
+    "UNIT_PRICE": "P.U",
+    "AMOUNT": "Importe",
+    "OPTIONS": "Opción",
+    "CONTRACTOR_DATA": "DATOS DE CONTRATISTA",
+    "RUC": "RUC",
+    "BUSINESS_NAME": "Razón Social",
+    "ADDRESS": "Dirección",
+    "EMAIL": "Correo",
+    "PHONE": "Teléfono",
+    "SAVE": "Guardar",
+    "TOCLOSE": "Cerrar",
+    "CONTRACT_NUMBER": "Número de contrato",
+    "ERRORS": {
+      "CONTRACT_NUMBER_REQUIRED": "Número de contrado es requirido",
+      "SELECCIONAR_ITEM": "Seleccionar el concepto es requerido",
+      "REQUIRED": "El campo es requirido",
+      "MIN_CARACTERS": "Mínimo un caracteres"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro el Contrato Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrió un error al registrar el Contrato",
+        "FAILED_TITLE": "Registro de Contrato Fallido!",
+        "DUPLICATE": "No se puede registrar un concepto y área duplicado"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Contrato Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al actualizar el Contrato",
+        "FAILED_TITLE": "Actualización del Contrato Fallido!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dió de baja exitosamente el Contrato",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al dar de baja el Contrato",
+        "FAILED_TITLE": "Actualización del Contrato Fallido!"
+      }
+    }
+  },
+  "CONFIRMATION": {
+    "EDITION_CONFIRMATION": "CONFIRMAR EDICIÓN",
+    "MESSAGE": "Guardar todos los cambios efectuados?",
+    "CONFIRMATION": "Confirmar",
+    "TOCLOSED": "Cerrar"
+  },
+  "VISUALIZE_DRIVER": {
+    "TITLE": "CONDUCTOR | 78021701",
+    "GENERAL_DATA": "DATOS GENERALES",
+    "LICENSES": "LICENCIAS DE CONDUCIR",
+    "DRIVER": {
+      "AREA": "ÁREA",
+      "TOCLOSED": "Cerrar",
+      "DRIVER": "CONDUCTOR",
+      "GENDER": "GÉNERO",
+      "AGE": "EDAD",
+      "DIRECTION": "DIRECCIÓN",
+      "PHONE": "TELÉFONO",
+      "EMAIL": "EMAIL",
+      "DOCUMENT": "DOCUMENTO(RECORD)",
+      "STATE": "ESTADO",
+      "OPTIONS": "OPCIÓN",
+      "ITEM": "N°",
+      "LICENSE_NUMBER": "Número-Licencia",
+      "CLASS": "Clase/Cat",
+      "EXPEDITION": "Expedición",
+      "EXPIRATION": "Vencimiento",
+      "LICENSE": "Licencia",
+      "LICENSE_EXPIRATION": "Vencimiento de licencia",
+      "SINCE": "Desde",
+      "UNTIL": "Hasta",
+      "CLASS_CATEGORY": "Clase categoría"
+    }
+  },
+  "MASTERS": {
+    "TITLES": {
+      "MASTERS": "Maestros",
+      "CREATE": "Registro de Maestro"
+    },
+    "CREATE": {
+      "LABELS": {
+        "CODE": "Código",
+        "NAME": "Nombre",
+        "BELONG_TO": "Pertenece a",
+        "MASTER": "Maestro"
+      }
+    },
+    "BUTTONS": {
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido",
+      "ONLY_UPPER_CASE": "Solo se admiten mayúsculas"
+    }
+  },
+  "DETAIL_MASTERS": {
+    "TITLES": {
+      "REGISTER": "Registrar Detalle Maestro"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro el Detalle de Maestro Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrió un error al registrar el Detalle de Maestro ",
+        "FAILED_TITLE": "Registro del Detalle de Maestro Fallido!"
+      }
+    }
+  },
+  "MOBILITY_REQUEST": {
+    "TITLE": "Solicitudes de Movilidad",
+    "TITLES": {
+      "REGISTER": "Registro de Solicitud de Movilidad"
+    },
+    "CONTROL_PANEL": "Home / Solicitud de Movilidad",
+    "CONTROL_PANEL_NEW": "Home / Solicitud de Movilidad / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Solicitud de Movilidad / Editar",
+    "NEW": "Nueva Solicitud de Movilidad",
+    "SHOW": "Ver Solicitud de Movilidad",
+    "EDIT": {
+      "TITLE": "SOL MOV",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA SOLICITUD DE MOVILIDAD",
+      "QUESTION": "¿Estas seguro que quieres dar de baja la Solicitud de Movilidad?"
+    },
+    "LABELS": {
+      "SERVICE_DATA": "Datos del servicio",
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO",
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Área",
+      "MOBILI_DATE": "Fecha",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "VEHICLE_DATA": "DATOS DEL VEHÍCULO",
+      "SERIE": "Vin/Nº de serie",
+      "SERVICE_DATE": "Datos de servicio",
+      "N": "N°",
+      "USER_AREA": "Área usuaria",
+      "COMMISSIONARY_STAFF": "Personal comisionado",
+      "DATE_SERVICE": "Fecha del servicio",
+      "TIME_SERVICE": "Hora de servicio",
+      "COMMISSION_OBJETIVE": "Objetivo de la comisión",
+      "ASSIGNED_DRIVER": "Conductor asignado",
+      "DEPARTURE_TIME": "Hora de salida",
+      "KM_OUT": "KM salida",
+      "TIME_ARRIVAL": "Hora de llegada",
+      "KM_ARRIVAL": "KM llegada",
+      "DESTINATION_DATA": "DATOS DE DESTINO",
+      "ENTITY": "Entidad",
+      "DISTRIC": "Distrito",
+      "ADDRESS": "Dirección",
+      "OBSERVATION": "Observación",
+      "ATTACHED_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "ADD_DOCUMENT": "Agregar documento",
+      "SERVICE_NUMBER": "Nº",
+      "HOUR_SERVICE": "Hora de servicio",
+      "COMMISSION_GOAL": "Objetivo de la comisión",
+      "ARRIVAL_TIME": "Hora de llegada",
+      "DEPARTURE_KM": "KM salida",
+      "ARRIVAL_KM": "KM llegada",
+      "DISTRICT": "Distrito",
+      "USERS_AREAS": "Áreas Usuarias",
+      "VEHICLES": "Vehículos",
+      "DRIVERS": "Conductores",
+      "BRAND": "Marca"
+    },
+    "RECORD": {
+      "TITLE": "HISTORIAL DE SOAT",
+      "INSURED_VEHICLE_DATA": "DATOS DE VEHÍCULO ASEGURADO",
+      "HISTORY_OF_INSURED_VEHICLE": "HISTORIAL DE VEHÍCULO ASEGURADO",
+      "VEHICLE_HISTORY": {
+        "LICENSE_PLATE": "Placa",
+        "AREA": "Área",
+        "RESPONSIBLE": "Responsable",
+        "TYPE": "Tipo",
+        "BRAND": "Marca",
+        "MODEL": "Modelo",
+        "COLOR": "Color",
+        "YEAR": "Año",
+        "ENGINE": "N° de motor",
+        "SERIE": "Vin/N de serie",
+        "POLICY_NUMBER": "N° de póliza",
+        "BUSINESS": "Empresa",
+        "INITIAL_DATE": "Fecha inicial",
+        "FINAL_DATE": "Fecha final",
+        "STATE": "Estado",
+        "FUEL_TYPE": "Tipo de combustible",
+        "REGISTER_DATE": "Fecha de Registro"
+      },
+      "EDITFUEL": {
+        "TITLE": "CONTRATO | 032 2022-MINP/OGA"
+      },
+      "SERVICE_NUMBER": "Nº",
+      "HOUR_SERVICE": "Hora de servicio",
+      "COMMISSION_GOAL": "Objetivo de la comisión",
+      "ARRIVAL_TIME": "Hora de llegada",
+      "DEPARTURE_KM": "KM salida",
+      "ARRIVAL_KM": "KM llegada",
+      "DISTRICT": "Distrito",
+      "ADD_DOCUMENT": "Agregar documento",
+      "USERS_AREAS": "Áreas Usuarias",
+      "VEHICLES": "Vehículos",
+      "DRIVERS": "Conductores"
+    },
+    "ERRORS": {
+      "NUMBER_YEAR": "Número-año(xxxx-xxxx)",
+      "ALLOWS_NUMBERS": "Sólo números"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Solicitud de Movilidad Registrado!",
+        "FAILED_TITLE": "Solicitud de Movilidad no Registrado"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente la Solicitud de Movilidad",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al dar de baja la Solicitud de Movilidad",
+        "FAILED_TITLE": "Actualización de Solicitud de Movilidad Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizó la Solicitud de Movilidad Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al actualizar la Solicitud de Movilidad",
+        "FAILED_TITLE": "Actualización de la Solicitud de Movilidad Fallido!"
+      },
+      "USER_AREA": {
+        "FAILED": "No se encontro Áreas Usuarias"
+      }
+    }
+  },
+  "MAINTENANCES": {
+    "TITLE": "Mantenimientos",
+    "TITLES": {
+      "REGISTER": "Registro de Mantenimiento",
+      "HISTORY_VEHICLE": "Historial de Mantenimiento",
+      "REGISTER_PLAN": "Registro de Plan de Mantenimiento"
+    },
+    "CONTROL_PANEL": "Home / Mantenimiento",
+    "CONTROL_PANEL_NEW": "Home / Mantenimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Mantenimiento / Editar",
+    "NEW": "Nuevo Mantenimiento",
+    "SHOW": "Ver Mantenimiento",
+    "EDIT": {
+      "TITLE": "",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA MANTENIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el Mantenimiento?"
+    },
+    "LABELS": {
+      "CORRELATIVE": "CORRELATIVO",
+      "PREVENTIVE": "PREVENTIVO",
+      "PROVIDER_DATA": "Datos del proveedor",
+      "DATA_MAINTENANCE_PLAN": "Datos del plan de mantenimiento",
+      "VEHICLE_HISTORY": "HISTORIAL DEL VEHÍCULO",
+      "NO_VEHICLE": "No hay Vehículo",
+      "TYPE_MAINTENANCE": "Tipo de mantenimiento",
+      "PLAN_MAINTENANCE": "Plan de Mantenimiento",
+      "VEHICLES": "Vehículos",
+      "MAINTENANCE_DETAILS": "Detalles del mantenimiento",
+      "MAINTENANCE_CLASS": "Clase de mantenimiento",
+      "TYPE_MOTOR": "Tipo de motor",
+      "KM": "KM",
+      "DATE": "Fecha Ejecución Planificada",
+      "EXECUTE_DATE": "Fecha Ejecución",
+      "TOTAL_AMOUNT": "Monto total",
+      "CONTRACT": "Contrato",
+      "VENDOR": "Proveedor",
+      "ACTIVITIES": "Actividades",
+      "SPARE_PARTS": "Repuestos",
+      "DESCRIPTION": "Descripción",
+      "AMOUNT": "Cantidad",
+      "DOCUMENT": "Documento Adjunto",
+      "VEHICLE_INVENTORY": "Inventario de vehículo",
+      "RECORD_CONFORMITY": "Acta de conformidad",
+      "RECORD_SPARE_PARTS": "Acta de repuestos",
+      "MANT_NEW": "NUEVO",
+      "MANT_SEARH": "BUSCAR",
+      "MANT_HISTORIAL": "HISTORIAL",
+      "NOT_EXECUTED": "MANTENIMIENTO NO EJECUTADO"
+    },
+    "MESSAGES": {
+      "GET_TO_CREATE": {
+        "REGISTER_ACTIVITIE": "Registre una actividad",
+        "ACTIVITIE": "No hay alguna actividad registrada para esta clase de mantenimiento"
+      },
+      "ADD": {
+        "SUCCESS_TITLE": "Catálogo de Mantenimiento Registrado!",
+        "SUCCESS": "Se agrego correctamente el catálogo de mantenimiento",
+        "FAILED_TITLE": "Catálogo de Mantenimiento no Registrado",
+        "FAILED": "El catálogo de mantenimiento no se pudo registrar!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el mantenimiento",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al dar de baja  el mantenimiento",
+        "FAILED_TITLE": "Actualización del mantenimiento Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo la Solicitud de Movilidad Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar la Solicitud de Movilidad",
+        "FAILED_TITLE": "Actualización de la Solicitud de Movilidad Fallido!"
+      }
+    }
+  },
+  "LICENSE_REVALIDATION": {
+    "TITLE": "REGISTRO: REVA/RECA DE LICENCIA",
+    "DATA_LICENCE": "Datos de la licencia",
+    "REVALIDATION": {
+      "LICENSE_NUMBER": "Número de licencia",
+      "CLASS": "Clase",
+      "CATEGORY": "Categoría",
+      "EXPEDITION_DATE": "Fecha de expedición",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "LICENSE_DOCUMENT": "Documento(Licencia)",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar"
+    }
+  },
+  "ALERTS": {
+    "TITLE": "ALERTA DE EVENTOS",
+    "LABELS": {
+      "DOCUMENT": "Documento"
+    }
+  },
+  "PREVENTIVE_MAINTENANCE_CATALOG": {
+    "TITLE": "CATÁLOGOS DE ACTIVIDADES DE MANTEMIENTO PREVENTIVO",
+    "TITLE_REGISTER": "REGISTRO DE CATÁLOGO",
+    "TITLE_SHOW": "PREV CLASE A GASOLINERO V1",
+    "CATALOG": {
+      "SINCE": "Desde",
+      "UNTIL": "Hasta",
+      "COMPLETE_DATE": "Fecha Desde - Fecha Hasta",
+      "CLASS": "Clase",
+      "STATE": "Estado",
+      "NEW_CATALOG": "NUEVO",
+      "DATE": "Fecha",
+      "CATALOG_DATA": "Datos de catálogo",
+      "NAME": "Nombre",
+      "MAINTENANCE_CATALOG": "CATÁLOGO MANTENIMIENTO PREVENTIVO CLASE A GASOLINERO VERSION 1",
+      "VERSION": "Versión",
+      "MAINTENANCE_CLASS": "Clase de mantenimiento",
+      "ENGINE_TYPE": "Tipo de motor",
+      "START_DATE": "Fecha de inicio",
+      "EXERCISE": "Actividad",
+      "CURRENT": "VIGENTE",
+      "CLONE": "Clonar",
+      "NAME_CATALOG": "CATÁLOGO MANTENIMIENTO PREVENTIVO",
+      "ACTIVITIES": "ACTIVIDADES",
+      "TABLE": {
+        "FROM_DATE": "FECHA INICIO",
+        "TO_DATE": "FECHA FIN",
+        "CLASS": "CLASE",
+        "ENGINE_TYPE": "TIPO DE MOTOR",
+        "VERSION": "VERSIÓN",
+        "STATE": "ESTADO"
+      }
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Catálogo de Mantenimiento Registrado!",
+        "SUCCESS": "Se agrego correctamente el catálogo de mantenimiento",
+        "FAILED_TITLE": "Catálogo de Mantenimiento no Registrado",
+        "FAILED": "El catálogo de mantenimiento no se pudo registrar!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente la Solicitud de Movilidad",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al dar de baja la Solicitud de Movilidad",
+        "FAILED_TITLE": "Actualización de Solicitud de Movilidad Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo la Solicitud de Movilidad Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar la Solicitud de Movilidad",
+        "FAILED_TITLE": "Actualización de la Solicitud de Movilidad Fallido!"
+      }
+    },
+    "BUTTONS": {
+      "SEARCH": "BUSCAR"
+    }
+  },
+  "DOCUMENT_IDENTITY": {
+    "ACTIONS": {
+      "SEARCH": {
+        "ERROR": {
+          "TITLE": "Error",
+          "NOT_FOUND": "No se pudo encontrar algún registro con DNI/RUC ingresado"
+        }
+      }
+    }
+  },
+  "VALORIZATION": {
+    "LABELS": {
+      "TITLE": "REPORTES COMBUSTIBLE",
+      "AREA": "ÁREA"
+    },
+    "REPORTS": {
+      "LABELS": {
+        "TITLE": "VALORIZACIÓN DE LA ADQUISICIÓN DE COMBUSTIBLE",
+        "TITLE_REPORT_CONTROL": "CONTROL DE COMBUSTIBLE",
+        "SUB_TITLE_REPORT_CONTROL": "FORMATO PARA FIRMA",
+        "RESUME": "RESUMEN",
+        "DETAIL": "DETALLE",
+        "FROM_DATE": "Desde",
+        "TO_DATE": "Hasta",
+        "CONTRACT": "Número de Contrato",
+        "TOTAL_AMOUNT": "MONTO TOTAL",
+        "AREA": "Área"
+      }
+    }
+  },
+  "PLAN_MAINTENANCES": {
+    "SHOW": {
+      "LABELS": {
+        "DOWNLOAD_PLAN_MAINTENANCE_DETAIL": "Descargar Detalles Plan Mantemiento",
+        "TITLE": "PLAN MANTENIMIENTO",
+        "PROVIDER_DATA": "DATOS DEL PROVEEDOR",
+        "PLAN_MAINTENANCE_DATA": "DATOS DEL PLAN DE MANTEMIENTO",
+        "DOCUMENT_IDENTITY": "DNI/RUC",
+        "BUSINESS_NAME": "RAZÓN SOCIAL",
+        "ADDRESS": "DIRECCIÓN",
+        "FROM_DATE": "FECHA INICIO",
+        "TO_DATE": "FECHA FIN",
+        "PLAN_MAINTENANCE_SUMMARY": "RESUMEN PLAN MANTEMIENTO",
+        "PLAN_MAINTENANCE_DETAILS": "DETALLES PLAN MANTEMIENTO",
+        "ATTACHED_DOCUMENT": "DOCUMENTO ADJUNTO",
+        "CLOSE": "CERRAR",
+        "SAVE": "GUARDAR",
+        "STATE_REGISTERED": "REGISTRADO",
+        "STATE_APPROVED": "APROBADO",
+        "STATE_EXPIRED": "EXPIRADO"
+      }
+    },
+    "UNSUSCRIBE": {
+      "UNSUSCRIBE_TITLE": "DAR DE BAJA PLAN MANTENIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el Plan de Mantenimiento?"
+    },
+    "MODAL_APPROVED_PLAN": {
+      "TITLE": "APROBAR PLAN",
+      "DESCRIPTION": "Al aprobar un plan, los mantenimientos no podran ser modificados a excepción de la fecha del mantenimiento.",
+      "QUESTION": "¿Está seguro de continuar?"
+    },
+    "MODAL_DELETE_MAINTENANCE": {
+      "TITLE": "DAR DE BAJA MANTENIMIENTO",
+      "DESCRIPTION": "Esta acción removera el mantenimiento seleccionado del plan de mantenimiento.",
+      "QUESTION": "¿Está seguro de continuar?"
+    },
+    "LABELS": {
+      "PREVENTIVE_MAINTENANCE_PLAN": "PLAN DE MANTENIMIENTOS PREVENTIVOS",
+      "CONTRACT_NUMBER": "Número de contrato",
+      "PLAN": "PLANES",
+      "VEHICLES_UNASSIGNED": "VEHÍCULOS NO ASIGNADOS",
+      "NUMBER": "Nº",
+      "VEHICLE_HEADER": "VEHÍCULO",
+      "IDENTIFICATION_DOCUMENT": "RUC"
+    },
+    "BUTTONS": {
+      "ADD": "NUEVO",
+      "ACCEPT_SUGGESTION": "ACEPTAR SUGERENCIA"
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS_TITLE": "Plan de Mantenimiento Registrado!",
+        "SUCCESS": "Se agrego correctamente el Plan de mantenimiento",
+        "FAILED_TITLE": "Plan de Mantenimiento no Registrado",
+        "FAILED": "El Plan de mantenimiento no se pudo registrar!"
+      },
+      "UNSUSCRIBE": {
+        "SUCCESS": "Se dio de baja exitosamente el Plan de Mantenimiento",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al dar de baja el Plan de Mantenimiento",
+        "FAILED_TITLE": "Actualización de Plan de Mantenimiento Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Plan de Mantenimiento Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrió un error al actualizar el Plan de Mantenimiento",
+        "FAILED_TITLE": "Actualización del Plan de Mantenimiento Fallido!"
+      }
+    }
+  }
+}

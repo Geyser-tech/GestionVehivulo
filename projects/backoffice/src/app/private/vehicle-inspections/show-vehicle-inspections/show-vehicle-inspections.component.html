@@ -1,0 +1,190 @@
+<div class="container" *ngIf="vehicleInspection !=null">
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 row leftSectionTitleModal">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-7 titleNameModal">
+                <div class="licensePlate">
+                    <span class="tsp-font-size-modal-titles">{{'VEHICLE_INSPECTIONS.TITLE' |
+                        translate}}</span>&nbsp;
+                </div>
+                <div class="licensePlate">
+                    <span class="tsp-font-size-modal-titles">{{vehicleInspection.licensePlate}}</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="state"
+                    [ngClass]="{'stateDanger' : vehicleInspection.stateVehicleInspection=='Caducado','stateWarning' : vehicleInspection.stateVehicleInspection==STATE_EXPIRE,'stateSuccess' : vehicleInspection.stateVehicleInspection=='Vigente'}">
+                    <span class="tsp-font-size-modal-titles">{{vehicleInspection.stateVehicleInspection}}</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-4 optionsModal" *ngIf="vehicleInspection.registrationState==true &&
+            !checkOnlyRead">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" class="tsp-button-edit" (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowVehicleInspections -->
+    <div mat-dialog-content class="container">
+        <hr class="ks-line mt-2" />
+        <div class="row seccion-container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="title-container">
+                        <span class="tsp-font-size-default-title tsp-title">{{
+                            'VEHICLE_INSPECTIONS.DATA.INSURED_VEHICLE' | translate }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.LICENSE_PLATE' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content"> {{vehicleInspection.licensePlate}}
+                    </span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.AREA' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.area}}</span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.RESPONSIBLE' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.responsible}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.TYPE' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.type}}</span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.MARK' | translate }} :
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.brand}}</span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.MODEL' | translate }} :
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.model}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.COLOR' | translate }} :
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.color}}</span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.YEAR' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.year}}</span>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.N_ENGINE' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.engineNumber}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.SERIE' | translate }}:
+                    </div>
+                    <span class="tsp-font-size-default-content">{{vehicleInspection.serialNumber}}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="ks-line" />
+        <div class="row seccion-container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="title">
+                        <span class="tsp-font-size-default-content tsp-labels">{{
+                            'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_DETAILS' | translate
+                            }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_NUMBER' | translate
+                        }}:
+                    </div>
+                    <div class="tsp-font-size-default-content">{{vehicleInspection.certificateNumber}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.ENTERPRISE' | translate }}:
+                    </div>
+                    <div class="tsp-font-size-default-content">{{vehicleInspection.provider}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.REVIEW_DATE' | translate
+                        }} :
+                    </div>
+                    <div class="tsp-font-size-default-content">{{vehicleInspection.reviewDate | date:
+                        'dd/MM/yyyy' }}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="tsp-font-size-default-content tsp-labels">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.EXPIRATION_DATE' | translate }}:
+                    </div>
+                    <div class="tsp-font-size-default-content">{{vehicleInspection.expirationDate | date:
+                        'dd/MM/yyyy'}}</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="ks-line" />
+        <div class="seccion-container">
+            <div class="FileUploaded">
+                <div class="title">
+                    <span
+                        class="tsp-font-size-default-title tsp-font-size-default">{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT'
+                        | translate}}</span>
+                </div>
+                <cad-viewer-file [Files]="vehicleInspection.documentsUrl"></cad-viewer-file>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close color="primary" class="button-close tsp-font-size-buttons">
+            <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+        </button>
+    </div>
+</div>

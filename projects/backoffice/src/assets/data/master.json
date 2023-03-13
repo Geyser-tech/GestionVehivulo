@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "code": "AOT",
+            "name": "ACCION OPERATIVA DE TRANSICION"
+        },
+        {
+            "id": "2",
+            "code": "AOT",
+            "name": "MARCA CONCEPTUAL"
+        },
+        {
+            "id": "3",
+            "code": "PARCON",
+            "name": "ACCION OPERATIVA DE TRANSICION"
+        },
+        {
+            "id": "4",
+            "code": "AOTUA",
+            "name": "UNIDAD DE NEGOCIO"
+        },
+        {
+            "id": "5",
+            "code": "AOTFB",
+            "name": "UNIDAD DE MEDIDA"
+        },
+        {
+            "id": "6",
+            "code": "AOT",
+            "name": "ACCION OPERATIVA DE TRANSICION"
+        },
+        {
+            "id": "7",
+            "code": "AOT",
+            "name": "MARCA CONCEPTUAL"
+        },
+        {
+            "id": "8",
+            "code": "PARCON",
+            "name": "ACCION OPERATIVA DE TRANSICION"
+        },
+        {
+            "id": "9",
+            "code": "AOTUA",
+            "name": "UNIDAD DE NEGOCIO"
+        },
+        {
+            "id": "10",
+            "code": "AOTFB",
+            "name": "UNIDAD DE MEDIDA"
+        }
+    ],
+    "dataMaestrodetaller": [
+        {
+            "id": "1",
+            "code": "REG",
+            "name": "REGISTRAR",
+            "worth": "REG"
+        },
+        {
+            "id": "2",
+            "code": "REG",
+            "name": "REGISTRAR",
+            "worth": "REG"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<p-toast></p-toast>
+<p-toolbar styleClass="mb-4 gap-2">
+    <button class="button-dowload" mat-flat-button (click)="dowloadFiles($event)"
+        [disabled]="!selectedItems || !selectedItems.length">
+        <mat-icon>save_alt</mat-icon>
+    </button>
+
+</p-toolbar>
+<p-table [value]="Files" [(selection)]="selectedItems" [selectionPageOnly]="true" styleClass="p-datatable-customers"
+    class="tsp-table-container table" dataKey="file">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th pSortableColumn="Documents" style="min-width:30rem">
+                Archivos
+            </th>
+        </tr>
+
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="rowData">
+                </p-tableCheckbox>
+            </td>
+            <td class="data-columns tsp-font-size-default-content">
+                <label>{{rowData.fileName}}&nbsp;</label>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

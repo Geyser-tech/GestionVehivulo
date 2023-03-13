@@ -1,0 +1,307 @@
+<div class="container" *ngIf="fuelSupply!=null &&vehicle!=null">
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 leftSectionTitleModal ">
+            <div class="titleNameModal row">
+                <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5">
+                    <span class="tsp-font-size-modal-titles">{{'FUEL_SUPPLIES.TITLES.SHOW'|
+                        translate}}</span>&nbsp;
+                </div>
+                <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5">
+                    <span class="tsp-font-size-modal-titles">{{vehicle.licensePlate}}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal"
+            *ngIf="fuelSupply.registrationState!=fuelSupply.registrationStateUnsuscribe">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'FUEL_SUPPLIES.UNSUSCRIBE.BTN'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowFuelSupplies -->
+    <div mat-dialog-content class="container">
+        <!-- Section Validation -->
+        <div class="tsp-container mt-2">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title title-container mb-2">
+                        <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                            {{'FUEL_SUPPLIES.DATA.VALIDATION_DATA'|
+                            translate}}
+                        </span>
+                    </div>
+                </div>
+                <div class="tsp-container-content row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label
+                                class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.LICENSE_PLATE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">
+                                {{vehicle.licensePlate}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.AREA'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.area}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label
+                                class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.TYPE_VEHICLE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.vehicleType}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.N_ENGINE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.engineNumber}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.BRAND'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.brand}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.SERIE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.serialNumber}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.MODEL'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.model}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.YEAR'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.year}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.COLOR'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">{{vehicle.color}}</mat-label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Section dispatch -->
+        <div class="tsp-container mt-2">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title title-container mb-2">
+                        <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                            {{'FUEL_SUPPLIES.DATA.DISPATCH_DATA'|
+                            translate}}
+                        </span>
+                    </div>
+                </div>
+                <div class="tsp-container-content row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label
+                                class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.DISPATCH_NOTE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content"> {{fuelSupply.dispatchNote}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label
+                                class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.DISPATCH_DATE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content"> {{fuelSupply.dispachDate |
+                                date:'dd/MM/yyyy'}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label
+                                class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.DISPATCH_TIME'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content"> {{fuelSupply.dispachDate |
+                                date:'HH:mm'}}</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.ODOMETER'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">
+                                {{fuelSupply.odometer}}</mat-label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.CONTRACT'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content">
+                                {{fuelSupply.contractName}}</mat-label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 title">
+                            <mat-label class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.DRIVER'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 data">
+                            <mat-label class="tsp-font-size-default-content"> {{fuelSupply.driverName}}</mat-label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section Supplying -->
+        <div class="tsp-container mt-2">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title title-container mb-2">
+                        <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                            {{'FUEL_SUPPLIES.DATA.SUPPLIYING'|
+                            translate}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class=" tsp-container-content row">
+                    <div class="contentTable col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <p-table [value]="fuelSupplyDetails" [scrollable]="false">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th class="tsp-font-size-default-content tsp-data-table -data-table le">
+                                        {{'FUEL_SUPPLIES.DATA.ITEM'|
+                                        translate}}</th>
+                                    <th class="tsp-font-size-default-content tsp-data-table ">
+                                        {{'FUEL_SUPPLIES.DATA.CONCEPT'| translate}}</th>
+                                    <th class="tsp-font-size-default-content tsp-data-table ">
+                                        {{'FUEL_SUPPLIES.DATA.QUANTITY'| translate}}</th>
+                                    <th class="tsp-font-size-default-content tsp-data-table ">{{'FUEL_SUPPLIES.DATA.PU'|
+                                        translate}}</th>
+                                    <th class="tsp-font-size-default-content tsp-data-table ">
+                                        {{'FUEL_SUPPLIES.DATA.AMOUNT'|
+                                        translate}}</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-FuelSuplies let-rowIndex="rowIndex">
+                                <tr>
+                                    <td class="tsp-font-size-default-content tsp-data-table">{{rowIndex+1}}</td>
+                                    <td class="tsp-font-size-default-content tsp-data-table">{{FuelSuplies.conceptName}}
+                                    </td>
+                                    <td class="tsp-font-size-default-content tsp-data-table">{{FuelSuplies.quantity}}
+                                    </td>
+                                    <td class="tsp-font-size-default-content tsp-data-table">{{FuelSuplies.unitPrice}}
+                                    </td>
+                                    <td class="tsp-font-size-default-content tsp-data-table">{{FuelSuplies.amount}}</td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="footer">
+                                <tr>
+                                    <td colspan="4"
+                                        class="tsp-total-table-title tsp-font-size-default-content  tsp-label-title">
+                                        {{'FUEL_SUPPLIES.DATA.TOTAL'|
+                                        translate}}</td>
+                                    <td class=" tsp-font-size-default-content tsp-data-table tsp-total-label">{{total}}
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button class="button-close" mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

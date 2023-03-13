@@ -1,0 +1,58 @@
+<div class="container" [formGroup]="form" *ngIf="form!=null">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class=" title-detail-master tsp-font-size-modal-titles inputMasterlist">
+                    {{'MASTER.MASTER_TITLE.UPDATE_MASTER' |
+                    translate}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="inputMasterlist">
+            <div class="form-container">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput ">
+                    <mat-form-field appearance="fill" class="codeInput">
+                        <mat-label class="tsp-font-size-default-content"> {{'MASTER.MASTER_TITLE.CODE' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'MASTER.MASTER_TITLE.CODE' | translate}}" formControlName="code"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.code.errors?.required && form.controls.code.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.code.errors?.pattern && form.controls.code.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput ">
+                    <mat-form-field appearance="fill" class="codeInput">
+                        <mat-label class="tsp-font-size-default-content"> {{'MASTER.MASTER_TITLE.NAME' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'MASTER.MASTER_TITLE.NAME' | translate}}" formControlName="name"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.name.errors?.required && form.controls.name.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.name.errors?.pattern && form.controls.name.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4 buttonMasters">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" [disabled]="form.invalid"
+                (click)="SaveEditMaster()">
+                <mat-icon>save</mat-icon>{{'MASTER.MASTER_TITLE.SAVE' | translate}}
+            </button>
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'MASTER.MASTER_TITLE.TOCLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

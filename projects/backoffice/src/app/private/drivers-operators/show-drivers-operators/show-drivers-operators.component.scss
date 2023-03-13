@@ -1,0 +1,278 @@
+@import 'variables';
+@import url('../../../../assets/scss/global-styles.scss');
+
+.seccion-container {
+    margin: 10px;
+}
+
+.titleNameModal {
+    text-align: center;
+}
+
+.register-background {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+::ng-deep .cdk-overlay-pane {
+    margin-left: 14%;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .6) !important;
+}
+
+.filter-container {
+    padding-left: 2%;
+    padding: 10px;
+}
+
+.button-plus {
+    background-color: $tspSigesSuccess;
+    color: $tspSigesWhite;
+}
+
+// TABLE
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-red {
+    color: red;
+    text-align: center;
+}
+
+.status-green {
+    color: green;
+    text-align: center;
+}
+
+.data-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+.space-container {
+    margin-bottom: 10px;
+}
+
+.fileUpload {
+    margin: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 10%;
+    height: 40%;
+}
+
+.fileUpload input.upload {
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+space-container {
+    margin-bottom: 10px;
+}
+
+
+.iconFile {
+    font-size: 40px;
+    color: $colorDanger;
+}
+
+.button-actions-delete {
+    margin-top: 5px;
+    background-color: $tspSigesError;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.SaveEdit {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+//BOTONES
+
+.optionModal {
+    display: inline-block;
+    display: flex;
+}
+
+.btndelete {
+    margin-left: 5px;
+}
+
+.iconFile {
+    font-size: 40px;
+    color: #ff074c;
+}
+
+.revalidacionLicense {
+    background-color: green;
+    color: white;
+}
+
+.buttons-container {
+    justify-content: end;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        flex-direction: row;
+        margin-top: 25px;
+
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+
+            .iconWhatapp {
+                margin-left: 10px;
+                width: 23px;
+                height: 23px;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.iconWhatsapp {
+    margin-left: 15px;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+}

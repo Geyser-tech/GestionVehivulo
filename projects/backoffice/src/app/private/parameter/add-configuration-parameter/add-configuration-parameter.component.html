@@ -1,0 +1,83 @@
+<div class="container" [formGroup]="form" *ngIf="form!=null">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class="title-detail-master tsp-font-size-modal-titles titleDetailMaster">
+                    {{'PARAMETER.DATA.REGISTER_PARAMETER' | translate}}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="form-container">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="InputDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'PARAMETER.DATA.NAME' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'PARAMETER.DATA.NAME_PARAMETER' | translate}}"
+                            formControlName="name" class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="form.controls.name.errors?.required &&
+                            form.controls.name.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.name.errors?.pattern && form.controls.name.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="InputDetailMaster">
+                        <mat-label class="tsp-font-size-default-content">{{'PARAMETER.DATA.TYPE' | translate}}
+                        </mat-label>
+                        <mat-select name="food" class="tsp-font-size-default-content" formControlName="type">
+                            <mat-option *ngFor="let typeVariable of listTypeVariable" [value]="typeVariable.value">
+                                {{typeVariable.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="InputDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'PARAMETER.DATA.DESCRIPTION' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'PARAMETER.DATA.DESCRIPTION_PARAMETER' | translate}}"
+                            formControlName="description" class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="form.controls.description.errors?.required &&
+                            form.controls.description.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.description.errors?.pattern && form.controls.description.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="InputDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'PARAMETER.DATA.WORTH' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'PARAMETER.DATA.WORTH_PARAMETER' | translate}}"
+                            formControlName="value" class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="form.controls.value.errors?.required &&
+                            form.controls.value.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="form.controls.value.errors?.pattern && form.controls.value.touched">
+                            {{'PARAMETER.DATA.MESSAGE_PARAMETER' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4 buttonDetailMaster">
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" [disabled]="form.invalid"
+                (click)="saveParameterConfiguration()">
+                <mat-icon>save</mat-icon>{{'PARAMETER.DATA.SAVE' | translate}}
+            </button>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'PARAMETER.DATA.TO_CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,479 @@
+@import 'variables';
+
+
+.seccion-container {
+    margin: 10px;
+}
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+}
+
+.tsp-title {
+    color: $tspSigesBlueLetters;
+}
+
+
+.register-background {
+    margin-left: -30px;
+    margin-right: -28px;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.search-input {
+    width: 80%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .6) !important;
+}
+
+.filter-container {
+    padding-left: 2%;
+    padding: 10px;
+}
+
+.button-plus {
+    background-color: $tspSigesSuccess;
+    color: $tspSigesWhite;
+}
+
+// TABLE
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-red {
+    color: red;
+    text-align: center;
+}
+
+.status-green {
+    color: green;
+    text-align: center;
+}
+
+.data-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+.space-container {
+    margin-bottom: 10px;
+}
+
+.fileUpload {
+    margin: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 10%;
+    height: 40%;
+}
+
+.fileUpload input.upload {
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fileUpload_vehicle {
+    margin: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 10%;
+    height: 40%;
+}
+
+.fileUpload_vehicle input.upload {
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+space-container {
+    margin-bottom: 10px;
+}
+
+
+.iconFile {
+    font-size: 40px;
+    color: $colorDanger;
+}
+
+.button-actions-delete {
+    margin-top: 5px;
+    background-color: $tspSigesError;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.mat-flat-button {
+    min-width: 0;
+    line-height: 0;
+}
+
+.btnSearch {
+    margin-left: 2px;
+}
+
+.columnTable {
+    text-align: center;
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.SaveEdit {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+//FILE
+.file {
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.file input {
+    display: none;
+}
+
+.containerFile {
+    display: block;
+    color: $tspSigesWhite;
+    background-color: $tspSigesBlue;
+    padding: 8px 21px;
+    border-radius: 5px;
+    width: 20%;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+file-value {
+    text-align: left;
+}
+
+.attachmentsFile {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentAttachment {
+    margin-right: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contentAttachmentFile {
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+.btnChangeAndRemove {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#fileUpload {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_vehicle {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_conformity {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_spareParts {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.iconFile {
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+
+    .material-icons {
+        font-size: 40px;
+        color: $colorDanger;
+    }
+
+    .mat-icon {
+        width: auto;
+        height: auto;
+    }
+}
+
+.nameFile {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: $tspSigesBlackLetters;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+
+.btnChange {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.btnRemove {
+    display: flex;
+    justify-content: end;
+
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .btnChange {
+        justify-content: center;
+    }
+
+    .btnRemove {
+        justify-content: center;
+
+    }
+
+}
+
+
+.mat-radio-button {
+    margin-right: 150px;
+    margin-bottom: 15px;
+}
+
+.mat-radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.sub-ks-line {
+    width: 100%;
+    background-color: $tspSigesLightGrayLetters;
+    color: $tspSigesWhite;
+    height: 5px;
+    position: relative;
+    opacity: 100%;
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+.sub-ks-line-vertical {
+    border-right: thick solid $tspSigesLightGrayLetters;
+    height: 100%;
+    position: relative;
+    opacity: 100%;
+    border-radius: 2px;
+}
+
+.check-box {
+    margin-bottom: 5px
+}
+
+.check-box-item {
+    white-space: initial;
+}
+
+// .table {
+//     ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+//         background-color: $tspSigesBlue;
+//         color: white;
+//         text-align: center;
+//         font-family: 'Roboto', sans-serif;
+//     }
+
+//     ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+//         text-align: center;
+//         font-weight: bold;
+//         font-family: 'Roboto', sans-serif;
+//     }
+// }
+
+.descriptionSpareParts {
+    pointer-events: none;
+    border: none;
+}
+
+.table {
+    input {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.tsp-margin-bottom {
+    margin-bottom: 10px;
+}
+
+
+::ng-deep .mat-dialog-content {
+    margin: 0 5px;
+    padding: 0 0px
+}

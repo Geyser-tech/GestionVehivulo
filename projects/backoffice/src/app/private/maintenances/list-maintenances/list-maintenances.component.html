@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+            {{'MAINTENANCES.TITLE' | translate}}
+        </h1>
+    </div>
+    <div class="filter">
+        <div class="row mt-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 date">
+                <div class="dateContent row" [formGroup]="form">
+                    <span class="title tsp-font-size-default-title">{{'MAINTENANCES.LABELS.DATE'| translate}}</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'GENERAL.LABELS.FROM'| translate}}
+                            </mat-label>
+                            <input matInput [matDatepicker]="picker1" class="tsp-font-size-default-content"
+                                formControlName="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker1 class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'GENERAL.LABELS.UNTIL'| translate}}
+                            </mat-label>
+                            <input matInput [matDatepicker]="picker" class="tsp-font-size-default-content"
+                                formControlName="EndDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 filterState">
+                <cad-chips-input [items]="vehicles" [InputLabel]="'MAINTENANCES.LABELS.VEHICLES' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"
+                    (selectedItems)="selectedVehicles($event)"></cad-chips-input>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 filterInsured">
+                <cad-chips-input [items]="typeMaintenance"
+                    [InputLabel]="'MAINTENANCES.LABELS.TYPE_MAINTENANCE' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"
+                    (selectedItems)="selectedTypeMaintenances($event)"></cad-chips-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-buttons-container">
+                <button mat-raised-button class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                    mat-raised-button (click)="clearFilters()">
+                    <mat-icon>filter_alt_off</mat-icon>
+                </button>
+                <button mat-raised-button class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                    mat-raised-button (click)="searchData()">
+                    {{'MAINTENANCES.LABELS.MANT_SEARH' | translate}}
+                </button>
+                <button mat-raised-button class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                    mat-raised-button (click)="openRegister()">
+                    <mat-icon>add</mat-icon>{{'MAINTENANCES.LABELS.MANT_NEW' | translate}}
+                </button>
+                <button mat-raised-button class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+                    mat-raised-button (click)="openShowHistory()">
+                    <mat-icon>history</mat-icon>{{'MAINTENANCES.LABELS.MANT_HISTORIAL'|translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 listPIP">
+        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openShow($event)">
+        </cad-table-filter>
+    </div>
+</div>

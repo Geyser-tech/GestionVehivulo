@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{
+                'PREVENTIVE_MAINTENANCE_CATALOG.TITLE_REGISTER' | translate }}
+            </h1>
+        </div>
+    </div>
+    <form [formGroup]="catalogForm">
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row mb-2">
+                    <div class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <span class="tsp-font-size-default-title title-container tsp-label-secction">
+                                {{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.CATALOG_DATA' | translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div>
+                            <mat-form-field appearance="fill" class="tsp-font-size-default-content"
+                                style="width: 100%;">
+                                <mat-label class="tsp-font-size-default-content">{{
+                                    'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.NAME' | translate
+                                    }}</mat-label>
+                                <input matInput disabled class="tsp-font-size-default-content" value="{{catalogName}}">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-6 col-xl-6">
+                        <mat-form-field appearance="fill" class="tsp-font-size-default-content" style="width: 100%;">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.MAINTENANCE_CLASS' | translate }}
+                            </mat-label>
+                            <mat-select matInput formControlName="maintenanceClass" (selectionChange)="setClassName()"
+                                class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let maintenance of maintenanceClass" [value]="maintenance"
+                                    class="tsp-font-size-default-content">
+                                    {{maintenance.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-xl-6">
+                        <mat-form-field appearance="fill" class="tsp-font-size-default-content" style="width: 100%;">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.ENGINE_TYPE' | translate }}
+                            </mat-label>
+                            <mat-select matInput formControlName="engineType" (selectionChange)="setEngineTypeName()"
+                                class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let engineType of engineTypes" [value]="engineType"
+                                    class="tsp-font-size-default-content">
+                                    {{engineType.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-xl-6">
+                        <mat-form-field appearance="fill" style="width: 100%;" class="tsp-font-size-default-content">
+                            <mat-label
+                                class="tsp-font-size-default-content">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.START_DATE'
+                                | translate}}</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="fromDate"
+                                class="tsp-font-size-default-content">
+                            <mat-datepicker-toggle matSuffix [for]="picker"
+                                class="tsp-font-size-default-content"></mat-datepicker-toggle>
+                            <mat-datepicker #picker class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row mb-2">
+                    <div class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <span class="tsp-font-size-default-title title-container tsp-label-secction">
+                                {{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.ACTIVITIES'
+                                |
+                                translate}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                        <mat-form-field appearance="fill" class="general-input" class="tsp-font-size-default-content"
+                            style="width: 100%;">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.EXERCISE' | translate }}
+                            </mat-label>
+                            <mat-select matInput formControlName="activities"
+                                (selectionChange)="selectActivitie($event)" class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let activitie of activities" [value]="activitie"
+                                    class="tsp-font-size-default-content">
+                                    {{activitie.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" id="goToCreate"
+                            (deleteItemCompleteEvent)="deleteActivitie($event)"></cad-table-filter>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" [disabled]="
+                (catalogForm.invalid) || (data.length<=0)" (click)="save()">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

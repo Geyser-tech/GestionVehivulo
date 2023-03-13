@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="">
+            <mat-label class="tsp-title tsp-view-title tsp-font-size-modal-titles">{{Title}}</mat-label>
+        </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 col-xl-12 question mt-2">
+        <mat-label class="tsp-font-size-default-content">{{Question}}</mat-label>
+    </div>
+    <div class="row mt-2">
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" class="button-save tsp-font-size-buttons" (click)="Ok()">
+                <mat-icon>check_box</mat-icon>{{BtnConfirm}}
+            </button>
+            <button mat-raised-button color="warn" class="marging-buttons button-close tsp-font-size-buttons"
+                mat-dialog-close>
+                <mat-icon>cancel</mat-icon>{{BtnCancelar}}
+            </button>
+        </div>
+    </div>
+</div>

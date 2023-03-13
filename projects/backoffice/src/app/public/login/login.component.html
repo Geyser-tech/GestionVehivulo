@@ -1,0 +1,74 @@
+<div class="tsp-wallpaper">
+  <div class="bg-layer">
+    <div class="tsp-container ">
+      <main class="card">
+        <h1 class="cardHead tsp-card-header">
+          <img src="../../../assets/images/logos/LogoSIGES.png" alt="tsp Advisors" class="tsp-icon-logo" /><br>
+        </h1>
+        <form [formGroup]="authForm" class="cardBody" (ngSubmit)="login()">
+          <div class="tsp-titles-container">
+            <span class="tsp-login-title ">{{ 'LOGIN.LABELS.COMPANY' | translate }}</span>
+            <h2 class="tsp-login-text">{{ 'LOGIN.LABELS.TITLE' | translate }}</h2>
+          </div>
+          <div class="alert alert_danger marginBottom_2" style="display: none">
+            <i class="mdi mdi-close-octagon alert__icon"></i>
+            <div>
+              <h3 class="alert__title">Invalid email/password</h3>
+              <p class="alert__text">Please check your credentials and try again.</p>
+            </div>
+          </div>
+          <div class="inputCont loginInput">
+            <mat-form-field appearance="fill" class="example-full-width" (blur)="onBlur('email')">
+              <mat-label>{{'LOGIN.LABELS.EMAIL' | translate}}</mat-label>
+              <input matInput placeholder="{{ 'LOGIN.PLACEHOLDERS.EMAIL' | translate }}" type="email" id="loginEmail"
+                maxlength="256" formControlName="email" class="input">
+              <mat-error class="tsp-font-size-errors-messages"
+                *ngIf="authForm.controls. email.errors?.required && authForm.controls. email.touched">
+                {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+              <mat-error class="tsp-font-size-errors-messages"
+                *ngIf="authForm.controls.email.errors?.pattern && authForm.controls.email.touched">
+                {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="inputCont loginInput">
+            <mat-form-field appearance="fill" class="example-full-width" (blur)="onBlur('password')">
+              <mat-label>{{'LOGIN.LABELS.PASSWORD' | translate}}</mat-label>
+              <input matInput placeholder="{{ 'LOGIN.PLACEHOLDERS.PASSWORD' | translate }}" type="password"
+                id="loginPassword" maxlength="256" formControlName="password" class="inputIconField"
+                [showPassword]="showPassword" [feedback]="false" aria-describedby="loginPassword_errorMsg" pPassword>
+              <button type="button" class="inputIconBtn" (click)="showPassword = !showPassword"
+                title="Show/hide password">
+                <i class="mdi" [class]="showPassword ? 'mdi-eye-off' : 'mdi-eye'"></i>
+              </button>
+
+              <mat-error class="tsp-font-size-errors-messages"
+                *ngIf="authForm.controls.password.errors?.required && authForm.controls.password.touched">
+                {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+              <mat-error class="tsp-font-size-errors-messages"
+                *ngIf="authForm.controls.password.errors?.pattern && authForm.controls.password.touched">
+                {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <button [disabled]="isAuthenticating$ | async" id="submitBtn" name="submit" type="submit"
+              class="button button_big button_block tsp-button-login">
+              <span *ngIf="(isAuthenticating$ | async) === false">{{ 'LOGIN.BUTTONS.SUBMIT' | translate }}</span>
+              <span *ngIf="isAuthenticating$ | async"><i class="mdi mdi-loading mdi-spin"></i></span>
+            </button>
+          </div>
+
+          <div class="loginFoot" style="display: none">
+            <div class="checkboxCont">
+              <p-checkbox value="remember" [(ngModel)]="remember" [ngModelOptions]="{ standalone: true }"
+                inputId="loginRemember"></p-checkbox>
+              <label for="loginRemember" class="checkboxLabel">{{ 'LOGIN.REMEMBER_ME' | translate }}</label>
+            </div>
+            <button type="button" class="button button_small button_clear">{{ 'LOGIN.FORGOT_PASSWORD' | translate
+              }}</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>

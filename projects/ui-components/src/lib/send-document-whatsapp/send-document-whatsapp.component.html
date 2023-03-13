@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label>{{sendingDocument}}</mat-label>
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="form">
+        <div class="row seccion-container">
+            <div class="row">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 margin-botton">
+                    <div class="tsp-secction-title ">
+                        <img src="../../../../assets//images/pictures/icon-whatsapp.png" class="iconWhatsapp" />
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            Whatsapp
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-12 col-md-16 col-lg-16 col-xl-6">
+                    <mat-form-field class="general-input">
+                        <mat-label>{{countryCode}} </mat-label>
+                        <input matInput aria-label="State" [matAutocomplete]="auto" formControlName="countryCode">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let data of filterOptionsDataCountry" [value]="data.name_es"
+                                #autocomplete>
+                                <span>{{data.name_es}}</span> |
+                                <small>{{data.dial_code}}</small>
+                            </mat-option>
+                        </mat-autocomplete>
+                        <mat-error
+                            *ngIf="form.controls.countryCode.errors?.required && form.controls.countryCode.touched">
+                            {{messageError}} </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-16 col-lg-16 col-xl-6">
+                    <mat-form-field class="general-input">
+                        <mat-label>{{numberPhone}} </mat-label>
+                        <span matPrefix>{{code}} &nbsp;</span>
+                        <input formControlName="numberPhone" type="tel" matInput placeholder="{{numberPhone}}"
+                            maxlength="9" required
+                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <mat-icon matSuffix>phone</mat-icon>
+                        <mat-error
+                            *ngIf="form.controls.numberPhone.errors?.required && form.controls.numberPhone.touched">
+                            {{messageError}} </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class=" row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()">
+                    <mat-icon class="icons">save</mat-icon>{{saveButton}}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{closeButton}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,312 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <span class="tsp-font-size-modal-titles tsp-view-title">{{
+            'PLAN_MAINTENANCES.LABELS.PREVENTIVE_MAINTENANCE_PLAN' | translate}}</span>
+    </div>
+</div>
+
+
+<div class="filter">
+    <div class=" row mt-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 date">
+            <div class="date-filter-container" [formGroup]="filterForm">
+                <div class="dateContent row">
+                    <span class="title tsp-font-size-default-title">{{'PIP.LIST.DATES'| translate}}</span>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="tsp-date-search-input">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.INITIAL_DATE'|
+                                translate}}</mat-label>
+                            <input matInput [matDatepicker]="picker1" class="tsp-font-size-default-content"
+                                formControlName="fromDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker1 class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="tsp-date-search-input">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.FINAL_DATE'|
+                                translate}}</mat-label>
+                            <input matInput [matDatepicker]="picker" class="tsp-font-size-default-content"
+                                formControlName="toDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- filter area -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 filterArea" *ngIf="areasMaster!=null">
+            <cad-chips-input [items]="areasMaster" [InputLabel]="'Áreas'"
+                [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedAreas($event)">
+            </cad-chips-input>
+        </div>
+
+        <!-- filter engineTypes -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 filterArea" *ngIf="engineTypeMaster!=null">
+            <cad-chips-input [items]="engineTypeMaster" [InputLabel]="'Tipos de Motor'"
+                [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"
+                (selectedItems)="selectedEngineTypes($event)">
+            </cad-chips-input>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="tsp-buttons-container">
+        <button mat-raised-button id="goToCreate" class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+            (click)="clearFilters()">
+            <mat-icon>filter_alt_off</mat-icon>
+        </button>
+
+        <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+            (click)="openRegister()"><mat-icon>add</mat-icon>{{
+            'PLAN_MAINTENANCES.BUTTONS.ADD' | translate}}</button>
+
+        <button mat-raised-button (click)="filter()" id="goToCreate"
+            class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success">{{'PIP.LIST.SEARCH'|
+            translate}}</button>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div>
+        <div class="row mt-2">
+            <hr class="ks-line">
+            <div class="titleSection title-container title-container-secction">
+                <mat-label class="tsp-label-search tsp-font-size-default-content tsp-title-module">
+                    {{
+                    'PLAN_MAINTENANCES.LABELS.PLAN' | translate}}
+                </mat-label>
+                <div style="overflow-x:auto;" class="mt-2">
+                    <table style="width: 100%;">
+                        <thead class="tsp-font-size-default-content ">
+                            <tr>
+                                <th class="plan-maintenance-header">{{
+                                    'PLAN_MAINTENANCES.LABELS.NUMBER' | translate}}</th>
+                                <th class="plan-maintenance-header">{{
+                                    'PLAN_MAINTENANCES.LABELS.VEHICLE_HEADER' | translate}}</th>
+
+                                <ng-container
+                                    *ngFor="let planMaintenanceHeader of vehicleMaintenanceHeader;let i=index">
+
+
+                                    <th class="plan-maintenance-header-dynamic">
+                                        <div class="tsp-plan-maintenance-actions">
+                                            {{planMaintenanceHeader.fromDate | date:'dd/MM/YYYY'}}-
+                                            {{planMaintenanceHeader.toDate | date:'dd/MM/YYYY'}}
+
+                                            <mat-checkbox [checked]="planMaintenanceHeader.checked"
+                                                (change)="ApprovePlan(planMaintenanceHeader.id)"
+                                                class="tsp-check-approve-plan"
+                                                [disabled]="planMaintenanceHeader.checked"></mat-checkbox>
+
+                                            <button
+                                                class=" tsp-button-magenta tsp-font-size-buttons tsp-buttons-show-maintenance tsp-delete-maintenance"
+                                                (click)="showPlanMaintenance(planMaintenanceHeader.id)">
+                                                <mat-icon class="delete-icon">search</mat-icon>
+                                            </button>
+                                        </div>
+                                    </th>
+
+                                </ng-container>
+                            </tr>
+                        </thead>
+                        <ng-container
+                            *ngFor="let vehiclePlanMaintenance of vehicleMaintenances;let indexVehicles=index">
+                            <tr>
+                                <td class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                    {{indexVehicles+1}}
+                                </td>
+                                <td class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                    <span
+                                        class="tsp-maintenance-item-type-label">{{vehiclePlanMaintenance.licensePlate}}</span><br>
+                                    <span>{{vehiclePlanMaintenance.name}}</span><br>
+                                    <span>{{vehiclePlanMaintenance.engineType}}</span>
+                                </td>
+
+                                <ng-container
+                                    *ngFor="let planMaintenanceItem of vehiclePlanMaintenance.planMaintenances;let i=index">
+                                    <ng-container *ngFor="let planMaintenances of vehicleMaintenanceHeader">
+
+                                        <ng-container *ngIf="planMaintenanceItem.id ==planMaintenances.id">
+                                            <td>
+                                                <ng-container
+                                                    *ngFor="let typeMaintenancesItem of planMaintenanceItem.typesMaintenances;let typeMaintenancesItemIndex=index">
+
+
+                                            <td [ngClass]="{
+                                            'tsp-maintenance-selector-approved':planMaintenanceItem.state == stateApprovedParameter && typeMaintenancesItem.state== maintenanceStateExecutedParameter,
+                                            'tsp-maintenance-selector-expire': planMaintenanceItem.state == stateExpiredParameter,
+                                            'tsp-maintenance-selector-registered':planMaintenanceItem.state == stateApprovedParameter && typeMaintenancesItem.state== maintenanceStateRegisteredParameter,
+                                            'tsp-maintenance-selector-registered-plan-registered':planMaintenanceItem.state == stateRegisteredParameter && typeMaintenancesItem.state == maintenanceStateRegisteredParameter,
+                                            'tsp-maintenance-selector-not-executed-plan-approved':planMaintenanceItem.state == stateApprovedParameter && typeMaintenancesItem.state == maintenanceStateNotExecutedParameter
+                                        }" (click)="showMaintenance(typeMaintenancesItem.id)">
+                                                <div class="tsp-buttons-actions" *ngIf="!planMaintenanceItem.checked">
+                                                    <button
+                                                        class="tsp-button-delete tsp-font-size-buttons tsp-buttons tsp-delete-maintenance"
+                                                        (click)="deleteMaintenance(typeMaintenancesItem.id)">
+                                                        <mat-icon class="delete-icon">close</mat-icon>
+                                                    </button>
+                                                </div>
+                                                <span
+                                                    class="tsp-font-size-default-content tsp-maintenance-item-type-label">
+                                                    {{typeMaintenancesItem.typeMaintenance}}</span><br>
+                                                <span *ngIf="typeMaintenancesItem.state==stateRegisteredParameter"
+                                                    [ngClass]="{'tsp-maintenance-item-date-label-approved':planMaintenanceItem.state == stateApprovedParameter, 'tsp-maintenance-item-date-label-expired': planMaintenanceItem.state == stateExpiredParameter,
+                                            'tsp-maintenance-item-date-label-registered':planMaintenanceItem.state == stateRegisteredParameter}"
+                                                    class="tsp-maintenance-item-date-label-success 
+                                                    tsp-font-size-default-content">{{typeMaintenancesItem.maintenanceDate
+                                                    |
+                                                    date:'dd/MM/YYYY'}}</span>
+
+
+
+
+                                                <!-- handler states for maintence executed---->
+                                                <span
+                                                    *ngIf="typeMaintenancesItem.state==maintenanceStateExecutedParameter && typeMaintenancesItem.executionDate==typeMaintenancesItem.maintenanceDate"
+                                                    class="tsp-maintenance-item-date-label-approved
+                                                    tsp-font-size-default-content">{{typeMaintenancesItem.executionDate
+                                                    |
+                                                    date:'dd/MM/YYYY'}}</span>
+
+                                                <ng-container
+                                                    *ngIf="typeMaintenancesItem.state==maintenanceStateExecutedParameter &&  typeMaintenancesItem.executionDate!=typeMaintenancesItem.maintenanceDate">
+                                                    <span
+                                                        class="tsp-maintenance-item-date-label-not-equals-date
+                                                    tsp-font-size-default-content not-equal-maintenance-date">{{typeMaintenancesItem.maintenanceDate
+                                                        |
+                                                        date:'dd/MM/YYYY'}}
+
+                                                    </span>
+                                                    <span class="tsp-maintenance-item-date-label-approved
+                                                    tsp-font-size-default-content not-equal-execute-date">
+                                                        {{typeMaintenancesItem.executionDate
+                                                        |
+                                                        date:'dd/MM/YYYY'}}
+                                                    </span>
+                                                </ng-container>
+
+                                                <!-- handler states for maintence not executed---->
+                                                <ng-container
+                                                    *ngIf="typeMaintenancesItem.state==maintenanceStateNotExecutedParameter">
+                                                    <span
+                                                        class="tsp-maintenance-item-date-label-not-equals-date
+                                                   tsp-font-size-default-content not-equal-maintenance-date">{{typeMaintenancesItem.maintenanceDate
+                                                        |
+                                                        date:'dd/MM/YYYY'}}
+
+                                                    </span>
+
+                                                </ng-container>
+
+
+                                            </td>
+                                        </ng-container>
+
+                                        </td>
+
+                                    </ng-container>
+
+
+                                </ng-container>
+                        </ng-container>
+                        </tr>
+                        </ng-container>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="row mt-4">
+        <hr class="ks-line">
+        <div class="titleSection title-container title-container-secction">
+            <mat-label class="tsp-label-search tsp-font-size-default-content tsp-title-module">
+                {{
+                'PLAN_MAINTENANCES.LABELS.VEHICLES_UNASSIGNED' | translate}}
+            </mat-label>
+
+            <div style="overflow-x:auto;" class="mt-2">
+                <div class="tsp-suggestion-buttons-container ">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        (click)="generateAllPlanMaintenance()">{{
+                        'PLAN_MAINTENANCES.BUTTONS.ACCEPT_SUGGESTION' | translate}}</button>
+                </div>
+                <table style="width: 100%;">
+                    <thead class="tsp-font-size-default-content ">
+                        <tr>
+                            <th class="plan-maintenance-header">{{
+                                'PLAN_MAINTENANCES.LABELS.NUMBER' | translate}}</th>
+                            <th class="plan-maintenance-header">{{
+                                'PLAN_MAINTENANCES.LABELS.VEHICLE_HEADER' | translate}}</th>
+
+                            <ng-container
+                                *ngFor="let planMaintenanceHeader of planMaintenancesActiveHeaderGenerator2;let i=index">
+                                <th class="plan-maintenance-header-dynamic">
+                                    {{planMaintenanceHeader.fromDate | date:'dd/MM/YYYY'}}-
+                                    {{planMaintenanceHeader.toDate | date:'dd/MM/YYYY'}}
+                                </th>
+                            </ng-container>
+                        </tr>
+                    </thead>
+                    <ng-container
+                        *ngFor="let vehiclePlanMaintenance of vehiclePlanMaintenances;let indexVehicles=index">
+                        <tr>
+                            <td class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                {{indexVehicles+1}}
+                            </td>
+                            <td class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                <span
+                                    class="tsp-maintenance-item-type-label">{{vehiclePlanMaintenance.licensePlate}}</span><br>
+                                <span>{{vehiclePlanMaintenance.name}}</span><br>
+                                <span>{{vehiclePlanMaintenance.engineType}}</span>
+                            </td>
+                            <ng-container
+                                *ngFor="let planMaintenanceItem of vehiclePlanMaintenance.planMaintenances;let i=index">
+                                <ng-container *ngFor="let planMaintenances of planMaintenancesActiveHeaderGenerator2">
+
+                                    <ng-container *ngIf="planMaintenanceItem.id ==planMaintenances.id">
+                                        <td>
+                                            <ng-container
+                                                *ngFor="let typeMaintenancesItem of planMaintenanceItem.typesMaintenances;let typeMaintenancesItemIndex=index">
+                                        <td class="tsp-maintenance-selector-generator">
+                                            <span
+                                                class="tsp-font-size-default-content tsp-maintenance-item-type-label">{{typeMaintenancesItem.typeMaintenance}}</span><br>
+                                            <span class="tsp-maintenance-item-date-label-generate 
+                                                    tsp-font-size-default-content">{{typeMaintenancesItem.dateExecution
+                                                |
+                                                date:'dd/MM/YYYY'}}</span>
+
+                                        </td>
+                                    </ng-container>
+
+                                    </td>
+
+                                </ng-container>
+
+
+                            </ng-container>
+                    </ng-container>
+                    </tr>
+                    </ng-container>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

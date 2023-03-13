@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col tsp-view-title-container">
+            <span class="tsp-font-size-modal-titles tsp-view-title">{{
+                'PLAN_MAINTENANCES.MODAL_DELETE_MAINTENANCE.TITLE' | translate}}</span>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="tsp-text-container">
+            <div class="tsp-text-modal tsp-font-size-default-content">{{
+                'PLAN_MAINTENANCES.MODAL_DELETE_MAINTENANCE.DESCRIPTION' | translate}}</div> <br>
+            <div class="tsp-text-modal tsp-text-modal-question tsp-font-size-default-content">{{
+                'PLAN_MAINTENANCES.MODAL_DELETE_MAINTENANCE.QUESTION' | translate}}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="tsp-container-buttons mb-2">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons tsp-buttons"
+                (click)="deleteMaintenance()">
+                <mat-icon>save</mat-icon>Confirmar
+            </button>
+            <button mat-flat-button mat-button class="tsp-button-delete tsp-font-size-buttons tsp-buttons"
+                (click)="closeDeletePlanMaintenanceModal()">
+                <mat-icon>close</mat-icon>Cancelar
+            </button>
+        </div>
+    </div>
+</div>

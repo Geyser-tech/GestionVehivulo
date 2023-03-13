@@ -1,0 +1,75 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.date {
+    align-items: center;
+    margin-left: 0px;
+}
+
+.dateContent {
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: $tspSigesBlue;
+}
+
+.btnSearch {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.btnNewAndHistory {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btnNew {
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {}
+
+@media (max-width: 664px) {
+
+    .btnSearch {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+}
+
+.tsp-action-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.tsp-action-button {
+    margin-right: 5px;
+}

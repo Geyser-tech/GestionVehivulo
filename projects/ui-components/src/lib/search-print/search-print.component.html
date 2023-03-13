@@ -1,0 +1,82 @@
+<form [formGroup]="form" *ngIf="isvehicle">
+    <div class="row">
+        <div
+            class="col-12 col-sm-6 col-md-{{ColumnNumber}} col-lg-{{ColumnNumber}} col-xl-{{ColumnNumber}} tsp-input-container">
+            <mat-form-field class="search-input mt-1">
+                <mat-label class="tsp-font-size-default-content"> {{PlaceHolderInput}} </mat-label>
+                <input type="text" matInput placeholder="{{PlaceHolderInput}}" maxlength="6" required
+                    formControlName="licensePlate" class="tsp-font-size-default-content"
+                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                <mat-error *ngIf="form.controls.licensePlate.errors?.required && form.controls.licensePlate.touched"
+                    class="tsp-font-size-errors-messages">
+                    {{MessageError}} </mat-error>
+            </mat-form-field>
+            <button class="button-actions" (click)="search()" [disabled]="form.invalid">
+                <mat-icon class="tsp-icons">search</mat-icon>
+            </button>
+        </div>
+        <div class="col-12 col-sm-6 col-md-{{ColumnNumber}} col-lg-{{ColumnNumber}} col-xl-{{ColumnNumber}} label-container"
+            *ngFor="let label of Labels">
+            <span class="tsp-font-size-default-content  tsp-labels"> {{label.Name}}</span><br>
+            <mat-form-field class="general-input" *ngIf="SomeObject ==null" style="width: 90%;">
+                <input matInput disabled class="tsp-font-size-default-content">
+            </mat-form-field>
+            <mat-form-field class="general-input" *ngIf="SomeObject !=null" style="width: 90%;">
+                <input matInput disabled class="tsp-font-size-default-content" value="{{SomeObject[label.Label]}}">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+
+
+<form [formGroup]="documentIdentityform" *ngIf="!isvehicle">
+    <div class="row">
+        <div class="row">
+            <div *ngIf="isDriver"
+                class="col-12 col-sm-6 col-md-{{ColumnNumber}} col-lg-{{ColumnNumber}} col-xl-{{ColumnNumber}} tsp-input-container">
+                <mat-form-field class="search-input">
+                    <mat-label class="tsp-font-size-default-content"> {{PlaceHolderInput}} </mat-label>
+                    <input type="text" matInput placeholder="{{PlaceHolderInput}}" maxlength="11" required
+                        formControlName="documentIdentity" class="tsp-font-size-default-content"
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <mat-error
+                        *ngIf="documentIdentityform.controls.documentIdentity.errors?.required && documentIdentityform.controls.documentIdentity.touched"
+                        class="tsp-font-size-errors-messages">
+                        {{MessageError}} </mat-error>
+                </mat-form-field>
+                <button class="button-actions" (click)="searchDocumentIdentify()"
+                    [disabled]="documentIdentityform.invalid">
+                    <mat-icon class="tsp-icons">search</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="!isDriver"
+            class="col-12 col-sm-6 col-md-{{ColumnNumber}} col-lg-{{ColumnNumber}} col-xl-{{ColumnNumber}} tsp-input-container">
+            <mat-form-field class="search-input">
+                <mat-label class="tsp-font-size-default-content"> {{PlaceHolderInput}} </mat-label>
+                <input type="text" matInput placeholder="{{PlaceHolderInput}}" maxlength="11" required
+                    formControlName="documentIdentity" class="tsp-font-size-default-content"
+                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                <mat-error
+                    *ngIf="documentIdentityform.controls.documentIdentity.errors?.required && documentIdentityform.controls.documentIdentity.touched"
+                    class="tsp-font-size-errors-messages">
+                    {{MessageError}} </mat-error>
+            </mat-form-field>
+            <button class="button-actions" (click)="searchDocumentIdentify()" [disabled]="documentIdentityform.invalid">
+                <mat-icon class="tsp-icons">search</mat-icon>
+            </button>
+
+        </div>
+        <div class="col-12 col-sm-6 col-md-{{ColumnNumber}} col-lg-{{ColumnNumber}} col-xl-{{ColumnNumber}} label-container"
+            *ngFor="let label of Labels">
+            <span class="tsp-font-size-default-content  tsp-labels"> {{label.Name}}</span><br>
+            <mat-form-field class="general-input" *ngIf="SomeObject ==null" style="width: 90%;">
+                <input matInput disabled class="tsp-font-size-default-content">
+            </mat-form-field>
+            <mat-form-field class="general-input" *ngIf="SomeObject !=null" style="width: 90%;">
+                <input matInput disabled class="tsp-font-size-default-content" value="{{SomeObject[label.Label]}}">
+            </mat-form-field>
+        </div>
+    </div>
+</form>

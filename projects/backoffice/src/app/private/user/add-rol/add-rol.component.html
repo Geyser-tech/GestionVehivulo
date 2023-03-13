@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class=" title-detail-master tsp-font-size-modal-titles titleDetailMaster">
+                    {{'USERS.DATA.USER_REGISTRATION_ROLE' |
+                    translate}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="rolForm">
+            <div class="form-container">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="InputDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'USERS.DATA.USER_ROLE' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'USERS.DATA.USER_NEWROL' | translate}}" formControlName="rol"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="rolForm.controls.rol.errors?.required &&
+                                rolForm.controls.rol.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="rolForm.controls.rol.errors?.pattern && rolForm.controls.rol.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row mt-2 mb-4 buttonDetailMaster">
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" [disabled]="!rolForm.valid">
+                <mat-icon>save</mat-icon>{{'USERS.DATA.USER_SAVE' | translate}}
+            </button>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'USERS.DATA.USER_CANCEL' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

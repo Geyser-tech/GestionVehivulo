@@ -1,0 +1,208 @@
+[
+  {
+    "text": "Vehículo",
+    "icon": "directions_car",
+    "routerLink": "/private/vehicles",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ]
+  },
+  {
+    "text": "SOAT",
+    "icon": "health_and_safety",
+    "routerLink": "/private/pip",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ]
+  },
+  {
+    "text": "Revisión Técnica",
+    "icon": "car_repair",
+    "routerLink": "/private/vehicleInspections",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ]
+  },
+  {
+    "text": "Solicitud de movilidad",
+    "icon": "commute",
+    "routerLink": "/private/mobilityRequest",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ]
+  },
+  {
+    "text": "Mantenimiento",
+    "icon": "build",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ],
+    "children": [
+      {
+        "text": "Ver Mantenimientos",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/maintenances"
+      },
+      {
+        "text": "Ver Catálogos",
+        "icon": "add_alert",
+        "routerLink": "/private/preventiveMaintenanceCatalog"
+      },
+      {
+        "text": "Ver Plan Mantenimientos",
+        "icon": "add_alert",
+        "routerLink": "/private/maintenances/PlanMaintenance"
+      }
+    ]
+  },
+  {
+    "text": "Asignación Vehículo-Área",
+    "icon": "format_list_bulleted",
+    "routerLink": "/private/vehicles/assignment",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ]
+  },
+  {
+    "text": "Combustible",
+    "icon": "local_gas_station",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ],
+    "children": [
+      {
+        "text": "Ver abastecimientos",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/fuelSupplies"
+      },
+      {
+        "text": "Control Consumo Combustibles",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/fuelSupplies/detailFuelConsumption"
+      },
+      {
+        "text": "Precio Combustibles",
+        "icon": "price_change",
+        "routerLink": "/private/fuelSupplies/fuelPrice"
+      },
+      {
+        "text": "Reportes",
+        "icon": "summarize",
+        "routerLink": "/private/fuelSupplies/reportValorization"
+      }
+    ]
+  },
+  {
+    "text": "Contrato",
+    "icon": "local_activity",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ],
+    "children": [
+      {
+        "text": "Contratos de Abastecimientos",
+        "icon": "local_activity",
+        "routerLink": "/private/fuelSupplyContract"
+      }
+    ]
+  },
+  {
+    "text": "Conductor",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ],
+    "icon": "person_pin",
+    "routerLink": "/private/driver-licenses",
+    "children": [
+      {
+        "text": "Ver conductores",
+        "icon": "person_pin",
+        "routerLink": "/private/driversOperators"
+      }
+    ]
+  },
+  {
+    "text": "Masters",
+    "roles": [
+      "AdminTI"
+    ],
+    "icon": "key",
+    "routerLink": "/private/masters"
+  },
+  {
+    "text": "Alerta",
+    "icon": "add_alert",
+    "roles": [
+      "AdminNegocioLocal",
+      "AdminNegocioGlobal",
+      "LecturaLocal"
+    ],
+    "children": [
+      {
+        "text": "Ver alertas",
+        "icon": "add_alert",
+        "routerLink": "/private/alerts"
+      }
+    ]
+  },
+  {
+    "text": "Funcionario",
+    "icon": "streetview",
+    "roles": [
+      "AdminTI"
+    ],
+    "children": [
+      {
+        "text": "Ver Funcionarios",
+        "icon": "person",
+        "routerLink": "/private/functionaries"
+      }
+    ]
+  },
+  {
+    "text": "Usuario y Roles",
+    "roles": [
+      "AdminTI"
+    ],
+    "icon": "supervised_user_circle",
+    "children": [
+      {
+        "text": "Ver Usuarios",
+        "icon": "supervisor_account",
+        "routerLink": "/private/user/"
+      }
+    ]
+  },
+  {
+    "text": "Configuración",
+    "roles": [
+      "AdminTI"
+    ],
+    "icon": "settings",
+    "children": [
+      {
+        "text": "Parámetros",
+        "icon": "surround_sound",
+        "routerLink": "/private/parameter/"
+      }
+    ]
+  }
+]

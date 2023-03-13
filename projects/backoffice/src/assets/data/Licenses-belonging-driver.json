@@ -1,0 +1,121 @@
+{
+    "data": [
+        {
+            "id": "100",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "101",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "102",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "103",
+            "licenseNumber": "X9846373828",
+            "class": "A IIA",
+            "expedition": "20/12/2022",
+            "expiration": "31/12/2022",
+            "state": "Baja",
+            "statusClass": "Red"
+        }
+    ]
+}

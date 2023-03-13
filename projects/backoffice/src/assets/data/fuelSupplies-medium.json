@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "date": "12/07/2022",
+            "nNote": "00104022563",
+            "licensePlate": "EE231",
+            "vehicleType": "AUTOMOVIL",
+            "area": "OGA",
+            "drive": "JAUN PEREZ CAVANALES",
+            "fuel": "GASOHOL 97",
+            "contract": "004-2022-C-MIMP/OGA",
+            "total": "$. 452.69",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "0002",
+            "date": "11/01/2022",
+            "nNote": "0010402251351",
+            "licensePlate": "EE3365",
+            "vehicleType": "AUTOMOVIL",
+            "area": "OGA",
+            "drive": "RICHARD COTRINA JULIAN",
+            "fuel": "GASOHOL 97",
+            "contract": "004-2022-C-MIMP/OGA",
+            "total": "$. 349.69",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "0003",
+            "date": "24/09/2022",
+            "nNote": "00104021431",
+            "licensePlate": "SAC365",
+            "vehicleType": "CAMIONETA",
+            "area": "OGA",
+            "drive": "RICHARD COTRINA JULIAN",
+            "fuel": "GASOHOL 97",
+            "contract": "004-2022-C-MIMP/OGA",
+            "total": "$. 349.69",
+            "status": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "0004",
+            "date": "24/02/2022",
+            "nNote": "00104021431",
+            "licensePlate": "SAC365",
+            "vehicleType": "MOTOCICLETA",
+            "area": "OGA",
+            "drive": "RICHARD COTRINA JULIAN",
+            "fuel": "GASOHOL 97",
+            "contract": "004-2022-C-MIMP/OGA",
+            "total": "$. 349.69",
+            "status": "De Baja",
+            "statusClass": "Red"
+        }
+    ]
+}

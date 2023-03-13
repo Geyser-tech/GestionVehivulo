@@ -1,0 +1,212 @@
+@import 'variables';
+
+.tsp-container {
+    padding: 0% 2% 1% 1%;
+}
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 906px;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.mat-dialog-content {
+    margin: 0;
+}
+
+.conceptName {
+    pointer-events: none;
+    border: none;
+}
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    // padding-left: 20px;
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: bold;
+    @extend .tsp-title;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.SaveEdit {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btnSearch {
+    min-width: 0;
+    margin-left: 10px;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.tsp-area-selector {
+    margin-bottom: -20px;
+}
+
+.searchPlate {
+    max-width: 120px;
+
+    input {
+        text-align: center;
+    }
+}
+
+.table {
+    input {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.titleSection {
+    margin-bottom: 15px;
+}
+
+.columnTable {
+    text-align: center;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .titleModal {
+        text-align: center;
+    }
+
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.mat-flat-button {
+    min-width: 0;
+    line-height: 0;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.tsp-message-warnings {
+    clear: both;
+    color: $tspSigesGrayLetters;
+    font-style: italic;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+
+.title-container {
+    margin-left: -8px;
+    margin-top: -10px;
+}
+
+.tsp-label-title {
+    font-weight: 600;
+}

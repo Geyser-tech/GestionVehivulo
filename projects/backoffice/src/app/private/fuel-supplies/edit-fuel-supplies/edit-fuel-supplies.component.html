@@ -1,0 +1,423 @@
+<div class="container" *ngIf="vehicleObj!=null && fuelSupply!=null">
+    <form [formGroup]="form">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <h1 class="tsp-title tsp-title-modals">{{'FUEL_SUPPLIES.SUPPLY.TITLE' | translate}}</h1>
+            </div>
+        </div>
+        <div mat-dialog-content class="container">
+            <div class="tsp-container mt-2">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 ">
+                        <div class="tsp-secction-title title-container mb-2">
+                            <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                                {{'FUEL_SUPPLIES.SUPPLY.VEHICLE_DATA' | translate}}:
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row tsp-container-content">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.LICENSE_PLATE' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.licensePlate}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.AREA' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.area}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.FUEL_TYPE' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.fuelType}}
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.TYPE' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.vehicleType}}
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.BRAND' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.brand}}
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.MODEL' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.model}}
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.COLOR' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.color}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.YEAR' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.year}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.ENGINE' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.engineNumber}}
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.SERIE' |
+                                    translate
+                                    }}</span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <span class="tsp-font-size-default-content ">
+                                    {{vehicleObj.serialNumber}}
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Dispatch -->
+            <div class="tsp-container mt-2">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-label-title tsp-secction-title title-container mb-2">
+                            <span
+                                class="tsp-font-size-default-title tsp-font-size-default">{{'FUEL_SUPPLIES.DATA.DISPATCH_DATA'|
+                                translate}}</span>
+                        </div>
+                    </div>
+                    <div class="row tsp-container-content">
+                        <!-- Dispach Note -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class="tsp-font-size-default-content tsp-labels">{{
+                                        'FUEL_SUPPLIES.DATA.DISPATCH_NOTE' | translate }}
+                                    </mat-label>
+                                    <input class="tsp-font-size-default-content" matInput type="number"
+                                        formControlName="dispatchNote">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" form.controls.dispatchNote.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Dispach Date -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div>
+                                <mat-form-field class="general-input" appearance="fill">
+                                    <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                        'VEHICLE_INSPECTIONS.DATA.EXPIRATION_DATE' | translate }} </mat-label>
+                                    <input matInput [matDatepicker]="Date" required formControlName="dispachDate"
+                                        class="tsp-font-size-default-content" />
+                                    <mat-datepicker-toggle matSuffix [for]="Date" startView="multi-year"
+                                        class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                    <mat-datepicker #Date></mat-datepicker>
+                                    <!-- Required Date Messages -->
+                                    <mat-error *ngIf="form.controls.dispachDate.errors?.required">{{
+                                        'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                        }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label class="tsp-font-size-default-content tsp-labels">
+                                        {{'FUEL_SUPPLIES.DATA.DRIVER'|
+                                        translate}} </mat-label>
+                                    <mat-select formControlName="driverId" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let driver of driver" [value]="driver.id">
+                                            {{ driver.firstName }} {{driver.fatherSurname}} {{driver.motherSurname}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="form.controls.driverId.errors?.required && form.controls.driverId.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label
+                                        class="tsp-font-size-default-content tsp-labels">{{'FUEL_SUPPLIES.DATA.DISPATCH_TIME'
+                                        | translate}}
+                                    </mat-label>
+                                    <input class="tsp-font-size-default-content" matInput type="time"
+                                        formControlName="dispatchHour" required />
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="form.controls.dispatchHour.errors?.required && form.controls.dispatchHour.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class="tsp-font-size-default-content tsp-labels">{{
+                                        'FUEL_SUPPLIES.DATA.ODOMETER' | translate }}
+                                    </mat-label>
+                                    <input class="tsp-font-size-default-content" matInput type="number"
+                                        formControlName="odometer">
+                                    <mat-error *ngIf=" form.controls.odometer.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                            <div class="input-with-button ">
+                                <mat-form-field class="generalMatForm tsp-area-selector" appearance="fill"
+                                    style="width:80%;">
+                                    <mat-label class="tsp-font-size-default-content tsp-labels">
+                                        {{'FUEL_SUPPLIES.DATA.AREA'|
+                                        translate}} </mat-label>
+                                    <mat-select class="tsp-font-size-default-content " formControlName="areaId">
+                                        <mat-option *ngFor="let area of area" [value]="area.id">
+                                            {{ area.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="form.controls.areaId.errors?.required && form.controls.areaId.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <button mat-fab color="accent" class="round-button"
+                                    (click)="createMasterDetailUserArea($event)">
+                                    <mat-icon class="icons-with-input">add</mat-icon>
+                                </button><br>
+                            </div>
+                            <small *ngIf="area.length<=0" class="tsp-font-size-errors-messages tsp-message-warnings">
+                                {{ 'FUEL_SUPPLIES.SUPPLY.ERORRS.AREAS_NOT_FOUND' | translate }}</small>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                            <div>
+                                <mat-form-field class="generalMatForm tsp-area-selector" appearance="fill"
+                                    *ngIf="contract">
+                                    <mat-label class="tsp-font-size-default-content tsp-labels">
+                                        {{'FUEL_SUPPLIES.DATA.CONTRACT'| translate}} </mat-label>
+                                    <mat-select class="tsp-font-size-default-content" formControlName="contractId"
+                                        (ngModelChange)="changeContract($event)">
+                                        <mat-option *ngFor="let contract of contract" [value]="contract.id">
+                                            {{ contract.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="form.controls.contractId.errors?.required && form.controls.contractId.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <small *ngIf="contract.length<=0"
+                                class="tsp-font-size-errors-messages tsp-message-warnings">
+                                {{ 'FUEL_SUPPLIES.SUPPLY.ERORRS.CONTRACT_NOT_FOUND' | translate }}</small>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Supply -->
+            <div class="tsp-container mt-2">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title title-container mb-2">
+                            <span
+                                class=" tsp-label-title tsp-font-size-default-title tsp-font-size-default">{{'FUEL_SUPPLIES.DATA.SUPPLIYING'|
+                                translate}}</span>
+                        </div>
+                    </div>
+                    <div class="row tsp-container-content">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                            <div>
+                                <mat-form-field class="generalMatForm tsp-font-size-default-content" appearance="fill">
+                                    <mat-label class="tsp-font-size-default-content"> {{'FUEL_SUPPLIES.DATA.CONCEPT'|
+                                        translate}} </mat-label>
+                                    <mat-select (selectionChange)="addConcept($event)" formControlName="concept"
+                                        class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let item of conceptTemporal " [value]="item.id">
+                                            {{ item.conceptName }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="form.controls.contractId.errors?.required && form.controls.contractId.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " style="overflow-x:auto;">
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'FUEL_SUPPLIES.DATA.ITEM'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable tsp-input-table">
+                                            {{'FUEL_SUPPLIES.DATA.CONCEPT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable  tsp-input-table">
+                                            {{'FUEL_SUPPLIES.DATA.QUANTITY'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable tsp-input-table">
+                                            {{'FUEL_SUPPLIES.DATA.PU'|
+                                            translate}}
+                                        </th>
+                                        <th class="tsp-font-size-default-content columnTable tsp-input-table">
+                                            {{'FUEL_SUPPLIES.DATA.AMOUNT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'FUEL_SUPPLIES.DATA.OPTIONS'|
+                                            translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody formArrayName="arrayConcept">
+                                    <ng-container *ngFor="let item of array.controls;let i=index;">
+                                        <tr *ngIf="array.controls" [formGroupName]="i">
+                                            <td class="tsp-font-size-default-content tsp-table-data">{{i+1}}</td>
+
+                                            <td>
+                                                <input class="tsp-font-size-default-content tsp-input-table conceptName"
+                                                    formControlName="conceptName">
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="quantity"
+                                                    class="tsp-font-size-default-content tsp-input-table" type="number"
+                                                    min="1" maxlength="10" (change)="changeQuantity(i)">
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="unitPrice"
+                                                    class="tsp-font-size-default-content tsp-input-table" type="number"
+                                                    min="1" maxlength="10" (change)="changeUnitPrice(i)"
+                                                    onchange="this.value=parseFloat(this.value).toFixed(3)" />
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="amount"
+                                                    class="tsp-font-size-default-content tsp-input-table" type="number"
+                                                    min="1" maxlength="10" (change)="changeAmount(i)"
+                                                    onchange="this.value=parseFloat(this.value).toFixed(3)">
+                                            </td>
+
+                                            <div>
+                                                <td class="tsp-font-size-default-content">
+                                                    <button mat-fab color="accent" class="round-button-delete"
+                                                        (click)="removeData(i)">
+                                                        <mat-icon class="icons-with-input">delete</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                                <tfoot>
+                                    <td colspan="3"></td>
+                                    <td class="tsp-font-size-default-content columnTable tsp-footer-text">
+                                        {{'FUEL_SUPPLIES.DATA.TOTAL'|
+                                        translate}}</td>
+                                    <td class="tsp-font-size-default-content columnTable tsp-footer-text">{{total}}
+                                    </td>
+                                    <td></td>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary" class="button-save" (click)="saveFuelSupply()"
+                    [disabled]="this.form.invalid || array.controls.length==0">
+                    <mat-icon class="icons">save</mat-icon>{{ 'FUEL_SUPPLIES.SUPPLY.BUTTONS_SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'FUEL_SUPPLIES.SUPPLY.BUTTONS_CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

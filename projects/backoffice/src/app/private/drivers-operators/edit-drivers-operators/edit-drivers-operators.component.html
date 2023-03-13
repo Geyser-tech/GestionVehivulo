@@ -1,0 +1,378 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label>{{ 'DRIVERS_OPERATORS.EDIT.TITLE' | translate }}
+                </mat-label>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="form">
+        <div mat-dialog-content class="container">
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <mat-label class="tsp-font-size-default-title title-container">
+                                {{ 'DRIVERS_OPERATORS.LABELS.GENERAL_DATE' | translate }}
+                            </mat-label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.DNI' |
+                                translate }}</mat-label>
+                            <input matInput type="text" value="{{data.driver.identityDocument}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.PATERNAL_LAST_NAME' |
+                                translate }}</mat-label>
+                            <input matInput type="text" value="{{data.driver.fatherSurname}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.MOTHER_LAST_NAME'
+                                |
+                                translate }}</mat-label>
+                            <input matInput type="text" value="{{data.driver.motherSurname}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.NAMES' |
+                                translate }}</mat-label>
+                            <input matInput type="text" value="{{data.driver.firstName}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.DATE_BIRTH' |
+                                translate }}</mat-label>
+                            <input class="tsp-font-size-default-content" matInput [matDatepicker]="dateBirth" required
+                                formControlName="dateBirth" required />
+                            <mat-datepicker-toggle matSuffix [for]="dateBirth">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #dateBirth></mat-datepicker>
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.dateBirth.errors?.required && form.controls.dateBirth.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.GENDER' |
+                                translate }}</mat-label>
+                            <mat-select required class="tsp-font-size-default-content" matInput
+                                formControlName="gender">
+                                <mat-option *ngFor="let gender of genders" [value]="gender.id">
+                                    {{gender.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.gender.errors?.required && form.controls.gender.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.AREAS' |
+                                translate }}</mat-label>
+                            <mat-select required class="tsp-font-size-default-content" matInput formControlName="area">
+                                <mat-option *ngFor="let area of areas" [value]="area.id">
+                                    {{area.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.area.errors?.required && form.controls.area.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.EMAIL' |
+                                translate }}</mat-label>
+                            <input class="tsp-font-size-default-content" matInput type="email"
+                                placeholder="{{ 'DRIVERS_OPERATORS.LABELS.EMAIL' | translate }}" maxlength="50"
+                                formControlName="email" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.email.errors?.required && form.controls.email.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.PHONE' |
+                                translate }}</mat-label>
+                            <input class="tsp-font-size-default-content" matInput
+                                placeholder="{{ 'DRIVERS_OPERATORS.LABELS.PHONE' | translate }}" type="number"
+                                maxlength="9" formControlName="phone" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.phone.errors?.required && form.controls.phone.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{ 'DRIVERS_OPERATORS.LABELS.DIRECTION' |
+                                translate }}</mat-label>
+                            <input class="tsp-font-size-default-content" matInput
+                                placeholder="{{ 'DRIVERS_OPERATORS.LABELS.DIRECTION' | translate }}" maxlength="50"
+                                formControlName="direction" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.direction.errors?.required && form.controls.direction.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            <span class="tsp-font-size-default-title tsp-label-title">
+                                {{ 'DRIVERS_OPERATORS.LABELS.DRIVERS_LICENSES' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <form [formGroup]="licensesForm" #formDirective="ngForm">
+                    <div class="row" *ngIf="newLicenseValidator==true">
+                        <div class="filter-container col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate
+                                            }}</mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            placeholder="{{ 'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate }}"
+                                            maxlength="50" formControlName="number" required
+                                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                        <mat-error class="tsp-font-size-errors-messages"
+                                            *ngIf="licensesForm.controls.number.errors?.required && licensesForm.controls.number.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field appearance="fill" class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.CLASS' | translate
+                                            }}</mat-label>
+                                        <mat-select (ngModelChange)="selectClass($event)" #select
+                                            class="tsp-font-size-default-content" matInput required
+                                            formControlName="class">
+                                            <mat-option *ngFor="let class of class" [value]="class" #select>
+                                                {{class.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <mat-error class="tsp-font-size-errors-messages"
+                                            *ngIf="licensesForm.controls.class.errors?.required && licensesForm.controls.class.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field appearance="fill" class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate
+                                            }}</mat-label>
+                                        <mat-select [disabled]="selectClassValidator"
+                                            class="tsp-font-size-default-content" matInput required
+                                            formControlName="category">
+                                            <mat-option *ngFor="let category of category" [value]="category">
+                                                {{category.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <mat-error class="tsp-font-size-errors-messages"
+                                            *ngIf="licensesForm.controls.category.errors?.required && licensesForm.controls.category.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label class="tsp-font-size-default-content"> {{
+                                            'DRIVERS_OPERATORS.LABELS.EXPEDITION_DATE' | translate }}
+                                        </mat-label>
+                                        <input class="tsp-font-size-default-content" matInput required
+                                            [matDatepicker]="issueDate" required formControlName="issueDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="issueDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #issueDate></mat-datepicker>
+                                        <mat-error
+                                            *ngIf="licensesForm.controls.issueDate.errors?.required && licensesForm.controls.issueDate.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label class="tsp-font-size-default-content"> {{
+                                            'DRIVERS_OPERATORS.LABELS.EXPIRATION_DATE' | translate }}
+                                        </mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            [matDatepicker]="expirationDate" required
+                                            formControlName="expirationDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="expirationDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #expirationDate></mat-datepicker>
+                                        <mat-error
+                                            *ngIf="licensesForm.controls.expirationDate.errors?.required && licensesForm.controls.expirationDate.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <cad-upload-files [Multiple]="true"
+                                [Label]="'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate"
+                                [typeAccep]="'application/pdf, image/*'"
+                                (SendData)="receiveDocumentLicense($event)"></cad-upload-files>
+
+                            <div class="row" style="margin-top: 15px;">
+                                <div class=".col-md-1 .col-md-offset-1 container-button-save"
+                                    *ngIf="!editLicenseValidator">
+                                    <button mat-raised-button class="button-plus" [disabled]="licensesForm.invalid"
+                                        (click)="saveLicenses(formDirective)"><mat-icon>add</mat-icon></button>
+                                </div>
+                                <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1" *ngIf="editLicenseValidator">
+                                    <button mat-raised-button class="button-plus" [disabled]="licensesForm.invalid"
+                                        (click)="saveEditLicense(formDirective)"><mat-icon>add</mat-icon></button>
+                                </div>
+                                <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1" *ngIf="editLicenseValidator">
+                                    <button mat-raised-button color="primary" class="button-close "
+                                        (click)="cancelEditLicense()"><mat-icon>close</mat-icon></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="editLicenseValidator==true">
+                        <div class="filter-container col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate
+                                            }}</mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            value="{{licenseEdit.number}}" disabled required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.CLASS' | translate
+                                            }}</mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            value="{{licenseEdit.class}}" disabled required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input">
+                                        <mat-label class="tsp-font-size-default-content">{{
+                                            'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate
+                                            }}</mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            value="{{licenseEdit.category}}" disabled required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label class="tsp-font-size-default-content"> {{
+                                            'DRIVERS_OPERATORS.LABELS.EXPEDITION_DATE' | translate }}
+                                        </mat-label>
+                                        <input class="tsp-font-size-default-content" matInput required
+                                            [matDatepicker]="issueDate" required formControlName="issueDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="issueDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #issueDate></mat-datepicker>
+                                        <mat-error
+                                            *ngIf="licensesForm.controls.issueDate.errors?.required && licensesForm.controls.issueDate.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label class="tsp-font-size-default-content"> {{
+                                            'DRIVERS_OPERATORS.LABELS.EXPIRATION_DATE' | translate }}
+                                        </mat-label>
+                                        <input class="tsp-font-size-default-content" matInput
+                                            [matDatepicker]="expirationDate" required
+                                            formControlName="expirationDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="expirationDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #expirationDate></mat-datepicker>
+                                        <mat-error
+                                            *ngIf="licensesForm.controls.expirationDate.errors?.required && licensesForm.controls.expirationDate.touched">
+                                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <cad-upload-files [Multiple]="true"
+                                [Label]="'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate"
+                                [typeAccep]="'application/pdf, image/*'" [RegisteredFiles]="files"
+                                (SendData)="receiveDocumentLicenseEdit($event)"
+                                [IdFileUpdate]="'fileEditUploads'"></cad-upload-files>
+
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                                    <button mat-raised-button class="button-plus" [disabled]="licensesForm.invalid"
+                                        (click)="saveEditLicense(formDirective)"><mat-icon>add</mat-icon></button>
+                                </div>
+                                <div class="col-sm-12 col-1 col-md-1 col-lg-1 col-xl-1">
+                                    <button mat-raised-button color="primary" class="button-close "
+                                        (click)="cancelEditLicense()"><mat-icon>close</mat-icon></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row space-container">
+                    <cad-table-licenses [Edit]="true" [Licenses]="licenses" [columns]="cols"
+                        (deleteEvent)="deleteLicense($event)" (editEvent)="editLicense($event)"
+                        [hideButtons]="editLicenseValidator"></cad-table-licenses>
+                </div>
+            </div>
+            <cad-upload-files [Multiple]="true" [Label]="'DRIVERS_OPERATORS.LABELS.DOCUMENT_RECORD' | translate"
+                [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"
+                [RegisteredFiles]="data.driver.documentsUrl" [IdFileUpdate]="'fileRecordUploads'"></cad-upload-files>
+        </div>
+    </form>
+    <div class="row mt-4 mb-4">
+        <div class="buttons-container">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" (click)="save()"
+                [disabled]="form.invalid || loading==false || licenses.length ==0">
+                <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+            </button>
+            <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                mat-dialog-close>
+                <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

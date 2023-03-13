@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <span class="tsp-font-size-modal-titles tsp-view-title">
+            {{'USERS.DATA.USER_TITLE' | translate}}
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+        <cad-chips-input [items]="roles" [InputLabel]="'FUNCIONARIES.DATA.FUNC_ROLES' | translate"
+            [InputCheckLabel]="'FUNCIONARIES.DATA.FUNC_ROLE' | translate"></cad-chips-input>
+    </div>
+    <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6 inputnewuser">
+        <div class="button-add-container">
+            <button mat-raised-button class="button-add mr-2 tsp-font-size-buttons" (click)="createUser()">
+                <mat-icon>add</mat-icon>{{
+                'USERS.DATA.USER_NEW' |
+                translate
+                }}
+            </button>
+            <button mat-raised-button class="button-add tsp-font-size-buttons" (click)=" addUser()">
+                <mat-icon>add</mat-icon>{{
+                'USERS.DATA.USER_SEE' | translate
+                }}
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)"
+        (searchEvent)="showUser()">
+    </cad-table-filter>
+</div>

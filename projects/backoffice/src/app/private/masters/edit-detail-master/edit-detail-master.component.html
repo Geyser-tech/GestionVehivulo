@@ -1,0 +1,94 @@
+<div class="container" [formGroup]="masterDetailForm" *ngIf="masterDetailForm!=null">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class=" title-detail-master tsp-font-size-modal-titles editTitleDetailMaster">
+                    {{'MASTER.MASTER_DETAIL.EDIT' |
+                    translate}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="form-container">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="inputEditDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'MASTER.MASTER_TITLE.CODE' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'MASTER.MASTER_TITLE.CODE' | translate}}" formControlName="code"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="masterDetailForm.controls.code.errors?.required &&
+                            masterDetailForm.controls.code.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="masterDetailForm.controls.code.errors?.pattern && masterDetailForm.controls.code.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="inputEditDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'MASTER.MASTER_TITLE.NAME' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'MASTER.MASTER_TITLE.NAME' | translate}}" formControlName="name"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="masterDetailForm.controls.name.errors?.required &&
+                            masterDetailForm.controls.name.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="masterDetailForm.controls.name.errors?.pattern && masterDetailForm.controls.name.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput">
+                    <mat-form-field appearance="fill" class="inputEditDetailMaster">
+                        <mat-label class="tsp-font-size-default-content"> {{'MASTER.MASTER_DETAIL.WORTH' | translate}}
+                        </mat-label>
+                        <input matInput placeholder="{{'MASTER.MASTER_DETAIL.WORTH' | translate}}"
+                            formControlName="value" class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages" *ngIf="masterDetailForm.controls.value.errors?.required &&
+                            masterDetailForm.controls. value.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="masterDetailForm.controls.value.errors?.pattern && masterDetailForm.controls.value.touched">
+                            {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 spaceInput spacebutton">
+                    <mat-checkbox class="tsp-font-size-default-content" (change)="changeChecked($event)">
+                        {{'MASTER.MASTER_TITLE.BELONGS' |
+                        translate}}
+                    </mat-checkbox>
+                </div>
+                <div *ngIf="checked" class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 ">
+                    <mat-form-field appearance="fill" class="general-input" style="width:80%;">
+                        <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.YEAR' | translate
+                            }}</mat-label>
+                        <mat-select formControlName="detailMasterId" class="tsp-font-size-default-content">
+                            <mat-option *ngFor="let masterDetail of masterDetailByGenericId" [value]="masterDetail.id"
+                                class="tsp-font-size-default-content">
+                                {{masterDetail.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="masterDetailForm.controls.detailMasterId.errors?.required && masterDetailForm.controls.detailMasterId.touched"
+                            class="tsp-font-size-default-content">
+                            {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4 buttonEditDetailMaster">
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4 ">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                [disabled]="masterDetailForm.invalid" (click)="updateMasterDetail()">
+                <mat-icon>save</mat-icon>{{'MASTER.MASTER_TITLE.SAVE' | translate}}
+            </button>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'MASTER.MASTER_TITLE.TOCLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

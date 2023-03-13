@@ -1,0 +1,37 @@
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="view-title-container">
+                <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                    {{'USERS.DATA.USER_ROLE_TRAY' | translate}}
+                </span>
+            </div>
+        </div>
+        <div class="row masterdetail">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="button-add-container">
+                    <button mat-raised-button class="button-add tsp-font-size-buttons" (click)=" addRol()">
+                        <mat-icon>add</mat-icon>{{
+                        'USERS.DATA.USER_ADD_ROL' | translate
+                        }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row mt-4 listDetailTable">
+                    <cad-table-filter [items]="rol" [columns]="columns" [actions]="actions">
+                    </cad-table-filter>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 mb-4 buttontoclose">
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 button-add-close">
+                <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                    <mat-icon>close</mat-icon>{{'USERS.DATA.USER_CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

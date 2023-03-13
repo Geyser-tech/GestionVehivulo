@@ -1,0 +1,435 @@
+<div class="container" [formGroup]="form" *ngIf="form!=null">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label>{{ 'MAINTENANCES.TITLE' | translate }} AIU-056 / PREV</mat-label>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div mat-dialog-content class="container">
+            <div class="row seccion-container">
+                <!-- Section Vehicle -->
+                <div class="row seccion-container" *ngIf="dataMaintenance!=null">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title tsp-title">
+                                {{ 'MOBILITY_REQUEST.LABELS.INSURED_VEHICLE' | translate }}
+                            </span>
+                        </div>
+                        <div class="container row tsp-container">
+                            <!-- PLATE -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div>
+                                    <mat-label class="title tsp-font-size-default-content">{{'PIP.DATA.LICENSE_PLATE'|
+                                        translate}}
+                                    </mat-label>
+                                </div>
+                                <div>
+                                    <span
+                                        class="tsp-font-size-default-content">{{dataMaintenance.vehicle.licensePlate}}</span>
+                                </div>
+
+                            </div>
+                            <!-- AREA -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.AREA'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{dataMaintenance.vehicle.area}}</span>
+                                </div>
+                            </div>
+                            <!-- TYPE -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.TYPE'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span
+                                        class="tsp-font-size-default-content">{{dataMaintenance.vehicle.vehicleType}}</span>
+                                </div>
+                            </div>
+                            <!-- BRAND -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.BRAND'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{dataMaintenance.vehicle.brand}}</span>
+                                </div>
+                            </div>
+                            <!-- MODEL -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.MODEL'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{dataMaintenance.vehicle.model}}</span>
+                                </div>
+                            </div>
+                            <!-- COLOR -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.COLOR'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{dataMaintenance.vehicle.color}}</span>
+                                </div>
+                            </div>
+                            <!-- YEAR -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.YEAR'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span class="tsp-font-size-default-content">{{dataMaintenance.vehicle.year}}</span>
+                                </div>
+                            </div>
+                            <!-- N° ENGINE -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.N_ENGINE'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span
+                                        class="tsp-font-size-default-content">{{dataMaintenance.vehicle.engineNumber}}</span>
+                                </div>
+                            </div>
+                            <!-- N° SERIE -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                                <div class="title">
+                                    <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.SERIE'|
+                                        translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span
+                                        class="tsp-font-size-default-content">{{dataMaintenance.vehicle.serialNumber}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title tsp-title">
+                                {{ 'MAINTENANCES.LABELS.TYPE_MAINTENANCE' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Type Maintenance -->
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-radio-group class="mat-radio-group" formControlName="typeMaintenanceId"
+                            (change)="changeTypeMaintenance()">
+                            <mat-radio-button class="mat-radio-button tsp-font-size-default-content"
+                                *ngFor="let type of typeMaintenance" [value]="type.id">
+                                {{type.name}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+            <!-- maintenance Detail -->
+            <div class="row seccion-container ">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title tsp-title">
+                                {{ 'MAINTENANCES.LABELS.MAINTENANCE_DETAILS' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- class maintenance -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill" *ngIf="classMaintencances">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.MAINTENANCE_CLASS'
+                                | translate }}</mat-label>
+                            <mat-select formControlName="maintenanceClassId" required
+                                (ngModelChange)="ChangeClassMaintenance()" class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let classMaintencance of classMaintencances"
+                                    [value]="classMaintencance.id" class="tsp-font-size-default-content">
+                                    {{ classMaintencance.value }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="form.controls.maintenanceClassId.errors?.required && form.controls.maintenanceClassId.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- Engine Type -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.TYPE_MOTOR' |
+                                translate }}
+                            </mat-label>
+                            <input class="tsp-font-size-default-content" type="text" matInput
+                                formControlName="typeEngine"
+                                placeholder="{{ 'MAINTENANCES.LABELS.TYPE_MOTOR' | translate }}">
+                            <mat-error
+                                *ngIf="form.controls.typeEngine.errors?.required && form.controls.typeEngine.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- KM -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.KM' | translate }}
+                            </mat-label>
+                            <input class="tsp-font-size-default-content" type="number" matInput formControlName="km"
+                                placeholder="{{ 'MAINTENANCES.LABELS.KM' | translate }}">
+                            <mat-error *ngIf="form.controls.km.errors?.required && form.controls.km.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Date -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.DATE' | translate
+                                }} </mat-label>
+                            <input matInput [matDatepicker]="date" required formControlName="date"
+                                class="tsp-font-size-default-content" />
+                            <mat-datepicker-toggle matSuffix [for]="date"> </mat-datepicker-toggle>
+                            <mat-datepicker #date></mat-datepicker>
+
+                            <mat-error *ngIf="form.controls.date.errors?.required && form.controls.date.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- Amount -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.TOTAL_AMOUNT' |
+                                translate }} </mat-label>
+                            <input type="number" matInput formControlName="totalAmount"
+                                class="tsp-font-size-default-content"
+                                placeholder="{{ 'MAINTENANCES.LABELS.TOTAL_AMOUNT' | translate }}">
+                            <mat-error
+                                *ngIf="form.controls.totalAmount.errors?.required && form.controls.totalAmount.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- Plan Maintenance -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.PLAN_MAINTENANCE'
+                                | translate }}</mat-label>
+                            <mat-select formControlName="planId" required class="tsp-font-size-default-content">
+                                <mat-option *ngFor="let planMaintenance of listPlanMaintenance"
+                                    [value]="planMaintenance.id" class="tsp-font-size-default-content">
+                                    {{ planMaintenance.contractNumber }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.planId.errors?.required && form.controls.planId.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                <div class="row" *ngIf="dataMaintenance.state !=maintenanceStateRegisteredParameter ||
+                dataMaintenance.planState != planStateRegisterdParameter">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'MAINTENANCES.LABELS.EXECUTE_DATE' |
+                                translate
+                                }} </mat-label>
+                            <input matInput [matDatepicker]="date" required formControlName="executeDate"
+                                class="tsp-font-size-default-content" />
+                            <mat-datepicker-toggle matSuffix [for]="date"> </mat-datepicker-toggle>
+                            <mat-datepicker #date></mat-datepicker>
+
+                            <mat-error *ngIf="form.controls.date.errors?.required && form.controls.date.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- -------------------------------Activitie and SpareParts----------------------------------------- -->
+                <div class="row" *ngIf="dataMaintenance.state !=maintenanceStateRegisteredParameter || 
+                dataMaintenance.planState != planStateRegisterdParameter">
+                    <hr class="sub-ks-line" />
+                    <!-- Activities Type Corrective -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 sub-ks-line-vertical"
+                        *ngIf="form.controls.typeMaintenanceId.value==correctiveMaintenance">
+                        <span class="tsp-font-size-default-content  tsp-labels tsp-margin-botton">{{
+                            'MAINTENANCES.LABELS.ACTIVITIES' | translate }} </span><br>
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                'MAINTENANCES.LABELS.SPARE_PARTS' | translate }}</mat-label>
+                            <mat-select class="tsp-font-size-default-content" (selectionChange)="addActivities($event)"
+                                formControlName="selectActivities">
+                                <mat-option *ngFor="let item of activitiesTemporal" [value]="item.id"
+                                    class="tsp-font-size-default-content  tsp-labelss">
+                                    {{ item.activitie }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute"
+                            *ngIf="arrayListActivities.controls.length>0">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'MAINTENANCES.LABELS.DESCRIPTION'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'MAINTENANCES.LABELS.AMOUNT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.OPTIONS'|
+                                            translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody formArrayName="arrayListActivities">
+                                    <ng-container *ngFor="let item of arrayListActivities.controls;let i=index;">
+                                        <tr *ngIf="arrayListActivities.controls" [formGroupName]="i">
+                                            <td class="tsp-font-size-default-content"><input type="text"
+                                                    formControlName="description" class="descriptionSpareParts">
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="quantity"
+                                                    type="number" min="1" maxlength="10" />
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><button mat-flat-button
+                                                    type="button" color="warn" class="removeItem"
+                                                    (click)="removeDataActivitie(i)">
+                                                    <mat-icon>close</mat-icon>
+                                                </button>
+                                            </td>
+                                    </ng-container>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- Activities Type Preventive -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 sub-ks-line-vertical"
+                        *ngIf="form.controls.typeMaintenanceId.value==preventiveMaintenance">
+                        <span class="tsp-font-size-default-content  tsp-labels tsp-margin-botton">{{
+                            'MAINTENANCES.LABELS.ACTIVITIES' | translate }} </span><br>
+                        <div *ngFor="let activitie of activities;let i=index" class="check-box">
+                            <mat-checkbox [checked]="activitie.isSelected==true" [value]="activitie.id"
+                                (change)="changeActivities($event,i)">
+                                <span class="tsp-font-size-default-content">{{activitie.activitie}}</span>
+                            </mat-checkbox>
+
+                        </div>
+                    </div>
+
+                    <!-- SparePare -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 sub-ks-line-vertical">
+                        <span class="tsp-font-size-default-content  tsp-labels tsp-margin-botton">{{
+                            'MAINTENANCES.LABELS.SPARE_PARTS' | translate }} </span><br>
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                'MAINTENANCES.LABELS.SPARE_PARTS' | translate }}</mat-label>
+                            <mat-select class="tsp-font-size-default-content" (selectionChange)="addSpareParts($event)"
+                                formControlName="selectSpareParts">
+                                <mat-option *ngFor="let item of sparePartsTemporal" [value]="item.id"
+                                    class="tsp-font-size-default-content  tsp-labelss">
+                                    {{ item.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute"
+                            *ngIf="arrayListMaintenanceDetail.controls.length>0">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'MAINTENANCES.LABELS.DESCRIPTION'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'MAINTENANCES.LABELS.AMOUNT'|
+                                            translate}}</th>
+                                        <th class="tsp-font-size-default-content columnTable">
+                                            {{'CONTRACT.OPTIONS'|
+                                            translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody formArrayName="arrayListMaintenanceDetail">
+                                    <ng-container *ngFor="let item of arrayListMaintenanceDetail.controls;let i=index;">
+                                        <tr *ngIf="arrayListMaintenanceDetail.controls" [formGroupName]="i">
+                                            <td class="tsp-font-size-default-content"><input type="text"
+                                                    formControlName="description" class="descriptionSpareParts">
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><input formControlName="quantity"
+                                                    type="number" min="1" maxlength="10" />
+                                            </td>
+                                            <td class="tsp-font-size-default-content"><button mat-flat-button
+                                                    type="button" color="warn" class="removeItem"
+                                                    (click)="removeDataSpareParts(i)">
+                                                    <mat-icon>close</mat-icon>
+                                                </button>
+                                            </td>
+                                    </ng-container>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row seccion-container mt-1" *ngIf="dataMaintenance.state !=maintenanceStateRegisteredParameter ||
+            dataMaintenance.planState != planStateRegisterdParameter">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title tsp-title">
+                                {{ 'MAINTENANCES.LABELS.DOCUMENT' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <cad-upload-files [Multiple]="true" [Label]="'MAINTENANCES.LABELS.VEHICLE_INVENTORY' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocumentVehicle($event)"
+                    [IdFileUpdate]="'fileVehicle'"></cad-upload-files>
+
+                <cad-upload-files [Multiple]="true" [Label]="'MAINTENANCES.LABELS.RECORD_CONFORMITY' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocumentConformity($event)"
+                    [IdFileUpdate]="'fileConformity'"></cad-upload-files>
+
+                <cad-upload-files [Multiple]="true" [Label]="'MAINTENANCES.LABELS.RECORD_SPARE_PARTS' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocumentSparePart($event)"
+                    [IdFileUpdate]="'fileSparePart'"></cad-upload-files>
+
+            </div>
+        </div>
+        <div class=" row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()"
+                    [disabled]="form.invalid || arrayListMaintenanceDetail.length==0 || loading==false">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' |
+                    translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' |
+                    translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

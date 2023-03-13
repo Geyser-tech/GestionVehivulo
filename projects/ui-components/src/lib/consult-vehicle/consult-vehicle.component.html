@@ -1,0 +1,79 @@
+<form [formGroup]="form" (ngSubmit)="searchVehicle()">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <mat-form-field class="search-input">
+                <mat-label> {{LicensePlate}} </mat-label>
+                <input type="text" matInput placeholder="{{LicensePlate}}" maxlength="6" required
+                    formControlName="licensePlate"
+                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                <mat-error *ngIf="form.controls.licensePlate.errors?.required && form.controls.licensePlate.touched">
+                    {{MessageError}} </mat-error>
+            </mat-form-field>
+            <button class="button-actions" (click)="searchVehicle()" [disabled]="form.invalid">
+                <mat-icon class="tsp-icons">search</mat-icon>
+            </button>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels"> {{Area}}</span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.area}}
+            </span>
+        </div>
+        <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Responsible}} </span><br>
+            <span class="tsp-font-size-default-content ">
+                {{dataResponsible}}
+            </span>
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Type}}</span><br>
+            <span class="tsp-font-size-default-content" *ngIf="vehicle !=null">
+                {{vehicle.type}}
+            </span><br>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Brand}}</span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.brand}}
+            </span><br>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Model}}</span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.model}}
+            </span><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Color}}</span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.color}}
+            </span><br>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Year}}</span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.year}}
+            </span><br>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{NEngine}} </span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.engineNumber}}
+            </span><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <span class="tsp-font-size-default-content  tsp-labels">{{Serie}} </span><br>
+            <span class="tsp-font-size-default-content " *ngIf="vehicle !=null">
+                {{vehicle.serialNumber}}
+            </span><br>
+        </div>
+    </div>
+</form>

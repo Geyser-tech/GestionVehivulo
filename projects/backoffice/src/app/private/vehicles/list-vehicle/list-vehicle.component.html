@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <span class="tsp-font-size-modal-titles tsp-view-title">{{viewTitle}}</span>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4" *ngIf="areas!=null">
+        <cad-chips-input [items]="areas" [InputLabel]="'VEHICLES.SHOW.LABELS.ASSIGNED_AREA' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedAreas($event)">
+        </cad-chips-input>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4" *ngIf="brands!=null">
+        <cad-chips-input [items]="brands" [InputLabel]="'VEHICLES.SHOW.LABELS.BRAND' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedBrands($event)">
+        </cad-chips-input>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4" *ngIf="vehicleTypes!=null">
+        <cad-chips-input [items]="vehicleTypes" [InputLabel]="'VEHICLES.SHOW.LABELS.VEHICLE_TYPE' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedVehicleTypes($event)">
+        </cad-chips-input>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngIf="vehicleStates!=null">
+        <cad-multi-check-box-filter [items]="vehicleStates"
+            [GroupName]="'VEHICLES.SHOW.LABELS.VEHICLE_STATE' | translate"
+            (selectedItems)="selectedVehicleStates($event)">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngIf="pipStates!=null">
+        <cad-multi-check-box-filter [items]="pipStates" [GroupName]="'VEHICLES.SHOW.LABELS.SOAT_STATE' | translate"
+            (selectedItems)="selectedPipStates($event)">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngIf="vehicleInspections!=null">
+        <cad-multi-check-box-filter [items]="vehicleInspections"
+            [GroupName]="'VEHICLES.SHOW.LABELS.TECHNICAL_REVIEW_STATE' | translate"
+            (selectedItems)="selectedVehicleInspections($event)"></cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngIf="registerStates!=null">
+        <cad-multi-check-box-filter [items]="registerStates"
+            [GroupName]="'VEHICLES.SHOW.LABELS.REGISTER_STATE' | translate"
+            (selectedItems)="selectedRegisterStates($event)">
+        </cad-multi-check-box-filter>
+    </div>
+</div>
+<div class="row">
+    <div class="button-add-container">
+        <button mat-raised-button class="button-clear-filters" (click)="clearFilters()">
+            <mat-icon>filter_alt_off</mat-icon>
+        </button>
+        <button mat-raised-button class="button-add mr-2 tsp-font-size-buttons" (click)="searchData()">{{
+            'VEHICLES.BUTTONS.SEARCH' |
+            translate
+            }}
+        </button>
+        <button mat-raised-button class="button-add tsp-font-size-buttons" (click)="openRegister()"
+            *ngIf="!checkOnlyRead">
+            <mat-icon>add</mat-icon>{{
+            'VEHICLES.BUTTONS.NEW' | translate
+            }}
+        </button>
+    </div>
+</div>
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+    </cad-table-filter>
+</div>

@@ -1,0 +1,82 @@
+{
+    "data": [
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "De Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "De Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "dni": "78021709",
+            "driver": "Fernando Carrillo Toledo",
+            "phone": "987656789",
+            "gmail": "fernado@tsolperu.com",
+            "license": "234567",
+            "expedition": "12/08/2022",
+            "expiration": "12/08/2022",
+            "classCategory": "Allb",
+            "registrationStatus": "De Baja",
+            "statusClass": "Red"
+        }
+    ]
+}

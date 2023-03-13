@@ -1,0 +1,91 @@
+@import 'variables';
+
+.row {
+    width: 100%;
+}
+
+.seccion-container {
+    margin: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.register-background {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.buttones-container {
+    display: flex;
+    justify-content: end;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-form-field {
+    margin-right: 12px;
+}
+
+//TABLA 
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 800px;
+    margin: 0px auto;
+}
+
+td,
+th {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+td:nth-child(n + 3),
+th:nth-child(n + 3) {
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #DCDCDC;
+}
+
+thead {
+    background-color: #DCDCDC;
+    color: black;
+}

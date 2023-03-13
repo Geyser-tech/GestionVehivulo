@@ -1,0 +1,64 @@
+@import 'variables';
+
+
+table,
+th,
+td {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+.tsp-title-module-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-mimp {
+    width: 280px;
+}
+
+.tsp-labels-date {
+    font-weight: 600;
+
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-top: -28px;
+
+}
+
+.tsp-action-buttons {
+    margin-left: 5px;
+}
+
+.tsp-table-container {
+    padding: 0% 1% 0% 1%;
+}
+
+.tsp-title-module {
+    font-weight: 600;
+    color: $tspSigesBlue;
+}
+
+.title-container {
+    margin-left: 5px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.title-label {
+    text-align: center;
+}
+
+
+.tsp-secction-title {
+    margin-top: 10px;
+}
+
+.title-container-secction {
+    text-align: start;
+}

@@ -1,0 +1,100 @@
+<!-- Individual -->
+<p-toast></p-toast>
+<div *ngIf="!Multiple" class="container">
+    <p-toolbar styleClass="mb-4 gap-2">
+        <input (change)="fileUpload($event)" accept="{{typeAccep}}" type="file" id="fileUpload">
+        <button class="button-Upload" mat-flat-button (click)="btn_upload()">
+            <mat-icon>note_add</mat-icon>{{Label}}
+        </button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedFile()"
+            [disabled]="!selectedItem || !selectedItem.length"></button>
+    </p-toolbar>
+    <p-table *ngIf="file.length !=0" [value]="file" [(selection)]="selectedItem" dataKey="name"
+        [selectionPageOnly]="true" styleClass="p-datatable-customers" class="tsp-table-container table">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 4rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="Documents" style="min-width:30rem">
+                    Documentos
+                </th>
+            </tr>
+
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="rowData">
+                    </p-tableCheckbox>
+                </td>
+                <td class="data-columns tsp-font-size-default-content">
+                    <label class="label-name-file">{{rowData.name}}&nbsp;</label>
+                    <label>&nbsp;({{rowData.size}}&nbsp;bytes)</label>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-toast></p-toast>
+<!-- Multiple -->
+<div *ngIf="Multiple" class="container">
+    <p-toolbar styleClass="mb-4 gap-2">
+        <input (change)="fileUploads($event)" accept="{{typeAccep}}" type="file" id="{{IdFileUpdate}}" multiple>
+        <button class="button-Upload" mat-flat-button (click)="btn_uploads()">
+            <mat-icon class="icon-note">note_add</mat-icon>{{Label}}
+        </button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedFiles()"
+            [disabled]="!selectedItems || !selectedItems.length"></button>
+    </p-toolbar>
+
+
+    <p-table *ngIf="files.length !=0" [value]="files" [(selection)]="selectedItems" [selectionPageOnly]="true"
+        styleClass="p-datatable-customers" class="tsp-table-container table" dataKey="name">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 4rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="Documents" style="min-width:30rem">
+                    Documentos
+                </th>
+            </tr>
+
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+            <tr *ngIf="rowData.type !='registered' && rowData.size">
+                <td>
+                    <p-tableCheckbox [value]="rowData">
+                    </p-tableCheckbox>
+                </td>
+                <td class="data-columns tsp-font-size-default-content">
+                    <label>{{rowData.name}}&nbsp;</label>
+                    <label class="label-name-file">&nbsp;({{rowData.size}}&nbsp;bytes)</label>
+                    <mat-icon class="icon-star">star</mat-icon>
+                </td>
+            </tr>
+            <tr *ngIf="rowData.type =='registered' && rowData.stateFile!='deleted'">
+                <td>
+                    <p-tableCheckbox [value]="rowData">
+                    </p-tableCheckbox>
+                </td>
+                <td class="data-columns tsp-font-size-default-content">
+                    <label>{{rowData.fileName}}&nbsp;</label>
+
+                </td>
+            </tr>
+            <tr *ngIf="rowData.stateFile=='deleted' && rowData.type =='registered'">
+                <td>
+                </td>
+                <td class="data-columns tsp-font-size-default-content">
+                    <label class="label-deleted">{{rowData.fileName}}&nbsp;</label>
+                    <button class="button-actions " (click)="restoreFile(rowData)">
+                        <mat-icon class="tsp-icons">autorenew</mat-icon>
+
+                    </button>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

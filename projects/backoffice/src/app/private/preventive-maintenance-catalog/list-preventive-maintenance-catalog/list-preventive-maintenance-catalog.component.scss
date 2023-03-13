@@ -1,0 +1,124 @@
+// @import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.date {
+    align-items: center;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+.dateContent {
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: $tspSigesBlue;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.generalMatForm {
+    width: 100%;
+    font-size: 14px;
+}
+
+.filterDate {
+    align-items: center;
+    margin-left: 0px;
+}
+
+.nameView {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btnSearch {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.btnNewAndHistory {
+    margin-top: auto;
+    // margin-bottom: auto;
+    display: flex;
+    justify-content: end;
+}
+
+.btnNew {
+
+    margin-top: 10px;
+
+}
+
+.filter {
+    margin-bottom: 11px;
+}
+
+.contentBTNs {
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width: 375px) {
+
+    .btnSearch {
+        text-align: center;
+        margin-bottom: 7px;
+        margin-top: 2px;
+    }
+
+    .contentBTNs {
+        justify-content: center;
+    }
+
+}
+
+//CHECK
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.btnfilter {
+    margin-top: 10px;
+}
+
+.inputSelectheader {
+    margin-top: 10px;
+}
+
+.tsp-action-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.tsp-action-button {
+    margin-right: 5px;
+}

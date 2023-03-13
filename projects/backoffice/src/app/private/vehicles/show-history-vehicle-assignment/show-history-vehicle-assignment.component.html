@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="row">
+        <div class="view-title-container">
+            <span class="tsp-title tsp-view-title tsp-font-size-modal-titles"> {{
+                'VEHICLES.TITLES.HISTORY_VEHICLE_ASSIGNMENT' | translate
+                }}</span>
+        </div>
+        <form [formGroup]="form" class="register-background tsp-container">
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title tsp-font-size-default-title">
+                            {{ 'VEHICLES.LABELS.FILTERS' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-3 col-md-3 col-lg-3 col-xl-3">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{ 'VEHICLES.LABELS.AREA' | translate }}</mat-label>
+                            <mat-select formControlName="area" (ngModelChange)="selectedAreas($event)" #select>
+                                <mat-option *ngFor="let area of areas" [value]="area.id" #select>
+                                    {{area.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.area.errors?.required && form.controls.area.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-3 col-md-3 col-lg-3 col-xl-3">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{ 'VEHICLES.LABELS.USER_AREA' | translate }}</mat-label>
+                            <mat-select formControlName="userArea" [disabled]="userAreas.length<1">
+                                <mat-option *ngFor="let userArea of userAreas" [value]="userArea.id">
+                                    {{userArea.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="form.controls.userArea.errors?.required && form.controls.userArea.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-3 col-md-3 col-lg-3 col-xl-3">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'VEHICLES.LABELS.FROM_DATE'
+                                | translate }} </mat-label>
+                            <input class="tsp-font-size-default-content" matInput [matDatepicker]="startDate"
+                                formControlName="startDate" />
+                            <mat-datepicker-toggle matSuffix [for]="startDate"> </mat-datepicker-toggle>
+                            <mat-datepicker #startDate></mat-datepicker>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-3 col-md-3 col-lg-3 col-xl-3">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{ 'VEHICLES.LABELS.UNTIL_DATE'
+                                | translate }} </mat-label>
+                            <input class="tsp-font-size-default-content" matInput [matDatepicker]="endDate"
+                                formControlName="endDate" />
+                            <mat-datepicker-toggle matSuffix [for]="endDate"> </mat-datepicker-toggle>
+                            <mat-datepicker #endDate></mat-datepicker>
+
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="button-add-container">
+                    <button mat-raised-button class="button-add mr-2 tsp-font-size-buttons" (click)="searchData()">{{
+                        'VEHICLES.BUTTONS.SEARCH' |
+                        translate
+                        }}
+                    </button>
+                </div>
+
+            </div>
+        </form>
+        <div class="row mt-4">
+            <p-table #dt1 [value]="data" dataKey="id" styleClass="p-datatable-customers" [columns]="columns"
+                class="tsp-table-container">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th class="column-options table-font-header">
+                            Nº
+                        </th>
+                        <th class="column-options table-font-header">
+                            FECHA DE REGISTRO
+                        </th>
+                        <th class="column-options table-font-header">
+                            HORA
+                        </th>
+                        <th class="column-options table-font-header">
+                            PLATA
+                        </th>
+                        <th class="column-options table-font-header">
+                            DESCRIPCIÓN
+                        </th>
+                        <th class="column-options table-font-header">
+                            CONDUCTORES
+                        </th>
+                        <th class="column-options table-font-header">
+                            FECHA DE EXPIRACIÓN
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-customer let-rowData let-columns="columns" let-rowIndex="rowIndex">
+                    <tr [pSelectableRow]="customer">
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowIndex + 1}}
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowData.registrationDate}}
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowData.registrationHour}}
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowData.licencePlate}}
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowData.description}}
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            <div *ngFor="let driver of rowData.drivers"><label> {{driver}}<br> </label></div>
+
+
+                        </td>
+                        <td class="tsp-font-size-default-content tsp-index">
+                            {{rowData.expirationDate}}
+                        </td>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="4" class="tsp-font-size-default-content">No se encontraron registros disponibles
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                    mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

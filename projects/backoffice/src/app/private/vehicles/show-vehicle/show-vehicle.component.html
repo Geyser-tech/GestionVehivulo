@@ -1,0 +1,300 @@
+<div class="container " *ngIf="vehicle !=null">
+    <div class="row">
+        <div class="view-title-container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'VEHICLES.SHOW.LABELS.VEHICLE' |
+                        translate
+                        }}
+                        |
+                        {{idVehicle}}</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="buttons-header-container" *ngIf="vehicle.registrationState!=registrationStateUnsuscribeParameter &&
+                        !checkOnlyRead">
+                        <button mat-raised-button color="primary" class="action-buttons tsp-button-tool">
+                            <mat-icon class="icons">construction</mat-icon>
+                        </button>
+                        <button mat-raised-button color="primary" class="action-buttons tsp-button-edit"
+                            (click)="editVehicle()">
+                            <mat-icon class="icons">edit</mat-icon>
+                        </button>
+                        <button mat-raised-button color="primary" class="action-buttons tsp-button-delete"
+                            (click)="unsuscribeVehicle()">
+                            <mat-icon class="icons">delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row tsp-container">
+        <mat-dialog-content>
+            <div class="seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="title-container">
+                            <span class=" tsp-font-size-default-title tsp-title"> {{
+                                'VEHICLES.LABELS.GENERAL_DATE' |
+                                translate }}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                'VEHICLES.LABELS.LICENSE_PLATE'
+                                |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.licensePlate}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels"> {{ 'VEHICLES.LABELS.BRAND' |
+                                translate
+                                }}
+                            </span>
+                            <br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.brand}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{ 'VEHICLES.LABELS.MODEL' |
+                                translate
+                                }}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.model}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{ 'VEHICLES.LABELS.YEAR' |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.year}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{
+                                'VEHICLES.LABELS.VEHICLE_TYPE' |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.type}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{
+                                'VEHICLES.LABELS.ASSIGNED_AREA' |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.area}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{
+                                'VEHICLES.SHOW.LABELS.VEHICLE_STATE'
+                                |
+                                translate }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.state}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">
+                                {{'VEHICLES.LABELS.BELONGING' | translate}}
+                            </span>
+                            <br>
+                            <span class="tsp-font-size-default-content">
+                                {{vehicle.belonging}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="title-container">
+                            <span class=" tsp-font-size-default-title tsp-title"> {{
+                                'VEHICLES.LABELS.FEATURES' |
+                                translate }}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels"> {{ 'VEHICLES.LABELS.COLOR' |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.color}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels"> {{
+                                'VEHICLES.LABELS.SERIAL_NUMBER'
+                                |
+                                translate }}
+                            </span>
+                            <br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.serialNumber}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{
+                                'VEHICLES.LABELS.ENGINE_NUMBER' |
+                                translate
+                                }}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.engineNumber}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{ 'VEHICLES.LABELS.ENGINE_TYPE'
+                                |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.engineType}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">{{ 'VEHICLES.LABELS.FUEL_TYPE' |
+                                translate
+                                }}</span><br>
+                            <span class="tsp-font-size-default-content ">
+                                {{vehicle.fuelType}}
+                            </span>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <span class="tsp-font-size-default-content  tsp-labels">
+                                {{'VEHICLES.LABELS.FACTORY_CONSUMPTION_RANGE' | translate}}
+                            </span>
+                            <br>
+                            <span class="tsp-font-size-default-content">
+                                {{vehicle.factoryConsumptionRange}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="title-container">
+                            <span class=" tsp-font-size-default-title tsp-title"> {{
+                                'VEHICLES.LABELS.ALERT' |
+                                translate }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <span class=" tsp-font-size-default-content tsp-labels"> {{
+                            'VEHICLES.SHOW.LABELS.PIP' |
+                            translate }}</span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <span class="tsp-font-size-default-content"
+                            *ngIf="vehicle.pipPolicy != null ; else notPipRegistered">
+                            {{statePIP}}</span>
+                        <ng-template #notPipRegistered>
+                            <span class="tsp-font-size-default-content"> {{'VEHICLES.SHOW.LABELS.PIP_NOT_REGISTRED' |
+                                translate }}</span>
+                        </ng-template>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div *ngIf="vehicle.pipPolicy != null" class="tsp-soat-status-container">
+                            <span class="tsp-font-size-default-content"
+                                [ngClass]="{'soat-status-Lapsed':pipStateLapsedParameter == vehicle.pipState,
+                                 'soat-status-valid': pipStateActiveParameter == vehicle.pipState, 
+                                 'soat-status-expire': pipStateExpireParameter == vehicle.pipState}">{{vehicle.untilValidityPolicy | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <span class=" tsp-font-size-default-content tsp-labels">
+                            {{
+                            'VEHICLES.SHOW.LABELS.TECHNICAL_REVIEW' |
+                            translate }}</span>
+
+
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <span class="tsp-font-size-default-content"
+                            *ngIf="vehicle.vehicleInspectionExpirationDate != null; else notVehicleInspectionRegistered">
+                            {{stateVehicleInspection}}</span>
+                        <ng-template #notVehicleInspectionRegistered>
+                            <span class="tsp-font-size-default-content">
+                                {{'VEHICLES.SHOW.LABELS.VEHICLE_INSPECTION_NOT_REGISTRED' | translate }}</span>
+                        </ng-template>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 ">
+                        <div *ngIf="vehicle.vehicleInspectionExpirationDate != null" class="tsp-soat-status-container">
+                            <span class="tsp-font-size-default-content"
+                                [ngClass]="{'soat-status-Lapsed':vehicleInspectionStateLapsedParameter ==  vehicle.vehicleInspectionState, 'soat-status-valid': vehicleInspectionStateActiveParameter == vehicle.vehicleInspectionState,
+                                'soat-status-expire': vehicleInspectionStateExpireParameter == vehicle.vehicleInspectionState}">{{vehicle.vehicleInspectionExpirationDate
+                                | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <span class=" tsp-font-size-default-content tsp-labels"> {{
+                            'VEHICLES.SHOW.LABELS.MAINTENANCE' |
+                            translate }}</span>
+                    </div>
+                    <!-- <div class="col-12 col-md-4 col-lg-4"> </div> -->
+                    <div class="col-12 col-md-4 col-lg-4" *ngIf="maintenanceDates.length!=0">
+                        <div *ngFor="let maintenanceDate of maintenanceDates">
+                            <div class="row sectionMaintenance">
+                                <div class="col-2 col-md-2 col-lg-2 classMaintenance">
+                                    <span
+                                        class="tsp-font-size-default-content">{{maintenanceDate.maintenanceClass}}</span>
+                                </div>
+                                <div class="col-10 col-md-10 col-lg-10 dateMaintenance"
+                                    [ngClass]="{'stateExpire' : maintenanceDate.maintenanceDate<today,'stateNextMaintenance' : maintenanceDate.maintenanceDate>today}">
+                                    <span class="tsp-font-size-default-content"> {{maintenanceDate.maintenanceDate |
+                                        date:'dd/MM/yyyy' }}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6" *ngIf="maintenanceDates.length==0">
+                        <span class="tsp-font-size-default-content">{{'VEHICLES.SHOW.LABELS.MAINTENANCE_NOT_REGISTRED' |
+                            translate }}</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </mat-dialog-content>
+    </div>
+    <div class="row mt-2 mb-4">
+        <div class="col-xs-12 col-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="button-container">
+                <button mat-raised-button color="primary"
+                    class="marging-buttons button-close tsp-font-size-default-content" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

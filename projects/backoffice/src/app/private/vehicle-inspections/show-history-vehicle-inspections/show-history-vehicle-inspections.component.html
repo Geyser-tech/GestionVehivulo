@@ -1,0 +1,97 @@
+<div class="container">
+    <form [formGroup]="historyVehicleInspectionForm">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div>
+                    <mat-label class="tsp-font-size-modal-titles">{{'VEHICLE_INSPECTIONS.TITLES.SHOW_HISTORY'
+                        |
+                        translate}}</mat-label>
+                </div>
+            </div>
+        </div>
+
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <hr class="ks-line mt-3" />
+            <div class="Section">
+                <div class="row mb-1">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="title-container">
+                            <span class="tsp-font-size-default-title tsp-title">
+                                {{'VEHICLE_INSPECTIONS.DATA.INSURED_VEHICLE'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <cad-search-print class="mt-2" [PlaceHolderInput]="'PIP.DATA.LICENSE_PLATE' | translate"
+                            (SendIdentifierObject)="searchVehicle($event)" [SomeObject]="vehicle" [Labels]="labels"
+                            [ColumnNumber]=4 [isvehicle]="true">
+                        </cad-search-print>
+                    </div>
+                </div>
+            </div>
+            <!-- Section Contractor -->
+            <hr class="ks-line" />
+            <div class="Section mb-4">
+                <div class="row seccion-container">
+                    <div class="ContractorData">
+                        <div class="title-container">
+                            <mat-label
+                                class="tsp-font-size-default-title tsp-title">{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.TITLE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div class="container row table">
+                            <p-table [value]="history">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.N_CERTIFIED'| translate}}</th>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.SUPPLIER'| translate}}</th>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.REVIEW_DATE'| translate}}</th>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.EXPIRATION_DATE'| translate}}</th>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.STATE'| translate}}</th>
+                                        <th class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{'VEHICLE_INSPECTIONS.SHOW_HISTORY.STATE_REGISTER'| translate}}</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-vehicleInspection let-rowIndex="rowIndex">
+                                    <tr>
+                                        <td class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{vehicleInspection.certificateNumber}}</td>
+                                        <td class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{vehicleInspection.provider}}</td>
+                                        <td class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{vehicleInspection.reviewDate | date:'dd/MM/yyyy'}}</td>
+                                        <td class="tsp-font-size-default-title tsp-font-size-default">
+                                            {{vehicleInspection.expirationDate| date:'dd/MM/yyyy'}}</td>
+                                        <td class="tsp-font-size-default-title tsp-font-size-default"
+                                            [ngClass]="{'statusRed': vehicleInspection.state=='Caducado','statusSuccess' : vehicleInspection.state=='Vigente','statusYelow' : vehicleInspection.state=='Por Vencer'}">
+                                            {{vehicleInspection.state}}
+                                        <td class="tsp-font-size-default-title tsp-font-size-default"
+                                            [ngClass]="{'statusRed': vehicleInspection.registrationState=='De Baja','statusSuccess' : vehicleInspection.registrationState=='Activo'}">
+                                            {{vehicleInspection.registrationState}}
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary" class="button-close tsp-font-size-buttons" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

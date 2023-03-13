@@ -1,0 +1,92 @@
+<!-- AAAAAAAAAAAAAAAAAa -->
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+                <span class="tsp-font-size-modal-titles">{{ 'MOBILITY_REQUEST.RECORD.TITLE' |
+                    translate }}</span>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-content class="container">
+        <div class="">
+            <hr class="ks-line">
+            <div class="row">
+                <div class=" title title-container">
+                    <mat-label class="tsp-font-size-default-title title-container">
+                        {{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'|
+                        translate}}</mat-label>
+                </div>
+                <div class="row tsp-container">
+                    <cad-search-print [PlaceHolderInput]="'PIP.DATA.LICENSE_PLATE' | translate"
+                        (SendIdentifierObject)="searchVehicle($event)" [SomeObject]="vehicle" [Labels]="labels"
+                        [ColumnNumber]=4 [isvehicle]="true">
+                    </cad-search-print>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <hr class="ks-line">
+            <div class="row">
+                <div class="title title-container">
+                    <mat-label class="tsp-font-size-default-title title-container">
+                        {{'MOBILITY_REQUEST.RECORD.HISTORY_OF_INSURED_VEHICLE'|
+                        translate}}:
+                    </mat-label>
+                </div>
+                <div class=" container row tsp-container mt-2">
+                    <p-table [value]="recordPip">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th class="table-font-header ">
+                                    {{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.POLICY_NUMBER'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.BUSINESS'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.INITIAL_DATE'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.FINAL_DATE'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.REGISTER_DATE'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'PIP.DATA.REGISTRATION_STATE'|
+                                    translate}}</th>
+                                <th class="table-font-header">{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.STATE'|
+                                    translate}}</th>
+
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-recordPip let-rowIndex="rowIndex">
+                            <tr>
+                                <td class="tsp-font-size-default-content">{{recordPip.policyNumber}}</td>
+                                <td class="tsp-font-size-default-content">{{recordPip.insurer}}</td>
+                                <td class="tsp-font-size-default-content">{{recordPip.fromValidityPolicy | date:
+                                    'dd/MM/yyyy'}}</td>
+                                <td class="tsp-font-size-default-content">{{recordPip.untilValidityPolicy | date:
+                                    'dd/MM/yyyy'}}</td>
+                                <td class="tsp-font-size-default-content">{{recordPip.registerDate | date: 'dd/MM/yyyy
+                                    h:mm a'}}</td>
+                                <td class="tsp-font-size-default-content" [ngClass]="{'pip-status-valid': recordPip.registrationState==true,
+                                'pip-status-expire' : recordPip.registrationState==false}">{{recordPip.stateRegister}}
+                                </td>
+                                <td class="tsp-font-size-default-content" [ngClass]="{'pip-status-valid': recordPip.state==pipStateActiveParameter,
+                                    'pip-status-expire' : recordPip.state==pipStateExpireParameter,
+                                    'pip-status-lapsed' : recordPip.state==pipStateLapsedParameter}">
+                                    {{recordPip.stateString}}
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 CloseModal">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,353 @@
+<div class="container" *ngIf="mobilityRequest">
+    <div class="tsp-title-header-modal titleModal row">
+        <!-- IZQUIERDA -->
+
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 row leftSectionTitleModal">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 titleNameModal">
+                <div>
+                    <span class="tsp-font-size-modal-titles">SOL MOV {{mobilityRequest.serviceNumber
+                        }}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal" *ngIf="mobilityRequest.registrationState==true &&
+            !checkOnlyRead">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button class="tsp-button-edit" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button class="tsp-button-delete" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'FUEL_SUPPLIES.UNSUSCRIBE.BTN'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-content class="container">
+        <!-- Section Vehicle -->
+        <div class="Section mt-2">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container">
+                    <mat-label
+                        class="tsp-font-size-default-title title-container">{{'MOBILITY_REQUEST.LABELS.VEHICLE_DATA'|
+                        translate}}</mat-label>
+                </div>
+                <div class="container row tsp-container">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.LICENSE_PLATE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.licensePlate
+                                }} </span>
+                        </div>
+                    </div>
+                    <!-- AREA -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.AREA'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.area}}</span>
+                        </div>
+                    </div>
+                    <!-- TYPE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.TYPE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.type}}</span>
+                        </div>
+                    </div>
+                    <!-- BRAND -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.BRAND'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.brand}}</span>
+                        </div>
+                    </div>
+                    <!-- MODEL -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.MODEL'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.model}}</span>
+                        </div>
+                    </div>
+                    <!-- COLOR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.COLOR'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.color}}</span>
+                        </div>
+                    </div>
+                    <!-- YEAR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.YEAR'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.year}}</span>
+                        </div>
+                    </div>
+                    <!-- N° ENGINE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.N_ENGINE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.engineNumber}}</span>
+                        </div>
+                    </div>
+                    <!-- N° SERIE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.SERIE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.serialNumber}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Service -->
+        <div class="Section mt-2">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container">
+                    <span class="tsp-font-size-default-title title-container">{{'MOBILITY_REQUEST.LABELS.SERVICE_DATE'|
+                        translate}}</span>
+                </div>
+                <div class="container row  tsp-container">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.N'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.serviceNumber}}</span>
+                        </div>
+                    </div>
+                    <!-- User Area -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.USER_AREA'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.userArea}}</span>
+                        </div>
+                    </div>
+                    <!-- Commission staff -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label
+                                class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.COMMISSIONARY_STAFF'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.commissionedStaff
+                                }} </span>
+                        </div>
+                    </div>
+                    <!-- Date Service -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.DATE_SERVICE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.serviceDate |
+                                date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                    <!-- Time Service -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.TIME_SERVICE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.serviceHour}}</span>
+                        </div>
+                    </div>
+                    <!-- Commission objetive -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label
+                                class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.COMMISSION_OBJETIVE'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.objective
+                                }}</span>
+                        </div>
+                    </div>
+                    <!-- Assigned driver -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label
+                                class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.ASSIGNED_DRIVER'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.driver?.name}}</span>
+                        </div>
+                    </div>
+                    <!-- Departure Time -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.DEPARTURE_TIME'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.departureTime}}</span>
+                        </div>
+                    </div>
+                    <!-- KM out -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.KM_OUT'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.departureKM}}</span>
+                        </div>
+                    </div>
+                    <!-- Time arrival -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.TIME_ARRIVAL'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.arrivalTime}}</span>
+                        </div>
+                    </div>
+                    <!-- KM arrival -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.KM_ARRIVAL'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.arrivalKM}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section DESTINATION -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="row">
+                <div class="title title-container">
+                    <mat-label
+                        class="tsp-font-size-default-title title-container">{{'MOBILITY_REQUEST.LABELS.DESTINATION_DATA'|
+                        translate}}</mat-label>
+                </div>
+                <div class="container row tsp-container">
+                    <!-- Entity -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.ENTITY'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.entity}}</span>
+                        </div>
+                    </div>
+                    <!-- Distric -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.DISTRIC'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.district}}</span>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.ADDRESS'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.address}}</span>
+                        </div>
+                    </div>
+                    <!-- Observations -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label class="tsp-font-size-default-content">{{'MOBILITY_REQUEST.LABELS.OBSERVATION'|
+                                translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span class="tsp-font-size-default-content">{{mobilityRequest.observation}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section File Uploaded -->
+        <div class="Section">
+            <div class="title title-container">
+                <span class="tsp-font-size-default-title title-container">{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' |
+                    translate}}</span>
+            </div>
+            <cad-viewer-file [Files]="mobilityRequest.documentsUrl"></cad-viewer-file>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 CloseModal">
+            <button class="button-close tsp-font-size-buttons" mat-flat-button mat-button mat-dialog-close color="warn">
+                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

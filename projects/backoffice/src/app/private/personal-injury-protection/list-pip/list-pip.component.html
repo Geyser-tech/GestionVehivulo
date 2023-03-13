@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+    <h1 class="tsp-title tsp-view-title tsp-font-size-modal-titles">{{ 'PIP.TITLE' | translate }}</h1>
+  </div>
+  <div class="filter">
+    <div class="row mt-3">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 date">
+        <div class="dateContent row">
+          <span class="title tsp-font-size-default-title">{{'PIP.LIST.DATES'| translate}}</span>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+            <mat-form-field appearance="fill" class="generalMatForm">
+              <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.INITIAL_DATE'| translate}}</mat-label>
+              <input (dateChange)="clearDateEnd()" matInput [matDatepicker]="picker1"
+                class="tsp-font-size-default-content" [(ngModel)]="fromDate">
+              <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1 class="tsp-font-size-default-content"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 dateEnd">
+            <mat-form-field appearance="fill" class="generalMatForm">
+              <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.FINAL_DATE'| translate}}</mat-label>
+              <input matInput [matDatepickerFilter]="filterDateEnd" [matDatepicker]="picker"
+                class="tsp-font-size-default-content" [(ngModel)]="toDate">
+              <mat-datepicker-toggle matSuffix [for]="picker" class="tsp-font-size-default-content">
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker class="tsp-font-size-default-content"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!-- filter state -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 filterState" *ngIf="pipStatesDetailMaster!=null">
+        <cad-multi-check-box-filter [items]="pipStatesDetailMaster" [GroupName]="'Estado'"
+          (selectedItems)="selectedPipStates($event)">
+        </cad-multi-check-box-filter>
+      </div>
+      <!-- filter Insured -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 filterInsured" *ngIf="insurersDetailMaster!=null">
+        <cad-chips-input [items]="insurersDetailMaster" [InputLabel]="'Aseguradoras:'"
+          [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedInsurers($event)">
+        </cad-chips-input>
+      </div>
+      <!-- filter area -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 filterArea" *ngIf="areasDetailMaster!=null">
+        <cad-chips-input [items]="areasDetailMaster" [InputLabel]="'Áreas'"
+          [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate" (selectedItems)="selectedAreas($event)">
+        </cad-chips-input>
+      </div>
+
+      <!-- button new and histoy -->
+    </div>
+    <div class="row ">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-buttons-container">
+        <button mat-raised-button (click)="clearFilter()" id="goToCreate"
+          class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success">
+          <mat-icon>filter_alt_off</mat-icon>
+        </button>
+        <button mat-raised-button (click)="filter()" id="goToCreate"
+          class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success">{{'PIP.LIST.SEARCH'|
+          translate}}</button>
+
+        <button mat-raised-button (click)="openRegister()" id="goToCreate" *ngIf="!checkOnlyRead"
+          class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success">
+          <mat-icon>add</mat-icon>{{'PIP.NEW'|
+          translate}}
+        </button>
+        <button mat-raised-button (click)="openHistrial()"
+          class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success">
+          <mat-icon>history</mat-icon>{{'PIP.LIST.RECORD' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Table of SOATs -->
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 listPIP">
+    <cad-table-filter [items]="pipList" [columns]="columns" [actions]="actions" id="goToCreate"
+      (searchEvent)="searchEvent($event)"></cad-table-filter>
+  </div>
+</div>

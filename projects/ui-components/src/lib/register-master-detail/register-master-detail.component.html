@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class=" title-detail-master tsp-font-size-modal-titles"> {{Title}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="detailMasterForm">
+            <div class="form-container">
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label class="tsp-font-size-default-content"> {{CodeInput}}</mat-label>
+                        <input matInput placeholder="{{CodeInput}}" formControlName="code"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="detailMasterForm.controls.code.errors?.required && detailMasterForm.controls.code.touched">
+                            {{ errorMessageRequired}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="detailMasterForm.controls.code.errors?.pattern && detailMasterForm.controls.code.touched">
+                            {{ errorMessageUpperCase}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label class="tsp-font-size-default-content"> {{NameInput}}</mat-label>
+                        <input matInput placeholder="{{NameInput}}" formControlName="name"
+                            class="tsp-font-size-default-content">
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="detailMasterForm.controls.name.errors?.required && detailMasterForm.controls.name.touched">
+                            {{ errorMessageRequired}}</mat-error>
+                        <mat-error class="tsp-font-size-errors-messages"
+                            *ngIf="detailMasterForm.controls.name.errors?.pattern && detailMasterForm.controls.name.touched">
+                            {{ errorMessageUpperCase}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row mt-2 mb-4">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                [disabled]="!detailMasterForm.valid" (click)="sendDetailMaster()">
+                <mat-icon>save</mat-icon>{{ButtonSave}}
+            </button>
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons"
+                (click)="resetForm()">
+                <mat-icon>close</mat-icon>{{ButtonClose}}
+            </button>
+        </div>
+    </div>
+</div>

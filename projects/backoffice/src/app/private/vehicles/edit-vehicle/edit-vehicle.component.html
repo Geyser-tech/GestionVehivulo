@@ -1,0 +1,258 @@
+<div class="container">
+    <div class="row register-background ">
+        <div class="view-title-container">
+            <h1 class="tsp-title tsp-view-title tsp-font-size-modal-titles "> {{ 'VEHICLES.TITLES.EDIT' | translate }}
+            </h1>
+        </div>
+        <mat-dialog-content>
+            <form [formGroup]="vehicleForm">
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title tsp-font-size-default-title">
+                                {{ 'VEHICLES.LABELS.GENERAL_DATE' | translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                            <mat-form-field class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.LICENSE_PLATE' |
+                                    translate }}</mat-label>
+                                <input matInput placeholder="{{ 'VEHICLES.LABELS.LICENSE_PLATE' | translate }}"
+                                    formControlName="licensePlate" maxlength="6" class="tsp-font-size-default-content">
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.licensePlate.errors?.required && vehicleForm.controls.licensePlate.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.licensePlate.errors?.pattern && vehicleForm.controls.licensePlate.touched">
+                                    {{ 'VEHICLES.ERRORS.MIN_SIX_CARACTERS' | translate }}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.ASSIGNED_AREA' |
+                                    translate }}</mat-label>
+                                <mat-select formControlName="assignedArea" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let assignedAreaMaster of assignedAreaMasters"
+                                        [value]="assignedAreaMaster.id" class="tsp-font-size-default-content">
+                                        {{assignedAreaMaster.name}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.assignedArea.errors?.required && vehicleForm.controls.assignedArea.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.BELONGING' |
+                                    translate
+                                    }}</mat-label>
+                                <mat-select formControlName="belongingType" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let belongTypeMaster of belongTypeMasters"
+                                        [value]="belongTypeMaster.id" class="tsp-font-size-default-content">
+                                        {{belongTypeMaster.name}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.belongingType.errors?.required && vehicleForm.controls.belongingType.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+
+
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.BRAND' |
+                                        translate }}</mat-label>
+                                    <mat-select formControlName="brand"
+                                        class="tsp-select-input tsp-font-size-default-content">
+                                        <mat-option *ngFor="let brandMaster of brandMasters" [value]="brandMaster.id"
+                                            class="tsp-font-size-default-content">
+                                            {{brandMaster.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="vehicleForm.controls.brand.errors?.required && vehicleForm.controls.brand.touched">
+                                        {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <!-- <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                                    class="round-button" (click)="CreateMasterDetailBrand($event)">
+                                    <mat-icon class="icons-with-input">add</mat-icon>
+                                </button> -->
+                            </div>
+
+
+                            <div class="input-with-button">
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.MODEL' |
+                                        translate }}</mat-label>
+                                    <mat-select formControlName="model" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let modelMaster of modelMasters" [value]="modelMaster.id"
+                                            class="tsp-font-size-default-content">
+                                            {{modelMaster.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="vehicleForm.controls.model.errors?.required && vehicleForm.controls.model.touched">
+                                        {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <!-- <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                                    class="round-button" (click)="CreateMasterDetailModel($event)">
+                                    <mat-icon class="icons-with-input">add</mat-icon>
+                                </button> -->
+                            </div>
+                            <div>
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.YEAR' |
+                                        translate }}</mat-label>
+                                    <mat-select formControlName="year" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let year of years" [value]="year"
+                                            class="tsp-font-size-default-content">
+                                            {{year}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="vehicleForm.controls.year.errors?.required && vehicleForm.controls.year.touched">
+                                        {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.VEHICLE_TYPE' |
+                                        translate }}</mat-label>
+                                    <mat-select formControlName="vehicleType" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let vehicleTypeMaster of vehicleTypeMasters"
+                                            class="tsp-font-size-default-content" [value]="vehicleTypeMaster.id">
+                                            {{vehicleTypeMaster.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error class="tsp-font-size-default-content"
+                                        *ngIf="vehicleForm.controls.vehicleType.errors?.required && vehicleForm.controls.vehicleType.touched">
+                                        {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <!-- <button mat-fab color="accent" class="round-button"
+                                    (click)="CreateMasterDetailVehicleType($event)">
+                                    <mat-icon class="icons-with-input">add</mat-icon>
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title tsp-font-size-default-title">
+                                {{ 'VEHICLES.LABELS.FEATURES' | translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.COLOR' | translate
+                                    }}</mat-label>
+                                <input type="text" matInput placeholder="{{ 'VEHICLES.LABELS.COLOR' | translate }}"
+                                    formControlName="color" class="tsp-font-size-default-content">
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.color.errors?.pattern && vehicleForm.controls.color.touched">
+                                    Solo se permiten letras</mat-error>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.color.errors?.required && vehicleForm.controls.color.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.FUEL_TYPE' |
+                                    translate }}</mat-label>
+                                <mat-select formControlName="fuelType" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let fuelTypeMaster of fuelTypeMasters"
+                                        [value]="fuelTypeMaster.id" class="tsp-font-size-default-content">
+                                        {{fuelTypeMaster.name}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.fuelType.errors?.required && vehicleForm.controls.fuelType.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{
+                                    'VEHICLES.LABELS.FACTORY_CONSUMPTION_RANGE' |
+                                    translate }}</mat-label>
+                                <input matInput placeholder="{{
+                                    'VEHICLES.LABELS.FACTORY_CONSUMPTION_RANGE' |
+                                    translate }}" formControlName="factoryConsumptionRange"
+                                    class="tsp-font-size-default-content" type="number">
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.serialNumber.errors?.pattern && vehicleForm.controls.serialNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.MAYUSCULE_LONG' | translate }}</mat-error>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.serialNumber.errors?.required && vehicleForm.controls.serialNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.ENGINE_NUMBER' |
+                                    translate }}</mat-label>
+                                <input matInput placeholder="{{ 'VEHICLES.LABELS.ENGINE_NUMBER' | translate }}"
+                                    formControlName="engineNumber" class="tsp-font-size-default-content">
+
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.engineNumber.errors?.pattern && vehicleForm.controls.engineNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.MAYUSCULE' | translate }}</mat-error>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.engineNumber.errors?.required && vehicleForm.controls.engineNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.ENGINE_TYPE' |
+                                    translate }}</mat-label>
+                                <mat-select formControlName="engineType" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let engineTypeMaster of engineTypeMasters"
+                                        [value]="engineTypeMaster.id" class="tsp-font-size-default-content">
+                                        {{engineTypeMaster.name}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.engineType.errors?.required && vehicleForm.controls.engineType.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="general-input">
+                                <mat-label class="tsp-font-size-default-content">{{ 'VEHICLES.LABELS.SERIAL_NUMBER' |
+                                    translate }}</mat-label>
+                                <input matInput placeholder="{{ 'VEHICLES.LABELS.SERIAL_NUMBER' | translate }}"
+                                    formControlName="serialNumber" class="tsp-font-size-default-content">
+
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.serialNumber.errors?.pattern && vehicleForm.controls.serialNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.MAYUSCULE_LONG' | translate }}</mat-error>
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="vehicleForm.controls.serialNumber.errors?.required && vehicleForm.controls.serialNumber.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-dialog-content>
+        <div class="row mt-4 mb-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" (click)="saveEditVechicle()"
+                    [disabled]="vehicleForm.invalid">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                    mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

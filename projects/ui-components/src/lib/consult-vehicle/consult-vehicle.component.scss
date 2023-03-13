@@ -1,0 +1,22 @@
+@import 'variables';
+
+.search-input {
+    width: 70%;
+}
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+
+.tsp-labels {
+    font-weight: 600;
+}

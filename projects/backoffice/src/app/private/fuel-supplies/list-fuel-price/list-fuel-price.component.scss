@@ -1,0 +1,98 @@
+@import 'variables';
+
+.tsp-buttons-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.tsp-label-search {
+    font-weight: 600;
+    color: $tspSigesBlue;
+}
+
+.tsp-buttons-action {
+    margin-left: 5px;
+}
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.date {
+    align-items: center;
+    margin-left: 0px;
+}
+
+.dateContent {
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: $tspSigesBlue;
+}
+
+.btnSearch {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.btnNewAndHistory {
+    margin-top: auto;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px
+}
+
+.btnNew {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.btnSearch {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.btnNew {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.filter {}
+
+@media (max-width: 884px) and (min-width: 0px) {}
+
+@media (max-width: 664px) {
+
+    .btnSearch {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+}

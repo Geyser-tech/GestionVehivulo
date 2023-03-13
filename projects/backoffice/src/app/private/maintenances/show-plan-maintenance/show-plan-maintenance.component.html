@@ -1,0 +1,254 @@
+<div class="container" *ngIf="planMaintenance!=null">
+    <div [ngClass]="{'tsp-general-content':PlanMaintenanceStateRegisteredParameter == planMaintenance.state}">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="tsp-title-container">
+                    <div class="col-10">
+                        <div class="header-container">
+                            <h1 class="tsp-title tsp-view-title tsp-font-size-default-title">
+                                {{'PLAN_MAINTENANCES.SHOW.LABELS.TITLE'
+                                |
+                                translate}}
+                            </h1>
+
+                            <span
+                                class="tsp-title tsp-view-title tsp-font-size-default-title tsp-date-header">{{planMaintenance.fromDate
+                                |
+                                date:'dd/MM/YYYY
+                                '}} - {{planMaintenance.toDate | date:'dd/MM/YYYY
+                                '}}</span>
+
+                            <div class="tsp-flag-container" [ngClass]="{'flag-status-registered':PlanMaintenanceStateRegisteredParameter == planMaintenance.state,
+                    'flag-status-approved':PlanMaintenanceStateApprovedParameter == planMaintenance.state,
+                    'flag-status-expired':PlanMaintenanceStateExpiredParamter == planMaintenance.state}">
+                                <span class="tsp-font-size-modal-titles">{{planMaintenanceState}}</span>&nbsp;
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <div class="buttons-container">
+                            <button class="tsp-button-edit"
+                                *ngIf="planMaintenance.state==PlanMaintenanceStateRegisteredParameter"
+                                class="action-buttons tsp-button-edit" (click)="openEdit()">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+
+                            <button class="tsp-button-delete"
+                                *ngIf="planMaintenance.state==PlanMaintenanceStateRegisteredParameter"
+                                class="action-buttons tsp-button-delete tsp-button-delete-plan-maintenance"
+                                (click)="Unsuscribe()">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <form>
+            <div mat-dialog-content>
+                <div class="row seccion-container">
+                    <div class="row mb-2">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog">
+                            <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                                <span>{{'PLAN_MAINTENANCES.SHOW.LABELS.PROVIDER_DATA' |
+                                    translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.DOCUMENT_IDENTITY'
+                                | translate}}</span>
+                            <br>
+                            <span
+                                class="tsp-font-size-default-content">{{planMaintenance.providerDocumentIdentity}}</span>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.BUSINESS_NAME'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.providerBusinessName}}</span>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.ADDRESS'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.providerAddress}}</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog mb-2">
+                            <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                                <span>{{'PLAN_MAINTENANCES.SHOW.LABELS.PLAN_MAINTENANCE_DATA' |
+                                    translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.FROM_DATE'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.fromDate | date:'dd/MM/YYYY
+                                h:mm
+                                a'}}</span>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.TO_DATE'
+                                | translate}}</span>
+                            <br>
+                            <span class="tsp-font-size-default-content">{{planMaintenance.toDate | date:'dd/MM/YYYY h:mm
+                                a'}}</span>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="planMaintenance.state!=PlanMaintenanceStateRegisteredParameter">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.PLAN_MAINTENANCE_SUMMARY'
+                                | translate}}</span>
+
+                            <table style="width: 100%;">
+                                <thead class="tsp-font-size-default-content ">
+                                    <tr>
+                                        <th class="plan-maintenance-header">Estado / Clase</th>
+
+                                        <ng-container
+                                            *ngFor="let summaryMaintenanceHeader of planMaintenanceSummaryHeader;let i=index">
+                                            <th class="plan-maintenance-header-dynamic">
+                                                {{summaryMaintenanceHeader.maintenanceClassType}}
+                                            </th>
+                                        </ng-container>
+                                        <th class="plan-maintenance-header">Total</th>
+                                </thead>
+
+                                <ng-container *ngFor="let planMaintenanceSummarie of planMaintenanceSummaries">
+                                    <tr>
+                                        <td
+                                            class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                            <span
+                                                class="tsp-maintenance-item-type-label">{{planMaintenanceSummarie.stateName
+                                                }}</span><br>
+                                        </td>
+
+                                        <ng-container
+                                            *ngFor="let planMaintenanceSummaryItem of planMaintenanceSummarie.planMaintenanceSummaryItems;let i=index">
+                                            <ng-container
+                                                *ngFor="let summaryMaintenanceHeader of planMaintenanceSummaryHeader;let i=index">
+
+                                                <ng-container
+                                                    *ngIf="summaryMaintenanceHeader.maintenanceClassId ==planMaintenanceSummaryItem.maintenanceClassId">
+                                                    <td class="tsp-maintenance-items">
+                                                        {{planMaintenanceSummaryItem.amount}}
+                                                    </td>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                        <td
+                                            class="text-table-center tsp-border-complement-rows tsp-font-size-default-content">
+                                            <span
+                                                class="tsp-maintenance-item-type-label">{{planMaintenanceSummarie.amountTotal
+                                                }}</span><br>
+                                        </td>
+                                    </tr>
+
+                                </ng-container>
+                                <tfoot>
+                                    <tr>
+                                        <th class="plan-maintenance-header tsp-font-size-default-content">CONTRATADOS
+                                        </th>
+                                        <ng-container
+                                            *ngFor="let planMaintenanceSummaryItem of planMaintenanceTotalSummaryContract;let i=index">
+                                            <ng-container
+                                                *ngFor="let summaryMaintenanceHeader of planMaintenanceSummaryHeader;let i=index">
+
+                                                <ng-container
+                                                    *ngIf="summaryMaintenanceHeader.maintenanceClassId ==planMaintenanceSummaryItem.maintenanceClassId">
+                                                    <td class="tsp-maintenance-items">
+                                                        {{planMaintenanceSummaryItem.amount}}
+                                                    </td>
+
+                                                </ng-container>
+
+                                            </ng-container>
+
+                                        </ng-container>
+                                        <td class="  tsp-font-size-default-content tsp-maintenance-items">
+                                            {{planMaintenance.totalAmountMaintenances}}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="planMaintenance.state!=PlanMaintenanceStateRegisteredParameter">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <span
+                                class="tsp-font-size-default-content tsp-labels">{{'PLAN_MAINTENANCES.SHOW.LABELS.PLAN_MAINTENANCE_DETAILS'
+                                | translate}}</span>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                                (click)="downloadExcelDetailReport()"><mat-icon>download</mat-icon>{{'PLAN_MAINTENANCES.SHOW.LABELS.DOWNLOAD_PLAN_MAINTENANCE_DETAIL'
+                                | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog mb-2">
+                            <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                                <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' |
+                                    translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <cad-viewer-file [Files]="planMaintenance.documentsUrl"></cad-viewer-file>
+                </div>
+            </div>
+            <div class="row seccion-container" *ngIf="planMaintenance.state!=PlanMaintenanceStateRegisteredParameter">
+                <div class="row mb-2">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog">
+                        <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                            <span>{{'PLAN_MAINTENANCES.SHOW.LABELS.ATTACHED_DOCUMENT' |
+                                translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div
+                        [ngClass]="{'tsp-buttons-actions-container-registered-plan mb-2':PlanMaintenanceStateRegisteredParameter == planMaintenance.state,
+                'tsp-buttons-actions-container mb-2':PlanMaintenanceStateRegisteredParameter != planMaintenance.state}">
+                        <button class="tsp-button-delete tsp-font-size-buttons tsp-buttons" mat-flat-button mat-button
+                            mat-dialog-close>
+                            <mat-icon>close</mat-icon>{{'PLAN_MAINTENANCES.SHOW.LABELS.CLOSE' |
+                            translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

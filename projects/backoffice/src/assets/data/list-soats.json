@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "MINISTRA",
+            "insuranceCompany": "PACIFICO S.A.C",
+            "policyNumber": "PACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "CAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "BINISTRA",
+            "insuranceCompany": "BACIFICO S.A.C",
+            "policyNumber": "BACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "BAMIONETA",
+            "state": "De Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "DINISTRA",
+            "insuranceCompany": "DACIFICO S.A.C",
+            "policyNumber": "DACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "DAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "EINISTRA",
+            "insuranceCompany": "EACIFICO S.A.C",
+            "policyNumber": "EACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "EAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "ZINISTRA",
+            "insuranceCompany": "ZACIFICO S.A.C",
+            "policyNumber": "ZACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "ZAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "JINISTRA",
+            "insuranceCompany": "JACIFICO S.A.C",
+            "policyNumber": "JACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "JAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "RINISTRA",
+            "insuranceCompany": "RACIFICO S.A.C",
+            "policyNumber": "RACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "RAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "GINISTRA",
+            "insuranceCompany": "GACIFICO S.A.C",
+            "policyNumber": "GACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "GAMIONETA",
+            "state": "De Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "KINISTRA",
+            "insuranceCompany": "KACIFICO S.A.C",
+            "policyNumber": "KACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "KAMIONETA",
+            "state": "De Baja",
+            "statusClass": "Red"
+        },
+        {
+            "id": "100",
+            "daysUntilExpiration": "-5",
+            "areas": "VINISTRA",
+            "insuranceCompany": "VACIFICO S.A.C",
+            "policyNumber": "VACIFICO S.A.C",
+            "licensePlate": "2017-TBT",
+            "type": "VAMIONETA",
+            "state": "Activo",
+            "statusClass": "Green"
+        }
+    ]
+}

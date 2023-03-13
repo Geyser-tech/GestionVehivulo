@@ -1,0 +1,12 @@
+@import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+}

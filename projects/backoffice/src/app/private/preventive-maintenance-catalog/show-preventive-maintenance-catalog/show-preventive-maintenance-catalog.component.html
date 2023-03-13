@@ -1,0 +1,113 @@
+<div class="container" *ngIf="catalogMaintenance">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-md-5 col-lg-5 col-xl-5">
+            <h1 class="tsp-title tsp-view-title tsp-font-size-default-title">{{catalogMaintenance.name | slice:23:1000}}
+            </h1>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2 col-xl-2">
+            <div [ngClass]="{'flag-status-lapsed':catalogMaintenanceLapsedParameter == catalogMaintenance.state,
+            'flag-status-valid': catalogMaintenanceStateActiveParameter == catalogMaintenance.state}">
+                <span class="tsp-font-size-modal-titles">{{catalogMaintenanceState}}</span>&nbsp;
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="tsp-action-buttons-container">
+                <button mat-button class="tsp-action-button tsp-button-clone tsp-font-size-buttons"
+                    (click)="cloneCatalogActivities()">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.CLONE' |
+                    translate}}</button>
+                <button mat-raised-button class="tsp-action-button tsp-font-size-buttons tsp-button-edit"
+                    (click)="editCatalog()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <!-- <button mat-raised-button class="tsp-action-button tsp-font-size-buttons tsp-button-delete">
+                    <mat-icon>delete</mat-icon>
+                </button> -->
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row mb-2">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog">
+                        <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                            <span>{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.CATALOG_DATA' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                        <span
+                            class="tsp-font-size-default-content tsp-labels">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.NAME'
+                            |
+                            translate}}</span>
+                        <br>
+                        <span class="tsp-font-size-default-content">{{catalogMaintenance.name}}</span>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2 col-xl-2">
+                        <span
+                            class="tsp-font-size-default-content tsp-labels">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.VERSION'
+                            |
+                            translate}}</span>
+                        <br>
+                        <span class="tsp-font-size-default-content">{{catalogMaintenance.version}}</span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <label
+                            class="tsp-font-size-default-content tsp-labels">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.MAINTENANCE_CLASS'
+                            |
+                            translate}}</label>
+                        <br>
+                        <span class="tsp-font-size-default-content">{{catalogMaintenance.maintenanceClass}}</span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <label
+                            class="tsp-font-size-default-content tsp-labels">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.ENGINE_TYPE'
+                            |
+                            translate}}</label>
+                        <br>
+                        <span class="tsp-font-size-default-content">{{catalogMaintenance.engineType}}</span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <label
+                            class="tsp-font-size-default-content tsp-labels">{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.START_DATE'
+                            |
+                            translate}}</label><br>
+                        <span class="tsp-font-size-default-content ">{{catalogMaintenance.issueDate | date:
+                            'dd/MM/yyyy'}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 subtitlecatalog mb-2">
+                        <div class="tsp-font-size-default-title tsp-secction-labels title-container">
+                            <span>{{'PREVENTIVE_MAINTENANCE_CATALOG.CATALOG.ACTIVITIES'
+                                |
+                                translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <cad-table-filter [items]="catalogMaintenance.activities" [columns]="columns"
+                            [actions]="actions">
+                        </cad-table-filter>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button class="button-close" mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

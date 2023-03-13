@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title tsp-font-size-modal-titles">{{ 'MOBILITY_REQUEST.TITLE' | translate }}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 date">
+            <div class="dateContent row" [formGroup]="form">
+                <span class="title tsp-font-size-default-title">{{'MOBILITY_REQUEST.LABELS.MOBILI_DATE'
+                    | translate}}</span>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                    <mat-form-field appearance="fill" class="generalMatForm">
+                        <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.START_DATE' | translate}}
+                        </mat-label>
+                        <input (dateChange)="clearEndDate()" matInput [matDatepicker]="picker1"
+                            formControlName="startDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+                    <mat-form-field appearance="fill" class="generalMatForm">
+                        <mat-label class="tsp-font-size-default-content">{{'PIP.DATA.END_DATE' | translate}}</mat-label>
+                        <input [matDatepickerFilter]="filterEndDate" matInput [matDatepicker]="picker"
+                            formControlName="EndDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsUserArea" *ngIf="userAreas!=null">
+            <cad-chips-input [items]="userAreas" [InputLabel]="'MOBILITY_REQUEST.LABELS.USERS_AREAS' | translate"
+                [InputCheckLabel]="'Todas' | translate" (selectedItems)="selectedUserAreas($event)"></cad-chips-input>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsVehicle" *ngIf="vehicles!=null">
+            <cad-chips-input [items]="vehicles" [InputLabel]="'MOBILITY_REQUEST.LABELS.VEHICLES' | translate"
+                [InputCheckLabel]="'Todas' | translate" (selectedItems)="selectedVehicles($event)"></cad-chips-input>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 chipsDirvers" *ngIf="drivers!=null">
+            <cad-chips-input [items]="drivers" [InputLabel]="'MOBILITY_REQUEST.LABELS.DRIVERS' | translate"
+                [InputCheckLabel]="'Todas' | translate" (selectedItems)="selectedDrivers($event)"></cad-chips-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="button-add-container">
+            <button mat-raised-button class="button-clear-filters" (click)="clearFilters()">
+                <mat-icon>filter_alt_off</mat-icon>
+            </button>
+            <button mat-raised-button class="button-add mr-2 tsp-font-size-buttons" (click)="searchData()">{{
+                'VEHICLES.BUTTONS.SEARCH' |
+                translate
+                }}
+            </button>
+            <button mat-raised-button class="button-add tsp-font-size-buttons" (click)="openRegister()"
+                *ngIf="!checkOnlyRead">
+                <mat-icon>add</mat-icon>{{
+                'VEHICLES.BUTTONS.NEW' | translate
+                }}
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openShow($event)">
+    </cad-table-filter>
+</div>

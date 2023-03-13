@@ -1,0 +1,240 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'VEHICLES.TITLES.ASSIGNMENT_VEHICLE' | translate }}</h1>
+    </div>
+</div>
+<form [formGroup]="form">
+    <div class="row seccion-container">
+        <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+            <mat-form-field appearance="fill" class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.ASSIGNED_AREA' | translate }}</mat-label>
+                <mat-select formControlName="area" (ngModelChange)="selectedAreas($event)" #select>
+                    <mat-option *ngFor="let area of areas" [value]="area.id" #select>
+                        {{area.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls.area.errors?.required && form.controls.area.touched">
+                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row container-assignment" cdkDropListGroup>
+        <div class="col-sm-12 col-12 col-md-5 col-lg-5 col-xl-5 tsp-container-vehicle">
+            <div class=" tsp-view-title-container">
+                <h1 class="tsp-title tsp-view-title">{{ 'VEHICLES.SHOW.LABELS.VEHICLES' | translate }}</h1>
+            </div>
+            <div *ngIf="vehicles.length !==0" cdkDropList id="listVehicle" [cdkDropListData]="vehicles"
+                (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let vehicle of vehicles" class="container-vehicle" cdkDrag>
+                    <div class=" container-license col-sm-12 col-1 col-md-1 col-lg-1 col-xl-2">
+                        {{vehicle.licensePlate}} </div>
+                    <div class=" col-sm-12 col-1 col-md-1 col-lg-1 col-xl-10">
+                        {{vehicle.type}} | {{vehicle.brand}} | {{vehicle.model}} | {{vehicle.color}}
+                    </div>
+
+                </div>
+            </div>
+            <div *ngIf="vehicles.length ==0" class="container-no-vehicle">
+                <h2 class="tsp-font-size-modal-titles content-title">{{ 'VEHICLES.LABELS.NO_VEHICLES_AREA' | translate
+                    }}
+                </h2>
+            </div>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 tsp-container-user">
+            <div class=" tsp-view-title-container">
+                <h1 class="tsp-title tsp-view-title">{{ 'VEHICLES.SHOW.LABELS.USER_AREA' | translate }}</h1>
+                <div class="btnHistory">
+                    <button mat-raised-button (click)="openShowHistory()"
+                        class="generalMatForm tsp-buttons-actions tsp-font-size-buttons tsp-button-success">
+                        <mat-icon>history</mat-icon>{{'VEHICLE_INSPECTIONS.DATA.HISTORY' | translate}}
+                    </button>
+                </div>
+
+            </div>
+            <div *ngIf="userAreas.length!==0">
+                <div *ngFor="let userArea of userAreas; let i = index">
+                    <div class="container-users" cdkDropList [cdkDropListData]="userArea.vehicleAssignments"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class=" tsp-view-title-container">
+                            <h1 class="tsp-title tsp-view-title">{{userArea.name}}</h1>
+                        </div>
+                        <div *ngFor="let vehicleAssignment of userArea.vehicleAssignments; let j = index">
+                            <div class="line">
+                                <hr class="ks-line" />
+                            </div>
+                            <!-- Editar -->
+                            <div *ngIf="vehicleAssignment.vehicle !=null" class="container-vehicleAssignment">
+                                <div class="container-item">
+                                    <div class=" col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 container-vehicle">
+                                        <div class=" container-license col-sm-12 col-1 col-md-1 col-lg-1 col-xl-2">
+                                            {{vehicleAssignment.vehicle.licensePlate}} </div>
+                                        <div class="col-sm-12 col-12 col-md-10 col-lg-10 col-xl-10">
+                                            {{vehicleAssignment.vehicle.type}} | {{vehicleAssignment.vehicle.brand}} |
+                                            {{vehicleAssignment.vehicle.model}} |
+                                            {{vehicleAssignment.vehicle.color}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-select">
+                                    <div class="col-12 col-md-5 col-lg-5 col-xl-5 container-date">
+                                        <mat-form-field appearance="fill" class="general-input">
+                                            <mat-label> {{ 'VEHICLES.SHOW.LABELS.DATE_ISSUE' | translate }} </mat-label>
+                                            <input [disabled]="vehicleAssignment.editIssueDate"
+                                                [(ngModel)]="vehicleAssignment.issueDate"
+                                                [ngModelOptions]="{standalone: true}" matInput
+                                                [matDatepicker]="issueDate" />
+                                            <mat-datepicker-toggle matSuffix [for]="issueDate"> </mat-datepicker-toggle>
+                                            <mat-datepicker #issueDate></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-12 col-md-1 col-lg-1 col-xl-1">
+                                        <button [disabled]="!vehicleAssignment.editDriver" class="container-button-edit"
+                                            (click)="editIssueDate(i,j)">
+                                            <mat-icon class="icons">edit</mat-icon>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-6 col-xl-6 container-driver">
+                                        <div *ngFor="let item of vehicleAssignment.vehicleAssignment; let k = index"
+                                            class="row">
+                                            <div class="col-12 col-md-9 col-lg-9 col-xl-9">
+                                                <mat-form-field appearance="fill" class="general-input">
+                                                    <mat-label>{{ 'VEHICLES.SHOW.LABELS.DRIVE' | translate
+                                                        }}</mat-label>
+                                                    <mat-select [disabled]="item.editDriver"
+                                                        [(ngModel)]="item.driver.id"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                        <mat-option *ngFor="let driver of drivers" [value]="driver.id">
+                                                            {{driver.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-12 col-md-1 col-lg-2 col-xl-2 ">
+                                                <button [disabled]="!item.editIssueDate" class="container-button-edit"
+                                                    (click)="editDriver(i,j,k)">
+                                                    <mat-icon class="icons">edit</mat-icon>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-4"
+                                    *ngIf="vehicleAssignment.editIssueDate==true && vehicleAssignment.editDriver==true">
+                                    <div class="buttons-container">
+                                        <button mat-raised-button color="primary" class="marging-buttons button-close"
+                                            (click)="deleteVehicleAssignment(vehicleAssignment)">
+                                            <mat-icon class="icons">close</mat-icon>{{ 'GENERAL.BUTTONS.DELETE' |
+                                            translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-4" *ngIf="vehicleAssignment.editIssueDate==false">
+                                    <div class="buttons-container">
+                                        <button mat-raised-button class="tsp-button-success"
+                                            (click)="saveEditIssueDate(vehicleAssignment)">
+                                            <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' |
+                                            translate }}
+                                        </button>
+                                        <button mat-raised-button color="primary" class="marging-buttons button-close"
+                                            (click)="cancelEditIssueDate(i,j)">
+                                            <mat-icon class="icons">close</mat-icon>{{ 'GENERAL.BUTTONS.CANCEL' |
+                                            translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-4" *ngIf="vehicleAssignment.editDriver==false">
+                                    <div class="buttons-container">
+                                        <button mat-raised-button class="tsp-button-success"
+                                            (click)="saveEditDriver(userArea,vehicleAssignment)">
+                                            <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' |
+                                            translate }}
+                                        </button>
+                                        <button mat-raised-button color="primary" class="marging-buttons button-close"
+                                            (click)="cancelEditDriver(i,j)">
+                                            <mat-icon class="icons">close</mat-icon>{{ 'GENERAL.BUTTONS.CANCEL' |
+                                            translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Registrar -->
+                            <div *ngIf="vehicleAssignment.vehicle ==null">
+                                <div class="container-item">
+                                    <div class=" col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 container-vehicle">
+                                        <div class="container-license col-sm-12 col-1 col-md-1 col-lg-1 col-xl-2">
+                                            {{vehicleAssignment.licensePlate}} </div>
+                                        <div class="col-sm-12 col-12 col-md-10 col-lg-10 col-xl-10">
+                                            {{vehicleAssignment.type}} | {{vehicleAssignment.brand}} |
+                                            {{vehicleAssignment.model}} |
+                                            {{vehicleAssignment.color}}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="container-select">
+                                    <div class="col-12 col-md-6 col-lg-6 col-xl-6 container-date">
+                                        <mat-form-field appearance="fill" class="general-input">
+                                            <mat-label> {{ 'VEHICLES.SHOW.LABELS.DATE_ISSUE' | translate }} </mat-label>
+                                            <input [(ngModel)]="vehicleAssignment.issueDate"
+                                                [ngModelOptions]="{standalone: true}" matInput
+                                                [matDatepicker]="issueDate" />
+                                            <mat-datepicker-toggle matSuffix [for]="issueDate"> </mat-datepicker-toggle>
+                                            <mat-datepicker #issueDate></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6 col-xl-6 container-driver">
+                                        <mat-form-field appearance="fill" class="general-input">
+                                            <mat-label>{{ 'VEHICLES.SHOW.LABELS.DRIVE' | translate }}</mat-label>
+                                            <mat-select [(ngModel)]="vehicleAssignment.driverId"
+                                                [ngModelOptions]="{standalone: true}"
+                                                (selectionChange)="addDrivers($event)">
+                                                <mat-option *ngFor="let driver of drivers" [value]="driver.id">
+                                                    {{driver.name}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <div *ngFor="let selectDriver of selectDrivers ; let index = index"
+                                            class="row container-selectDriver">
+                                            <div class="col-12 col-md-8 col-lg-8 col-xl-8 "> {{selectDriver.firstName}}
+                                            </div>
+                                            <div class="col-12 col-md-3 col-lg-3 col-xl-3"> <button
+                                                    (click)="deleteDrivers(selectDriver,index)" mat-raised-button
+                                                    color="primary" class="marging-buttons button-close">
+                                                    <mat-icon class="icons">close</mat-icon>
+                                                </button></div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="buttons-container">
+                                        <button mat-raised-button class="tsp-button-success"
+                                            (click)="saveVehicle(userArea,vehicleAssignment)">
+                                            <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' |
+                                            translate }}
+                                        </button>
+                                        <button mat-raised-button color="primary" class="marging-buttons button-close"
+                                            (click)="deleteVehicle(userArea.vehicleAssignments,j,vehicleAssignment)">
+                                            <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' |
+                                            translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="userAreas.length==0">
+                <h2 class="tsp-font-size-modal-titles content-title">no hay Areas Usuarias en esta area</h2>
+            </div>
+
+        </div>
+
+    </div>
+</form>

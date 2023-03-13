@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-font-size-modal-titles tsp-view-title">{{ 'FUEL_SUPPLIES.TITLES.DETAIL_FUEL_CONSUMPTION' |
+            translate }}</h1>
+    </div>
+    <div class="filters">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="dateContent row">
+                    <span class="title tsp-font-size-default-title">{{'PIP.LIST.DATES'| translate}}</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.INITIAL_DATE'|
+                                translate}}</mat-label>
+                            <input (dateChange)="clearDateEnd()" matInput [matDatepicker]="picker1"
+                                class="tsp-font-size-default-content" [(ngModel)]="fromDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker1 class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label class="tsp-font-size-default-content">{{'PIP.LIST.FINAL_DATE'|
+                                translate}}</mat-label>
+                            <input matInput [matDatepickerFilter]="filterDateEnd" [matDatepicker]="picker"
+                                class="tsp-font-size-default-content" [(ngModel)]="toDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker" class="tsp-font-size-default-content">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker class="tsp-font-size-default-content"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" *ngIf="fuelTypeMasters!=null">
+                <cad-chips-input [items]="fuelTypeMasters" [InputLabel]="'FUEL_SUPPLIES.DATA.FUEL' | translate"
+                    [InputCheckLabel]="'TODAS' | translate" (selectedItems)="selectedFuelType($event)">
+                </cad-chips-input>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" *ngIf="licensePlates!=null">
+                <cad-chips-input [items]="licensePlates" [InputLabel]="'FUEL_SUPPLIES.DATA.LICENSE_PLATE' | translate"
+                    [InputCheckLabel]="'TODAS' | translate" (selectedItems)="selectedLicensePlates($event)">
+                </cad-chips-input>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mb-1">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-12 tsp-action-buttons">
+        <button mat-raised-button (click)="clearFilters()"
+            class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success  tsp-action-button">
+            <mat-icon>filter_alt_off</mat-icon>
+        </button>
+        <button mat-raised-button class="tsp-buttons-actions tsp-font-size-buttons tsp-button-success"
+            (click)="filter()">
+            {{'PREVENTIVE_MAINTENANCE_CATALOG.BUTTONS.SEARCH'|
+            translate}}
+        </button>
+    </div>
+</div>
+<div class="row mt-2">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEventDates)="searchEvent($event)">
+    </cad-table-filter>
+</div>

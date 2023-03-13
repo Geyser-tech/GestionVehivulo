@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <span class="tsp-font-size-modal-titles tsp-view-title">
+            {{'PARAMETER.PARAMETER_TITLE' | translate}}
+        </span>
+    </div>
+</div>
+
+<div class="row buttonadd">
+    <div class="button-add-container">
+        <button mat-raised-button class="buttonDow button-add mr-2 tsp-font-size-buttons">
+            <mat-icon>save_alt</mat-icon>{{
+            'PARAMETER.DATA.TO_DOWNLOAD' | translate
+            }}
+        </button>
+        <button mat-raised-button class="button-add mr-2 tsp-font-size-buttons" (click)=" registerParameter()">
+            <mat-icon>add</mat-icon>{{
+            'PARAMETER.DATA.NEW_CONFIGURATION' | translate
+            }}
+        </button>
+    </div>
+</div>
+<div class="row mt-4">
+    <cad-table-filter class="buttonTable" [items]="data" [columns]="columns" [actions]="actions"
+        (editEvent)=" editParameter($event)" (deleteEvent)="deleteParameter($event)"
+        (searchEvent)="showParameter($event)">
+    </cad-table-filter>
+</div>

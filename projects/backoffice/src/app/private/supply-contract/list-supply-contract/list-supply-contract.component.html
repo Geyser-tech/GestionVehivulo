@@ -1,0 +1,42 @@
+<sw-page-head [subtitle]="'SUPPLY_CONTRACT.CONTROL_PANEL' | translate" [title]="'SUPPLY_CONTRACT.TITLE' | translate"
+    style="margin-top: 20px">
+    <button class="button button_colorSuccess button_shadow" (click)="openRegister()" id="goToCreate">
+        <i class="mdi mdi-plus buttonIcon_right"></i> {{ 'SUPPLY_CONTRACT.NEW' | translate }}
+    </button>
+    <button class="button button_colorSuccess button_shadow" (click)="openShow()" id="goToCreate">
+        <i class="mdi mdi-plus buttonIcon_right"></i> {{ 'SUPPLY_CONTRACT.SHOW' | translate }}
+    </button>
+</sw-page-head>
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'SUPPLY_CONTRACT.TITLE' | translate }}</h1>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="fruits" [InputLabel]="'VEHICLES.SHOW.LABELS.ASSIGNED_AREA' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="fruits" [InputLabel]="'VEHICLES.SHOW.LABELS.ASSIGNED_AREA' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-multi-check-box-filter [items]="fruits" [GroupName]="'VEHICLES.SHOW.LABELS.VEHICLE_STATE' | translate">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-multi-check-box-filter [items]="fruits" [GroupName]="'VEHICLES.SHOW.LABELS.VEHICLE_STATE' | translate">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <button mat-raised-button color="primary" (click)="openRegister()" id="goToCreate"><i
+                class="mdi mdi-plus buttonIcon_right"></i>{{'SUPPLY_CONTRACT.NEW'|
+            translate}}</button>
+    </div>
+
+</div>
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+    </cad-table-filter>
+</div>

@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+    <mat-form-field class="general-input" appearance="fill">
+        <mat-label> {{label}}</mat-label>
+        <mat-select required formControlName="data" (ngModelChange)="onSelectChange($event)" #select>
+
+            <mat-option *ngFor="let value of values" [value]="value.name" #select>
+                {{ value.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <p-table #dt1 [value]="data" selectionMode="single" styleClass="p-datatable-customers" [columns]="columns"
+        class="tsp-table-container table">
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                    class="column-options table-font-header">
+                    {{column.header}}</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer let-rowData let-columns="columns" let-rowIndex="rowIndex">
+            <tr>
+                <td *ngFor="let col of columns; let i=index">
+            <tr class="data-columns table-font-content">{{ rowData[col.field]}}
+        </ng-template>
+    </p-table>
+
+</form>

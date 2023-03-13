@@ -1,0 +1,146 @@
+//@import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+
+
+.seccion-container {
+    margin: 10px;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: start;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+    margin-left: 12px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    // width: 1000px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    // display: flex;
+    // align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.round-button:hover {
+    transform: translateY(0) scale(1.02);
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+.mat-dialog-content {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.tsp-container {
+    padding: 1% 0% 0% 2%;
+}
+
+//AGREGAR ESTILOS MASTER DETAIL
+.buttonadd {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.masterdetail {
+    margin-top: 10px;
+    margin-right: -6.8px;
+}
+
+.button-add-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.button-add {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhiteLetters;
+    margin-right: 5px;
+}
+
+.button-add-master {
+    background-color: green;
+    color: white;
+}
+
+.button-add-close {
+    display: flex;
+    justify-content: end;
+}
+
+//Master
+
+.title-detail-master {
+    color: $tspSigesWhiteLetters;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.listDetailTable {
+    margin-right: -1px;
+}
+
+.buttontoclose {
+    margin-right: -6.8px;
+}

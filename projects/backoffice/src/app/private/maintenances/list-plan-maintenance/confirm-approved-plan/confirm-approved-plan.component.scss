@@ -1,0 +1,40 @@
+@import 'variables';
+
+.tsp-text-modal {
+    text-align: center;
+
+}
+
+.tsp-text-modal-question {
+    font-weight: 600;
+    margin-top: -20px;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+
+::ng-deep .mat-dialog-container {
+    padding: 0;
+}
+
+.tsp-container-buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.tsp-text-container {
+    min-height: 70px;
+}
+
+.tsp-buttons {
+    margin-right: 5px;
+}

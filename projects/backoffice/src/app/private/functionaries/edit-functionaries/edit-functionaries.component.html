@@ -1,0 +1,303 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="view-title-container">
+                <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                    {{'FUNCIONARIES.DATA.FUNC_TO_UPDATE' | translate}}
+                </span>
+            </div>
+            <mat-dialog-content>
+                <form [formGroup]="funcionariesForm" class="register-background tsp-container">
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.INFORMATION_PERSONAL' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content"> {{'FUNCIONARIES.DATA.DNI' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.DATA_DNI' | translate}}"
+                                        formControlName="dni" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.dni.errors?.required &&
+                                        funcionariesForm.controls.dni.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.dni.errors?.pattern && funcionariesForm.controls.dni.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content"> {{'FUNCIONARIES.DATA.LASTNAME' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.LASTNAME' | translate}}"
+                                        formControlName="lastName" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.lastName.errors?.required &&
+                                        funcionariesForm.controls.lastName.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.lastName.errors?.pattern && funcionariesForm.controls.lastName.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.MATERNAL_LAST_NAME' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.MATERNAL_LAST_NAME' | translate}}"
+                                        formControlName="maternalName" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.maternalName.errors?.required &&
+                                        funcionariesForm.controls.maternalName.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.maternalName.errors?.pattern && funcionariesForm.controls.maternalName.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.NAME' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.NAME' | translate}}"
+                                        formControlName="name" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.name.errors?.required &&
+                                        funcionariesForm.controls.name.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.name.errors?.pattern && funcionariesForm.controls.name.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIONARIES_DATE' | translate}}</mat-label>
+                                    <input matInput [matDatepicker]="picker" formControlName="dateBirth">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIONARIES_GENDER' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectGender" name="gender" formControlName="gender"
+                                        class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                                            {{gender.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIO_EMAIL' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.FUNCIONARIES_EMAIL' | translate}}"
+                                        formControlName="email" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.email.errors?.required &&
+                                        funcionariesForm.controls.email.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.email.errors?.pattern && funcionariesForm.controls.email.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIONARIES_PHONE' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.FUNCIONARIES_PHONE' | translate}}"
+                                        formControlName="phone" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.phone.errors?.required &&
+                                        funcionariesForm.controls.phone.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.phone.errors?.pattern && funcionariesForm.controls.phone.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIONARIES_ADRESS' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput
+                                        placeholder="{{'FUNCIONARIES.DATA.FUNCIONARIES_ADRESS' | translate}}"
+                                        formControlName="adress" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.adress.errors?.required &&
+                                        funcionariesForm.controls. adress.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.adress.errors?.pattern && funcionariesForm.controls.adress.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.FUNCIONARIES_FUN' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNCIONARIES_AREA' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectAreas" name="food" formControlName="area"
+                                        class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let area of areas" [value]="area.value">
+                                            {{area.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <label
+                                    class="tsp-font-size-default-content selectContract">{{'FUNCIONARIES.DATA.FUN_TYPE_CONTRACT'
+                                    |translate}}</label>
+                                <mat-radio-group aria-labelledby="example-radio-group-label" class="check"
+                                    [(ngModel)]="optionTypeContract">
+                                    <mat-radio-button class="tsp-font-size-default-content check_button"
+                                        *ngFor="let contract of  typeContract" [value]="contract">
+                                        {{contract}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <cad-chips-input [items]="roles"
+                                    [InputLabel]="'FUNCIONARIES.DATA.FUNC_ROLES' | translate"
+                                    [InputCheckLabel]="'FUNCIONARIES.DATA.FUNC_ROLE' | translate"></cad-chips-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-8 col-md-8 col-lg-8 col-xl-8">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'FUNCIONARIES.DATA.USER_CREDENTIALS' | translate}}
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <div class="button-add-container">
+                                    <button mat-raised-button class="buttonadd addcredenciales" (click)="ShowForm()"
+                                        [hidden]="formVisibility">
+                                        <mat-icon>add</mat-icon>{{'FUNCIONARIES.DATA.FUNC_ADDCREDENTIALS' | translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formVisibility" class="row seccion-container">
+                        <div class="row inputFormulario">
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content"> {{'FUNCIONARIES.DATA.EMAIL' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.FUNC_EMAIL' | translate}}"
+                                        formControlName="userEmail" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.userEmail.errors?.required &&
+                                        funcionariesForm.controls.userEmail.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.userEmail.errors?.pattern && funcionariesForm.controls.userEmail.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNC_PASSWORD' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput
+                                        placeholder="{{'FUNCIONARIES.DATA.FUNC_PASSWORD_MESSAGE' | translate}}"
+                                        formControlName="userPasword" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.userPasword.errors?.required &&
+                                        funcionariesForm.controls.userPasword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.userPasword.errors?.pattern && funcionariesForm.controls.userPasword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNC_REPEAT_PASSWORD' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'FUNCIONARIES.DATA.FUNC_CONFIRM' | translate}}"
+                                        formControlName="userConfirmaPasword" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="funcionariesForm.controls.userConfirmaPasword.errors?.required &&
+                                        funcionariesForm.controls.userConfirmaPasword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="funcionariesForm.controls.userConfirmaPasword.errors?.pattern && funcionariesForm.controls.userConfirmaPasword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNC_SECURITY' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectSecurityRole" name="role"
+                                        formControlName="segurityRole" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let role of securityRole" [value]="role.value">
+                                            {{role.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-dialog-content>
+            <div class="row mt-4 mb-4">
+                <div class="buttons-container">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        [disabled]="!funcionariesForm.valid">
+                        <mat-icon class="icons">save</mat-icon>{{ 'FUNCIONARIES.DATA.SAVE' | translate }}
+                    </button>
+                    <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                        mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'FUNCIONARIES.DATA.TO_CLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

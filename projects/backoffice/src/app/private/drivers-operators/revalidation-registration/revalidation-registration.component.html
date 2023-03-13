@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <h1 class="tsp-title tsp-view-title tsp-title-modals">
+            {{'LICENSE_REVALIDATION.TITLE' | translate}}
+        </h1>
+    </div>
+    <form [formGroup]="form">
+        <div mat-dialog-content class="container">
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            <span class="tsp-font-size-default-title tsp-label-title">
+                                {{'LICENSE_REVALIDATION.DATA_LICENCE' | translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate
+                                }}</mat-label>
+                            <input matInput type="text" value="{{data.number}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.CLASS' | translate
+                                }}</mat-label>
+                            <input matInput type="text" value="{{data.class}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4" *ngIf="expired">
+                        <mat-form-field class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate
+                                }}</mat-label>
+                            <input matInput type="text" value="{{data.category}}" [disabled]="true"
+                                class="tsp-font-size-default-content">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4" *ngIf="!expired">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label class="tsp-font-size-default-content">{{
+                                'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate
+                                }}</mat-label>
+                            <mat-select class="tsp-font-size-default-content" matInput required
+                                formControlName="category">
+                                <mat-option *ngFor="let category of category" [value]="category.id">
+                                    {{category.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error class="tsp-font-size-errors-messages"
+                                *ngIf="form.controls.category.errors?.required && form.controls.category.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{
+                                'DRIVERS_OPERATORS.LABELS.EXPEDITION_DATE' | translate }}
+                            </mat-label>
+                            <input (dateChange)="clearEndDate()" class="tsp-font-size-default-content" matInput required
+                                [matDatepicker]="issueDate" required formControlName="issueDate" />
+                            <mat-datepicker-toggle matSuffix [for]="issueDate">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #issueDate></mat-datepicker>
+                            <mat-error
+                                *ngIf="form.controls.issueDate.errors?.required && form.controls.issueDate.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label class="tsp-font-size-default-content"> {{
+                                'DRIVERS_OPERATORS.LABELS.EXPIRATION_DATE' | translate }}
+                            </mat-label>
+                            <input [matDatepickerFilter]="filterEndDate" class="tsp-font-size-default-content" matInput
+                                [matDatepicker]="expirationDate" required formControlName="expirationDate" />
+                            <mat-datepicker-toggle matSuffix [for]="expirationDate">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #expirationDate></mat-datepicker>
+                            <mat-error
+                                *ngIf="form.controls.expirationDate.errors?.required && form.controls.expirationDate.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                <cad-upload-files [Multiple]="true" [Label]="'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"></cad-upload-files>
+
+            </div>
+        </div>
+
+    </form>
+    <div class="row mt-4 mb-4">
+        <div class="buttons-container">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons" (click)="save()"
+                [disabled]="form.invalid || loading==false">
+                <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+            </button>
+            <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                mat-dialog-close>
+                <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,306 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.mat-dialog-content {
+    margin: 0;
+    word-wrap: break-word;
+
+}
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.tsp-title {
+    color: $tspSigesBlueLetters;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 44px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: left;
+    }
+
+    .state {
+        text-align: center;
+        justify-content: center;
+        color: $tspSigesBlack;
+        border-radius: 5px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: $tspSigesWhiteLetters;
+    }
+}
+
+.stateSuccess {
+    border: 1px solid;
+    background: $tspSigesSuccess;
+    border-color: $tspSigesSuccess;
+}
+
+.stateWarning {
+    border: 1px solid;
+    background: $colorWarning;
+    border-color: $colorWarning;
+}
+
+.stateDanger {
+    border: 1px solid;
+    background: $tspSigesError;
+    border-color: $tspSigesError;
+}
+
+
+.leftSectionTitleModal {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.optionModal {
+    display: flex;
+    justify-content: end;
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    // padding-left: 20px;
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    // border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 4px;
+    // box-shadow: 0px 1px 4px $tspSigesBlack;
+    // border-top: 3px solid;
+    // border-color: $tspSigesBlue;
+    // margin-bottom: 14px;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+    margin-left: -11px;
+    margin-right: -10px;
+    border-top-style: solid;
+    border-top-color: $tspSigesBlue;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: bold;
+    @extend .tsp-title;
+}
+
+/* .mat-raised-button {
+    padding: 0 2px 0px 2px;
+    min-width: 0;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+} */
+
+.flex {
+    display: flex;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        flex-direction: row;
+        margin-top: 25px;
+
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+
+            .iconWhatapp {
+                margin-left: 10px;
+                width: 23px;
+                height: 23px;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.optionsModalResponsive {
+    display: none;
+    align-items: center;
+}
+
+.licensePlate {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.mat-raised-button {
+    padding: 0 2px 0px 2px;
+    min-width: 0;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .optionsModal {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+}
+
+@media (max-width: 664px) {
+
+    .optionModal {
+        display: none;
+    }
+
+    .optionsModalResponsive {
+        display: flex;
+        justify-content: end;
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+}
+
+.seccion-container {
+    margin: 10px;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                cursor: pointer;
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}

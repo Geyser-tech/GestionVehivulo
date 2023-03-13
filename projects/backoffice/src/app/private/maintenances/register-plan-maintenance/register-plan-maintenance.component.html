@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label>{{ 'MAINTENANCES.TITLES.REGISTER_PLAN' | translate }}</mat-label>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="form">
+        <div mat-dialog-content class="container">
+            <div class="tsp-container mt-2">
+                <div class="row">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title title-container mb-2">
+                                <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                                    {{ 'MAINTENANCES.LABELS.PROVIDER_DATA' | translate }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <cad-search-print
+                        [PlaceHolderInput]="'PLAN_MAINTENANCES.LABELS.IDENTIFICATION_DOCUMENT' | translate"
+                        (SendIdentifierObject)="seachDocumentIdentity($event)" [SomeObject]="documentIdentity"
+                        [Labels]="labelsDni" [ColumnNumber]=6 [isvehicle]="false" [onlyRuc]="true">
+                    </cad-search-print>
+                    <div class="row">
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input">
+                                <mat-label class=" tsp-font-size-default-content"> {{ 'MOBILITY_REQUEST.LABELS.ADDRESS'
+                                    | translate }} </mat-label>
+                                <input matInput formControlName="address"
+                                    placeholder="{{ 'MOBILITY_REQUEST.LABELS.ADDRESS' | translate }}" maxlength="50"
+                                    required class=" tsp-font-size-default-content">
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="form.controls.address.errors?.required && form.controls.address.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input">
+                                <mat-label class=" tsp-font-size-default-content"> {{
+                                    'PLAN_MAINTENANCES.LABELS.CONTRACT_NUMBER' | translate }} </mat-label>
+                                <input matInput formControlName="contractNumber"
+                                    placeholder="{{ 'PLAN_MAINTENANCES.LABELS.CONTRACT_NUMBER' | translate }}"
+                                    maxlength="50" required class=" tsp-font-size-default-content">
+                                <mat-error class="tsp-font-size-errors-messages"
+                                    *ngIf="form.controls.address.errors?.required && form.controls.address.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tsp-container mt-2">
+                <div class="row ">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title title-container mb-2">
+                                <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                                    {{ 'MAINTENANCES.LABELS.DATA_MAINTENANCE_PLAN' | translate }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 row">
+                        <label class="tsp-font-size-default-content"> {{ 'FUEL_SUPPLIES.DATA.DATE' | translate }}
+                        </label>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'PIP.DATA.START_DATE' | translate }} </mat-label>
+                                <input matInput [matDatepicker]="fromDate" (dateChange)="clearToDate()" required
+                                    formControlName="fromDate" class="tsp-font-size-default-content" />
+                                <mat-datepicker-toggle matSuffix [for]="fromDate"
+                                    class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                <mat-datepicker #fromDate></mat-datepicker>
+
+                                <mat-error *ngIf="form.controls.fromDate.errors?.required">{{
+                                    'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                    }}</mat-error>
+
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'PIP.DATA.END_DATE' | translate }} </mat-label>
+                                <input matInput [matDatepicker]="toDate" [matDatepickerFilter]="filterToDate" required
+                                    formControlName="toDate" class="tsp-font-size-default-content" />
+                                <mat-datepicker-toggle matSuffix [for]="toDate"
+                                    class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                <mat-datepicker #toDate></mat-datepicker>
+
+                                <mat-error *ngIf="form.controls.toDate.errors?.required">{{
+                                    'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                    }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tsp-container mt-2">
+                <div class="row">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title title-container mb-2 ">
+                                <span class="tsp-label-title tsp-font-size-default-title tsp-font-size-default">
+                                    {{ 'PIP.CREATE.PRINTABLE_DOCUMENT' | translate }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <cad-upload-files [Multiple]="true" [Label]="'PIP.DATA.ADD_DOCUMENT' | translate"
+                        [typeAccep]="'application/pdf, image/*'"
+                        (SendData)="receiveDocument($event)"></cad-upload-files>
+
+
+                    <label class="label margin_top">{{ 'PIP.REQUIRED_DATA' | translate }} </label>
+                </div>
+            </div>
+        </div>
+        <div class=" row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()"
+                    [disabled]="form.invalid || loading==false">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' |
+                    translate }}
+                </button>
+                <button mat-raised-button [disabled]="loading==false" color="primary"
+                    class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' |
+                    translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

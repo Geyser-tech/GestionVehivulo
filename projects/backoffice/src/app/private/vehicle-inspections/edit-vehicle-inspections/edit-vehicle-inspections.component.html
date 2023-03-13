@@ -1,0 +1,264 @@
+<div class="container">
+    <form [formGroup]="form" *ngIf="form!=null">
+        <!-- Title Modal -->
+        <div class="titleModal row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-4 titleNameModal row">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                    <span
+                        class="tsp-title tsp-view-title tsp-font-size-modal-titles">{{'VEHICLE_INSPECTIONS.TITLES.EDIT'
+                        | translate}}</span>&nbsp;
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                        {{this.form.controls.licensePlate.value}}</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="state"
+                    [ngClass]="{'stateDanger' : this.form.controls.state.value=='Caducado','stateWarning' : this.form.controls.state.value=='Por Vencer','stateSuccess' : this.form.controls.state.value=='Vigente'}">
+
+                    <span
+                        class="tsp-title tsp-view-title tsp-font-size-modal-titles">{{this.form.controls.state.value}}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <div class="Section">
+                <hr class="ks-line" />
+                <div class="DataVehicle">
+                    <div class="title">
+                        <span
+                            class="tsp-font-size-default-title tsp-font-size-default">{{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'|
+                            translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- PLATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.LICENSE_PLATE'|
+                                    translate}}
+                                </mat-label>
+                            </div>
+                            <div>
+                                <span
+                                    class="tsp-font-size-default-content">{{this.form.controls.licensePlate.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- AREA -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.AREA'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.area.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- RESPONSIBLE
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.RESPONSIBLE'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.responsible.value}}</span>
+                            </div>
+                        </div> -->
+
+                        <!-- TYPE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.TYPE'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.type.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- BRAND -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.BRAND'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.brand.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- MODEL -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.MODEL'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.model.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- COLOR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.COLOR'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.color.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- YEAR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.YEAR'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.year.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- N° ENGINE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.N_ENGINE'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.nEngine.value}}</span>
+                            </div>
+                        </div>
+
+                        <!-- N° SERIE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels">{{'PIP.DATA.SERIE'|
+                                    translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span class="tsp-font-size-default-content">{{this.form.controls.serie.value}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Certified -->
+            <div class="Section">
+                <div class="Certified">
+                    <div class="row">
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title ">
+                                <span class="tsp-font-size-default-title tsp-font-size-default">
+                                    {{'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_DETAILS'| translate}}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label
+                                    class="tsp-font-size-default-content tsp-labels">{{'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_NUMBER'|
+                                    translate}}
+                                </mat-label>
+                                <input matInput type="text" formControlName="certificateNumber" maxlength="20" required
+                                    class="tsp-font-size-default-content"
+                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <mat-error *ngIf=" form.controls.certificateNumber.errors?.required">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{ 'PIP.DATA.INSURANCE' |
+                                    translate }}</mat-label>
+                                <mat-select formControlName="provider" class="tsp-font-size-default-content">
+                                    <mat-option *ngFor="let item of provider" [value]="item.id"
+                                        class="tsp-font-size-default-content  tsp-labelss">
+                                        {{ item.name }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="form.controls.provider.errors?.required && form.controls.provider.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'VEHICLE_INSPECTIONS.DATA.REVIEW_DATE' | translate }} </mat-label>
+                                <input matInput formControlName="reviewDate" [matDatepicker]="reviewDate" required
+                                    (dateChange)="reviewDates()" class="tsp-font-size-default-content" />
+                                <mat-datepicker-toggle matSuffix [for]="reviewDate"
+                                    class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                <mat-datepicker #reviewDate></mat-datepicker>
+
+                                <!-- Required Date Messages -->
+                                <mat-error *ngIf="form.controls.reviewDate.errors?.required">{{
+                                    'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                    }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'VEHICLE_INSPECTIONS.DATA.EXPIRATION_DATE' | translate }} </mat-label>
+                                <input matInput [matDatepicker]="expirationDate" required
+                                    formControlName="expirationDate" (dateChange)="expirationDates()"
+                                    class="tsp-font-size-default-content" />
+                                <mat-datepicker-toggle matSuffix [for]="expirationDate"
+                                    class="tsp-font-size-default-content  tsp-labels"> </mat-datepicker-toggle>
+                                <mat-datepicker #expirationDate></mat-datepicker>
+                                <!-- Required Date Messages -->
+                                <mat-error *ngIf="form.controls.expirationDate.errors?.required">{{
+                                    'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                    }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+
+            <!-- Section File Uploaded -->
+            <div class="Section">
+                <div class="FileUploaded">
+                    <div class="title">
+                        <span
+                            class="tsp-font-size-default-title tsp-font-size-default">{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT'
+                            | translate}}</span>
+                    </div>
+                    <cad-upload-files [Multiple]="true" [Label]="'MOBILITY_REQUEST.LABELS.ADD_DOCUMENT' | translate"
+                        [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"
+                        [RegisteredFiles]="vehicleInspection.documentsUrl"></cad-upload-files>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <div class="btnSave">
+                    <button mat-raised-button [disabled]="form.invalid || loading==false"
+                        class="tsp-font-size-buttons tsp-button-success" (click)="btnSave()">
+                        <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                    </button>
+                </div>
+                <div class="btnClose">
+                    <button mat-raised-button color="primary" [disabled]="loading==false"
+                        class="button-close tsp-font-size-buttons" mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

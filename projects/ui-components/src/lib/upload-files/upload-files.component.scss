@@ -1,0 +1,177 @@
+@import 'variables';
+
+.content-item {
+    display: flex;
+}
+
+.button-actions {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    border: none;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.label-button {
+    margin-bottom: 0.4vh;
+}
+
+.label-name-file {
+    color: $tspSigesBlue;
+}
+
+.label-deleted {
+    text-decoration: line-through;
+}
+
+.iconFile {
+    margin-left: 15px;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+
+}
+
+.icon-star {
+    color: $tspSigesbuttonEdit
+}
+
+#fileUpload {
+    display: none;
+    opacity: 0;
+}
+
+input {
+    display: none;
+    opacity: 0;
+}
+
+#fileUploadByItem {
+    display: none;
+    opacity: 0;
+}
+
+.button-Upload {
+    display: block;
+    color: $tspSigesWhite;
+    background-color: $tspSigesBlue;
+    padding: 3px;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-actions {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-lapsed {
+    color: $tspSigesStateLapsed;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.status-active {
+    color: $tspSigesStateActive;
+    text-align: center;
+    font-weight: 600;
+}
+
+.status-expire {
+    color: $tspSigesStateExpire;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+
+
+.btn-delete {
+    background-color: $tspSigesError;
+}
+
+.data-columns {
+    width: 80%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.iconFile {
+    font-size: 40px;
+    color: $colorDanger;
+}
+
+.nameFile {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: $tspSigesBlackLetters;
+}
+
+.table {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        text-align: center;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center;
+        font-weight: bold;
+
+    }
+}
+
+.icon-note {
+    margin-right: 10px;
+}

@@ -1,0 +1,242 @@
+@import 'variables';
+
+.tsp-view-title {
+  text-align: center;
+  color: $tspSigesWhiteLetters;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 0px;
+  max-width: 936px !important;
+  overflow: hidden;
+}
+
+.tsp-title-modals {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.tsp-title {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.325rem;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.tsp-subTitle {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.titleModal {
+  // background-color: $tspSigesBlue;
+  color: $tspSigesWhite;
+  // margin-left: -16px;
+  // margin-right: -16px;
+  padding-left: 44px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  @extend .tsp-title-modals;
+
+  .titleNameModal {
+    display: flex;
+  }
+
+  .state {
+    border: 1px solid;
+    text-align: center;
+    justify-content: center;
+    background: $tspSigesMagenta;
+    color: $tspSigesBlack;
+    // padding-right: 18px;
+    // padding-left: 18px;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+    border-color: $tspSigesMagenta;
+  }
+}
+
+.leftSectionTitleModal {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.optionModal {
+  display: flex;
+  justify-content: end;
+}
+
+
+.contentAtribute {
+
+  // padding-left: 20px;
+  .title {
+    font-weight: bold;
+    color: $tspSigesBlack;
+    @extend .tsp-subTitle;
+  }
+}
+
+
+.mat-divider {
+  border-top-width: 2px;
+  margin-left: -11px;
+  margin-right: -10px;
+  border-top-style: solid;
+  border-top-color: $tspSigesBlue;
+}
+
+.title {
+  color: $tspSigesBlue;
+  font-weight: bold;
+  @extend .tsp-title;
+}
+
+.mat-raised-button {
+  padding: 0 2px 0px 2px;
+  min-width: 0;
+  width: 40px;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.flex {
+  display: flex;
+}
+
+.FileUploaded {
+  .attachmentsFile {
+    flex-direction: row;
+    margin-top: 5px;
+
+    .contentAttachment {
+      display: flex;
+      flex-wrap: wrap;
+
+      .contentAttachmentFile {
+        display: flex;
+
+        .iconFile {
+          .material-icons {
+            font-size: 40px;
+            color: $colorDanger;
+          }
+        }
+
+        .nameFile {
+          margin-left: 18px;
+          margin-top: 6px;
+        }
+      }
+
+      .iconWhatapp {
+        margin-left: 10px;
+        width: 23px;
+        height: 23px;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.CloseModal {
+  display: flex;
+  justify-content: end;
+  margin-top: 14px;
+  margin-bottom: 10px
+}
+
+.optionsModalResponsive {
+  display: none;
+  align-items: center;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+  .title {
+    text-align: center;
+  }
+
+  .contentAtribute {
+    text-align: center;
+  }
+
+  .optionsModal {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
+}
+
+@media (max-width: 664px) {
+
+  .optionModal {
+    display: none;
+  }
+
+  .optionsModalResponsive {
+    display: flex;
+    justify-content: end;
+  }
+
+
+
+  .titleNameModal {
+    justify-content: center;
+  }
+}
+
+.mat-dialog-content {
+  margin: 0px !important;
+}
+
+.title-container {
+  margin-left: 4px;
+  margin-top: -10px;
+}
+
+.tsp-container {
+  padding: 0% 0% 2% 3%;
+
+}
+
+.seccion-container {
+  margin-top: 10px;
+}
+
+.pip-status-valid {
+  background-color: $tspSigesStateActive;
+  color: $tspSigesWhiteLetters;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.pip-status-expire {
+  background-color: $tspSigesStateExpire;
+  color: $tspSigesWhiteLetters;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.pip-status-lapsed {
+  background-color: $tspSigesStateLapsed;
+  color: $tspSigesWhiteLetters;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.title-modal {
+  padding: 20px;
+}

@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="view-title-container">
+                <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                    {{'USERS.DATA.ACTUALIZAR USUARIO' | translate}}
+                </span>
+            </div>
+            <mat-dialog-content>
+                <form [formGroup]="userForm">
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_CREDENTIALS' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_EMAIL' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USERT_PASSWORD' | translate}}:
+                                </label>
+                                <br>
+                                <label class="tsp-font-size-default-title titlehader">
+                                    {{'USERS.DATA.USER_ROL' | translate}}:
+                                </label>
+                            </div>
+                            <div class="col-sm-12 col-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="tsp-font-size-default-title">fernando.carrillo@gmail.com</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">*****************</label>
+                                <br>
+                                <label class="tsp-font-size-default-title">Lector de area</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_ASSIGN_OFFICER' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row inputFormulario">
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'USERS.DATA.USER_AREA' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectAreas" name="food" formControlName="area"
+                                        class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let area of areas" [value]="area.value">
+                                            {{area.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'USERS.DATA.USER_FUNCIONARIES' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectFuncionaries" name="funcionary"
+                                        formControlName="funcionary" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let funcionary of funcionaries" [value]="funcionary.value">
+                                            {{funcionary.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <cad-chips-input [items]="roles" formArrayName="rol"
+                                    [InputLabel]="'FUNCIONARIES.DATA.FUNC_ROLES' | translate"
+                                    [InputCheckLabel]="'FUNCIONARIES.DATA.FUNC_ROLE' | translate"></cad-chips-input>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-dialog-content>
+            <div class="row mt-4 mb-4">
+                <div class="buttons-container">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        [disabled]="!userForm.valid" (click)=" confirmationUser()">
+                        <mat-icon class="icons">save</mat-icon>{{ 'USERS.DATA.USER_SAVE' | translate }}
+                    </button>
+                    <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                        mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'USERS.DATA.USER_TOCLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

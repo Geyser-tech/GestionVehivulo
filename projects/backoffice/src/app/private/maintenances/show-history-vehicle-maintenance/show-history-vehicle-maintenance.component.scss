@@ -1,0 +1,152 @@
+@import 'variables';
+
+.seccion-container {
+    margin: 10px;
+}
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+.mat-dialog-content {
+    margin: 0;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+}
+
+.register-background {
+    margin-left: -30px;
+    margin-right: -28px;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-title {
+    color: $tspSigesBlueLetters;
+}
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+// ::ng-deep .mat-dialog-container {
+//     padding-top: 0px;
+//     padding-right: 16px;
+//     padding-left: 16px;
+// }
+
+// ::ng-deep .cdk-overlay-pane {
+//     margin-left: 14%;
+// }
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.round-button:hover {
+    transform: translateY(0) scale(1.02);
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .6) !important;
+}
+
+::ng-deep .mat-select-panel-wrap .mat-select-panel {
+    width: 80% !important;
+}
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.table {
+    margin-top: 5px;
+
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        background-color: $tspSigesBlue;
+        color: white;
+        text-align: center;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center;
+    }
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}

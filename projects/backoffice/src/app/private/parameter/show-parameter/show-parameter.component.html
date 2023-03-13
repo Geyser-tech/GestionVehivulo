@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="view-title-container">
+            <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                {{'PARAMETER.DATA.TITLE_PARAMETER_CONFIG' | translate}}
+            </span>
+        </div>
+    </div>
+    <div class="row tsp-container">
+        <mat-dialog-content>
+            <div class="seccion-container">
+                <div class="row">
+                    <div class="row showButton">
+                        <div class="button-add-container">
+                            <button mat-raised-button
+                                class="button-add-master buttonDow button-add mr-2 tsp-font-size-buttons">
+                                <mat-icon>save_alt</mat-icon>
+                                {{
+                                'PARAMETER.DATA.TO_DOWNLOAD' | translate
+                                }}
+                            </button>
+                            <button mat-raised-button class="buttonDow buttonDow button-add mr-2 tsp-font-size-buttons"
+                                (click)="addParameterConfig()">
+                                <mat-icon>add</mat-icon>
+                                {{
+                                'PARAMETER.DATA.MEW_PARAMETER' | translate
+                                }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seccion-container">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="row mt-4 listDetailTable">
+                        <cad-table-filter [items]="listParametersConfigurations" [columns]="columns" [actions]="actions"
+                            (editEvent)=" editParameterConfig($event)">
+                        </cad-table-filter>
+                    </div>
+                </div>
+            </div>
+        </mat-dialog-content>
+    </div>
+    <div class="row mt-2 mb-4 buttontoclose">
+        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4 button-add-close">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>close</mat-icon>{{'PARAMETER.DATA.TO_CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

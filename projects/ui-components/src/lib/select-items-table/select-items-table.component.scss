@@ -1,0 +1,20 @@
+@import 'variables';
+
+.general-input {
+    width: 100%;
+}
+
+.table {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        background-color: $tspSigesBlue;
+        color: white;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+}

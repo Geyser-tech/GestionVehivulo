@@ -1,0 +1,153 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="view-title-container">
+                <span class="tsp-title tsp-view-title tsp-font-size-modal-titles">
+                    {{'USERS.DATA.USER_NEW' | translate}}
+                </span>
+            </div>
+            <mat-dialog-content>
+                <form [formGroup]="userForm" class="register-background tsp-container">
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_CREDENTIALS' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content"> {{'USERS.DATA.USER_EMAIL' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'USERS.DATA.USER_EMAIL_PLACEHOLDER' | translate}}"
+                                        formControlName="email" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="userForm.controls.email.errors?.required &&
+                                    userForm.controls.email.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="userForm.controls.email.errors?.pattern && userForm.controls.email.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content"> {{'USERS.DATA.USERT_PASSWORD' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'USERS.DATA.USER_PASSWORD_PLACEHOLDER' | translate}}"
+                                        formControlName="password" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="userForm.controls.password.errors?.required &&
+                                    userForm.controls.password.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="userForm.controls.password.errors?.pattern && userForm.controls.password.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'USERS.DATA.USER_REPEAT_PASSWORD' |
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput placeholder="{{'USERS.DATA.USER_REPEAT_PLACEHOLDER' | translate}}"
+                                        formControlName="confirmPassword" class="tsp-font-size-default-content">
+                                    <mat-error class="tsp-font-size-errors-messages" *ngIf="userForm.controls.confirmPassword.errors?.required &&
+                                    userForm.controls.confirmPassword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                    <mat-error class="tsp-font-size-errors-messages"
+                                        *ngIf="userForm.controls.confirmPassword.errors?.pattern && userForm.controls.confirmPassword.touched">
+                                        {{'MASTER.MASTER_TITLE.MESSAGE' | translate}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'FUNCIONARIES.DATA.FUNC_SECURITY' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectSecurityRole" name="role"
+                                        formControlName="segurityRole" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let role of securityRole" [value]="role.value">
+                                            {{role.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row seccion-container">
+                        <div class="row">
+                            <hr class="ks-line">
+                            <div class="col-sm-12 col-8 col-md-8 col-lg-8 col-xl-8">
+                                <div class="tsp-secction-title tsp-font-size-default-title">
+                                    {{'USERS.DATA.USER_ASSIGN_OFFICER' | translate}}
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-2 col-md-2 col-lg-2 col-xl-2">
+                                <div class="button-add-container">
+                                    <button mat-raised-button class="buttonadd addcredenciales" (click)="userVisible()"
+                                        [hidden]="formVisibility">
+                                        <mat-icon>add</mat-icon>{{'USERS.DATA.USER_ADD_ASSIGNMENT' | translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formVisibility" class="row seccion-container">
+                        <div class="row inputFormulario">
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'USERS.DATA.USER_AREA' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectAreas" name="food" formControlName="area"
+                                        class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let area of areas" [value]="area.value">
+                                            {{area.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="InputDetailMaster">
+                                    <mat-label class="tsp-font-size-default-content">
+                                        {{'USERS.DATA.USER_FUNCIONARIES' | translate}}
+                                    </mat-label>
+                                    <mat-select [(ngModel)]="selectFuncionaries" name="funcionary"
+                                        formControlName="funcionary" class="tsp-font-size-default-content">
+                                        <mat-option *ngFor="let funcionary of funcionaries" [value]="funcionary.value">
+                                            {{funcionary.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                                <cad-chips-input [items]="roles"
+                                    [InputLabel]="'FUNCIONARIES.DATA.FUNC_ROLES' | translate"
+                                    [InputCheckLabel]="'FUNCIONARIES.DATA.FUNC_ROLE' | translate"></cad-chips-input>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-dialog-content>
+            <div class="row mt-4 mb-4">
+                <div class="buttons-container">
+                    <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                        [disabled]="!userForm.valid">
+                        <mat-icon class="icons">save</mat-icon>{{ 'USERS.DATA.USER_SAVE' | translate }}
+                    </button>
+                    <button mat-raised-button color="primary" class="marging-buttons button-close tsp-font-size-buttons"
+                        mat-dialog-close>
+                        <mat-icon class="icons">close</mat-icon>{{ 'USERS.DATA.USER_TOCLOSE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

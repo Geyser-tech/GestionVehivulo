@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div>
+                <mat-label class="tsp-font-size-modal-titles">{{ 'MAINTENANCES.TITLES.HISTORY_VEHICLE' | translate
+                    }}</mat-label>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-content class="container">
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title tsp-title">
+                            {{ 'PIP.CREATE.INSURED_VEHICLE' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <cad-search-print [PlaceHolderInput]="'PIP.DATA.LICENSE_PLATE' | translate"
+                        (SendIdentifierObject)="searchVehicle($event)" [SomeObject]="vehicle" [Labels]="labels"
+                        [ColumnNumber]=4 [isvehicle]="true">
+                    </cad-search-print>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title tsp-title">
+                            {{ 'MAINTENANCES.LABELS.VEHICLE_HISTORY' | translate }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="container row table">
+                <p-table [columns]="cols" [value]="history" class="tsp-table-container" selectionMode="single"
+                    [(selection)]="selectedItem" dataKey="id" styleClass="p-datatable-customers">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                                class="column-options table-font-header">
+                                <span class="tsp-font-size-default-title tsp-font-size-default">{{column.header}}</span>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-customer let-rowData let-columns="columns"
+                        let-rowIndex="rowIndex">
+                        <tr [pSelectableRow]="customer">
+                            <td *ngFor="let col of columns">
+                                <span
+                                    class="tsp-font-size-default-title tsp-font-size-default">{{rowData[col.field]}}</span>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="4"> {{ 'MAINTENANCES.LABELS.NO_VEHICLE' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row mt-4">
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

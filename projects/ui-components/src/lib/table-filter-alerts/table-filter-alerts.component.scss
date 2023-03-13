@@ -1,0 +1,83 @@
+@import 'variables.scss';
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.container-buttons:hover {
+    transform: translateY(0) scale(1.01);
+
+}
+
+.column-options {
+    text-align: center !important;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.status-red {
+    background-color: red;
+    padding: 5px;
+    color: $tspSigesWhite;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.status-ambar {
+    background-color: #FFBF00;
+    padding: 5px;
+    color: $tspSigesWhite;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.status-green {
+    background-color: green;
+    padding: 5px;
+    color: $tspSigesWhite;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.data-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-input-filter {
+    width: 100%;
+}
+
+.tsp-table-container {
+    font-size: 1px;
+}
+
+.table {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center;
+        padding: 5px;
+
+    }
+}

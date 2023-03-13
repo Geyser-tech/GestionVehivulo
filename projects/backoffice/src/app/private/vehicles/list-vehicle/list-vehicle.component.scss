@@ -1,0 +1,40 @@
+@import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+}
+
+.button-add-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.button-add {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhiteLetters;
+    margin-right: 5px;
+}
+
+.button-clear-filters {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhiteLetters;
+    margin-right: 5px;
+
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    font-weight: 400;
+}
+
+.multi-check-container {
+    margin-top: 1px;
+}

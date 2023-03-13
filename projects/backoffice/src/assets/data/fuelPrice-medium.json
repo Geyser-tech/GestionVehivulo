@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "id": "0001",
+            "Contract": "011-2022-GAS",
+            "Concept": "ACEITE",
+            "EfectiveDate": "12/07/2022",
+            "Worth": "20.536",
+            "Document": "PDF",
+            "STATUS": "ACTUAL"
+        },
+        {
+            "id": "0002",
+            "Contract": "020-2022-GAS",
+            "Concept": "GASOHOL 97",
+            "EfectiveDate": "12/07/2022",
+            "Worth": "25.00",
+            "Document": "PDF",
+            "STATUS": "DESFASADO"
+        },
+        {
+            "id": "0003",
+            "Contract": "032-2021-GAS",
+            "Concept": "GASOHOL 97",
+            "EfectiveDate": "12/07/2022",
+            "Worth": "15.15",
+            "Document": "PDF",
+            "STATUS": "ACTUAL"
+        }
+    ]
+}

@@ -1,0 +1,295 @@
+@import 'variables';
+
+.plan-maintenance-header {
+    padding: 10px;
+    text-align: center;
+    background-color: $tspSigesBlue;
+    border-right: 1px $tspSigesWhite solid;
+    color: $tspSigesWhiteLetters;
+}
+
+.plan-maintenance-header-dynamic {
+    padding: 10px;
+    text-align: center;
+    background-color: $tspSigesBlue;
+    border-right: 1px $tspSigesWhite solid;
+    color: $tspSigesWhiteLetters;
+    width: 10px !important;
+}
+
+.text-table-center {
+    text-align: center;
+}
+
+.maintenanceItem {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.tsp-border-complement-rows {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+}
+
+.tsp-maintenance-item-date-label-registered {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: $tspSigesPlanStateRegistered;
+    color: $tspSigesWhiteLetters;
+}
+
+
+.tsp-maintenance-item-date-label-approved {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: $tspSigesPlanStateApproved;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-maintenance-item-date-label-not-equals-date {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: $tspSigesError;
+    color: $tspSigesWhiteLetters;
+}
+
+
+.tsp-maintenance-item-date-label-expired {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: $tspSigesPlanStateExpire;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-maintenance-item-date-label-generate {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: $tspSigesPlanStateGenerate;
+    color: $tspSigesWhiteLetters;
+}
+
+
+.tsp-maintenance-item-type-label {
+    font-weight: 600;
+}
+
+.tsp-title-module {
+    font-weight: 600;
+    color: $tspSigesBlue;
+}
+
+.title-container-secction {
+    text-align: start;
+}
+
+
+.title-container {
+    margin-left: 5px;
+    margin-top: -10px;
+    text-align: start;
+}
+
+.tsp-suggestion-buttons-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-checkBox-plan-maintenance {
+    margin-right: 115px;
+}
+
+::ng-deep .mat-checkbox-inner-container-no-side-margin {
+    background-color: $tspSigesWhite;
+}
+
+
+
+.tsp-maintenance-selector-approved {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 100px;
+    background-color: $tspSigesPlanStateApprovedLow;
+}
+
+.tsp-maintenance-selector-approved:hover {
+    background-color: $tspSigesMagenta;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+.tsp-maintenance-selector-expire {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 100px;
+}
+
+.tsp-maintenance-selector-not-executed-plan-approved {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 100px;
+    background-color: $tspSigesPlanStateExpireLow;
+}
+
+.tsp-maintenance-selector-not-executed-plan-approved:hover {
+    background-color: $tspSigesMagenta;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+.tsp-maintenance-selector-expire:hover {
+    background-color: $tspSigesMagenta;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+.tsp-maintenance-selector-registered {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 100px;
+    background-color: $tspSigesPlanStateRegisteredLow;
+}
+
+.tsp-maintenance-selector-registered-plan-registered {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 100px;
+}
+
+.tsp-maintenance-selector-registered-plan-registered:hover {
+    background-color: $tspSigesMagenta;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+.tsp-maintenance-selector-registered:hover {
+    background-color: $tspSigesMagenta;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+.tsp-maintenance-selector-generator {
+    border: 1px $tspSigesBlack solid;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    height: 80px;
+}
+
+.tsp-plan-maintenance-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tsp-buttons-actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.tsp-buttons {
+    font-size: 1px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 2px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.tsp-check-approve-plan {
+    margin-left: 5px;
+}
+
+.tsp-buttons-show-maintenance {
+    font-size: 1px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 2px;
+
+    height: 20px;
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+
+.delete-icon {
+    font-size: 20px;
+}
+
+.tsp-maintenances-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dateContent {
+    margin-left: 4px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: $tspSigesBlue;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.tsp-date-search-input {
+    width: 100%;
+}
+
+.tsp-button-success {
+    margin-left: 5px;
+}
+
+.tsp-buttons-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.not-equal-execute-date {
+    margin-top: 5px;
+}
+
+.not-equal-maintenance-date {
+    text-decoration: line-through;
+}

@@ -1,0 +1,40 @@
+<!-- <div class="container">
+    <div class="register-background">
+        <div class="row">
+            <div class="view-title-container">
+                <h1 class="title-detail-master tsp-font-size-modal-titles titleDetailMaster">
+                    {{'PARAMETER.DATA.CAVEAT' | translate}}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form>
+            <div class="form-container">
+                <div class="colsm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4">
+                    <h1 class="tsp-font-size-default-title">{{'PARAMETER.DATA.MESSAGE'|
+                        translate}}</h1>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row mt-2 mb-4 buttonDetailMaster">
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4">
+            <button mat-raised-button class="tsp-button-success tsp-font-size-buttons"
+                (click)="advertecenseParameter()">
+                <mat-icon>assignment_turned_in</mat-icon>{{'PARAMETER.DATA.AGREE' | translate}}
+            </button>
+        </div>
+        <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6 mt-4 adveterclose">
+            <button mat-flat-button mat-button mat-dialog-close class="tsp-button-delete tsp-font-size-buttons">
+                <mat-icon>highlight_off</mat-icon>{{'PARAMETER.DATA.CANCEL' | translate}}
+            </button>
+        </div>
+    </div>
+</div> -->
+
+<cad-unsuscribe-dialog [TitleModal]="'PARAMETER.CONFIGURATION.UNSUSCRIBE.TITLE_MODAL' | translate"
+    [Question]="'PARAMETER.CONFIGURATION.UNSUSCRIBE.QUESTION' | translate" (Unsuscribe)="unsuscribe($event)"
+    [id]="configurationId" [BtnOk]="'GENERAL.BUTTONS.SAVE' | translate"
+    [BtnCancel]="'GENERAL.BUTTONS.CANCEL' | translate">
+</cad-unsuscribe-dialog>

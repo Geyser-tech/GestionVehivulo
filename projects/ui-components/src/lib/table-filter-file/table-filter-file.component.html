@@ -1,0 +1,71 @@
+<p-table #dt1 [value]="items" selectionMode="single" [(selection)]="selectedItem" dataKey="id"
+    styleClass="p-datatable-customers" [rows]="10" [paginator]="true" [columns]="columns" class="tsp-table-container"
+    [scrollable]="scrollable">
+    <ng-template pTemplate="header">
+        <tr>
+            <th class="column-options table-font-header">
+                Nº
+            </th>
+            <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                class="column-options table-font-header">
+                {{column.header}}</th>
+            <th *ngIf="columnDocument" class="column-options table-font-header">
+                Documento
+            </th>
+            <th class="column-options table-font-header">
+                Opciones
+            </th>
+        </tr>
+        <tr>
+            <th class="column-options">
+            </th>
+            <th *ngFor="let column of columns">
+                <input pInputText type="text" (input)="dt1.filter($any($event.target)?.value, column.field, 'contains')"
+                    [value]="$any(dt1).filters[column.field]?.value"
+                    class="p-column-filter tsp-input-filter  table-font-content">
+            </th>
+            <th class="column-options">
+            </th>
+            <th class="column-options">
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer let-rowData let-columns="columns" let-rowIndex="rowIndex">
+
+        <tr [pSelectableRow]="customer">
+            <td>
+                {{rowIndex + 1}}
+            </td>
+            <td *ngFor="let col of columns; let i=index" class="column-options">
+        <tr class="data-columns table-font-content" *ngIf="col.field == 'status'" [ngClass]="{'status-red':rowData.status == 'De Baja', 'status-green': rowData.status == 'Activo'
+                 ,'status-normal': rowData.statusClass == 'normal'}">{{ rowData['status']}}</tr>
+        <tr *ngIf="col.field != 'status'" class="data-columns table-font-content">{{ rowData[col.field]}}</tr>
+        </td>
+        <td *ngIf="columnDocument" class="column-options">
+            <div class="iconFile"><mat-icon>picture_as_pdf</mat-icon></div>
+        </td>
+        <td class="buttons-container row">
+            <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons" *ngIf="actions[0]==1">
+                <button class="button-actions" (click)="searchAction(rowData['Id'])">
+                    <mat-icon class="tsp-icons">search</mat-icon>
+                </button>
+            </div>
+            <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons" *ngIf="actions[1]==1">
+                <button class="button-actions" (click)="editAction(rowData['Id'])">
+                    <mat-icon class="tsp-icons">edit</mat-icon>
+                </button>
+            </div>
+            <div *ngIf="actions[2]==1" mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                <button class="button-actions-delete" (click)="deleteAction(rowData['Id'])">
+                    <mat-icon class="tsp-icons">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="4">No customers found.</td>
+        </tr>
+    </ng-template>
+</p-table>

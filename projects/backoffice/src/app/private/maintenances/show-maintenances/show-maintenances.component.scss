@@ -1,0 +1,513 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.325rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.titleModal {
+    color: $tspSigesWhite;
+    padding-left: 44px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+    }
+
+    .state {
+        border: 1px solid;
+        text-align: center;
+        justify-content: center;
+        background: $tspSigesMagenta;
+        color: $tspSigesBlack;
+        border-radius: 5px;
+        margin: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        border-color: $tspSigesMagenta;
+    }
+}
+
+.leftSectionTitleModal {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.optionModal {
+    display: flex;
+    justify-content: end;
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+    margin-left: -11px;
+    margin-right: -10px;
+    border-top-style: solid;
+    border-top-color: $tspSigesBlue;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: bold;
+    @extend .tsp-title;
+}
+
+.mat-raised-button {
+    padding: 0 2px 0px 2px;
+    min-width: 0;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.flex {
+    display: flex;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                cursor: pointer;
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.optionsModalResponsive {
+    display: none;
+    align-items: center;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .optionsModal {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+
+}
+
+@media (max-width: 664px) {
+
+    .optionModal {
+        display: none;
+    }
+
+    .optionsModalResponsive {
+        display: flex;
+        justify-content: end;
+    }
+
+
+    .titleNameModal {
+        justify-content: center;
+    }
+
+}
+
+//FILE
+.file {
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.file input {
+    display: none;
+}
+
+.containerFile {
+    display: block;
+    color: $tspSigesWhite;
+    background-color: $tspSigesBlue;
+    padding: 8px 21px;
+    border-radius: 5px;
+    width: 20%;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+file-value {
+    text-align: left;
+}
+
+.attachmentsFile {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentAttachment {
+    margin-right: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contentAttachmentFile {
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+.btnChangeAndRemove {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#fileUpload {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_vehicle {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_conformity {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#fileUpload_spareParts {
+    appearance: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.iconFile {
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+
+    .material-icons {
+        font-size: 40px;
+        color: $colorDanger;
+    }
+
+    .mat-icon {
+        width: auto;
+        height: auto;
+    }
+}
+
+.nameFile {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: $tspSigesBlackLetters;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+
+.btnChange {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.btnRemove {
+    display: flex;
+    justify-content: end;
+
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .btnChange {
+        justify-content: center;
+    }
+
+    .btnRemove {
+        justify-content: center;
+
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+}
+
+.mat-radio-button {
+    margin-right: 150px;
+    margin-bottom: 15px;
+}
+
+.mat-radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.sub-ks-line {
+    width: 100%;
+    background-color: $tspSigesLightGrayLetters;
+    color: $tspSigesWhite;
+    height: 5px;
+    position: relative;
+    opacity: 100%;
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+.sub-ks-line-vertical {
+    border-right: thick solid $tspSigesLightGrayLetters;
+    height: 100%;
+    position: relative;
+    opacity: 100%;
+    border-radius: 2px;
+}
+
+.check-box {
+    margin-bottom: 5px
+}
+
+.check-box-item {
+    white-space: initial;
+}
+
+.table {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        background-color: $tspSigesBlue;
+        color: white;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.seccion-container {
+    margin: 10px;
+}
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    text-align: center;
+}
+
+.register-background {
+    margin-left: -30px;
+    margin-right: -28px;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.search-input {
+    width: 80%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.activitiesPreventiveContainer {
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 10px;
+}
+
+.label-activities {
+    margin-top: 50px;
+}
+
+.iconCheck {
+    color: $tspSigesBlue;
+}
+
+.seccion-documents {
+    margin-top: 30px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+//Agregar
+.tsp-title {
+    color: $tspSigesBlueLetters;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+    margin-left: 10px;
+}
+
+.buttons-header-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+}

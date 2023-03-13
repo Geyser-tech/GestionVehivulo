@@ -1,0 +1,116 @@
+<div class="container" *ngIf="driver !=null">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-md-10 col-lg-10 col-xl-10 ">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals">{{'VISUALIZE_DRIVER.TITLE'|
+                translate}}
+            </h1>
+        </div>
+        <div class="col-12 col-md-2 col-lg-2 col-xl-2 " *ngIf="driver.registrationState==true &&
+        !checkOnlyRead">
+            <div class=" optionModal">
+                <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" class="btndelete" mat-dialog-close (click)="openUnsuscribe()">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div mat-dialog-content>
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line">
+                <div class="col-12 col-md-12 col-lg-12 col-lx-12">
+                    <div class="tsp-secction-title">
+                        {{'VISUALIZE_DRIVER.GENERAL_DATA'| translate}}:
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <span
+                        class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.DRIVER'
+                        |
+                        translate}}:</span>
+                    <br />
+                    <span
+                        class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.GENDER'
+                        |
+                        translate}}:</span>
+                    <br />
+                    <span class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.AGE' |
+                        translate}}:</span>
+                    <br />
+                    <span
+                        class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.DIRECTION'
+                        |
+                        translate}}:</span>
+                    <br />
+                    <span class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.PHONE'
+                        |
+                        translate}}:</span>
+                    <br />
+                    <span class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.EMAIL'
+                        |
+                        translate}}:</span>
+                    <br />
+                    <span class="tsp-font-size-default-content  tsp-labels label_bold">{{'VISUALIZE_DRIVER.DRIVER.AREA'
+                        |
+                        translate}}:</span>
+                    <br />
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <span class="tsp-font-size-default-content ">
+                        {{driver.fullName}}
+                    </span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.gender}}</span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.age}}</span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.address}}</span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.phone}}</span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.email}}</span>
+                    <br />
+                    <span class="tsp-font-size-default-content ">{{driver.area}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title">
+                        {{'VISUALIZE_DRIVER.LICENSES' | translate}}:
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <cad-table-show-drive-licenses [Licenses]="driver.currentLicences" [columns]="columns"
+                    (revalidateEvent)="revalidationRegistration($event)" (showFileEvent)="showFiles($event)"
+                    [revalidateDisabled]="revalidateDisabled"></cad-table-show-drive-licenses>
+            </div>
+        </div>
+        <div class="row seccion-container">
+
+            <div class="title">
+                <span>{{'VISUALIZE_DRIVER.DRIVER.DOCUMENT' | translate}}:</span>
+            </div>
+            <cad-viewer-file [Files]="driver.documentsUrl"></cad-viewer-file>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="buttons-container">
+            <button type="submit" mat-raised-button color="warn" class="CloseModal" mat-dialog-close>
+                <mat-icon>close</mat-icon>{{'VISUALIZE_DRIVER.DRIVER.TOCLOSED'|translate}}
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,185 @@
+<div class="container">
+    <div class="titleModal row">
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 leftSectionTitleModal ">
+            <div class="titleNameModal row">
+                <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5">
+                    <span class="tsp-font-size-modal-titles">{{
+                        'FUEL_SUPPLIES.TITLES.PRICE_RECORD' |
+                        translate }}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 optionsModal">
+            <div class="optionModal">
+                <div class="btnDowloadPrice" *ngIf="form.value.effectiveDate && loadingDowload">
+                    <button (click)="DowloadLastPrice()" mat-raised-button class="button-dowload-price">
+                        <mat-icon>note_add</mat-icon>
+                        <span class="tsp-font-size-modal-titles">{{
+                            'FUEL_SUPPLIES.FUEL_PRICE.PRICES' |
+                            translate }}</span>
+                    </button>
+                </div>
+                <div class="btnDowloadPrice" *ngIf="!loadingDowload">
+                    <div class="button-dowload-price-disabled row">
+                        <div class="col-sm-12 col-7 col-md-7 col-lg-7 col-xl-7">
+                            <span class="tsp-font-size-modal-titles">{{
+                                'GENERAL.SPINNER.LOADING' |
+                                translate }}</span>
+                        </div>
+                        <div class="col-sm-12 col-3 col-md-3 col-lg-3 col-xl-3">
+                            <mat-spinner [diameter]="30"></mat-spinner>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="form">
+        <div mat-dialog-content class="container mt-2">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title ">
+                        <span class="tsp-font-size-default-title  tsp-font-size-default">
+                            {{ 'FUEL_SUPPLIES.FUEL_PRICE.GENERAL_DATA' | translate }}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.CONTRACT' | translate }}</mat-label>
+                        <mat-select formControlName="contractId" (ngModelChange)="searchConceptClient($event)"
+                            class="tsp-font-size-default-content">
+                            <mat-option *ngFor="let contract of contract" [value]="contract.id"
+                                class="tsp-font-size-default-content">
+                                {{ contract.contractName}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="form.controls.contractId.errors?.required && form.controls.contractId.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.CONTRACTOR' | translate }}
+                        </mat-label>
+                        <input class="tsp-font-size-default-content" matInput value="{{client}}"
+                            placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.CONTRACTOR' | translate }}" disabled>
+                        <mat-error *ngIf="form.controls.clientId.errors?.required && form.controls.clientId.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.CONCEPT' | translate }}</mat-label>
+                        <mat-select formControlName="conceptId" class="tsp-font-size-default-content">
+                            <mat-option *ngFor="let concept of concept" [value]="concept.id"
+                                class="tsp-font-size-default-content">
+                                {{ concept.conceptName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.controls.conceptId.errors?.required && form.controls.conceptId.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.EFECTIVE_DATE' | translate }} </mat-label>
+                        <input class="tsp-font-size-default-content" matInput [matDatepicker]="efectiveDate"
+                            formControlName="effectiveDate" />
+                        <mat-datepicker-toggle matSuffix [for]="efectiveDate"> </mat-datepicker-toggle>
+                        <mat-datepicker #efectiveDate></mat-datepicker>
+
+                        <mat-error
+                            *ngIf="form.controls.effectiveDate.errors?.required && form.controls.effectiveDate.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <mat-form-field class="general-input" appearance="fill">
+                        <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}
+                        </mat-label>
+                        <input class="tsp-font-size-default-content" matInput type="number" formControlName="unitPrice"
+                            placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}" required>
+                        <mat-error *ngIf="form.controls.unitPrice.errors?.required && form.controls.unitPrice.touched">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 row" [formGroup]="formPrice">
+                    <p-toolbar>
+
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title ">
+                                <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                    {{ 'FUEL_SUPPLIES.FUEL_PRICE.PRICE_CONTRACT' | translate }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 containerActualPrice">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'FUEL_SUPPLIES.FUEL_PRICE.ACTUAL_PRICE' | translate }}
+                                </mat-label>
+                                <input class="tsp-font-size-default-content" matInput type="number"
+                                    formControlName="actualPrice"
+                                    placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.ACTUAL_PRICE' | translate }}">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 containerPreviusPrice">
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label class="tsp-font-size-default-content  tsp-labels"> {{
+                                    'FUEL_SUPPLIES.FUEL_PRICE.PREVIUS_PRICE' | translate }}
+                                </mat-label>
+                                <input class="tsp-font-size-default-content" matInput type="number"
+                                    formControlName="previusPrice"
+                                    placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.PREVIUS_PRICE' | translate }}">
+
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 container-buttonCheck">
+                            <button class="button-check" mat-flat-button (click)="checkPrice()"
+                                [disabled]="formPrice.invalid">
+                                COMPROBAR PRECIO
+                            </button>
+                        </div>
+                        <div *ngIf="valuePriceContract" class="container-buttonCheck">
+                            <span class="tsp-font-size-default">
+                                El valor actual para el contrato es de&nbsp;
+                            </span>
+                            <span class="tsp-font-size-default tsp-secction-title">
+                                {{valuePriceContract}}
+                            </span>
+                        </div>
+                    </p-toolbar>
+                </div>
+
+
+                <cad-upload-files [Multiple]="true" [Label]="'FUEL_SUPPLIES.FUEL_PRICE.DOCUMENT' | translate"
+                    [typeAccep]="'application/pdf, image/*'" (SendData)="receiveDocument($event)"></cad-upload-files>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()"
+                    [disabled]="form.invalid || loading==false">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button [disabled]="loading==false" color="primary"
+                    class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
